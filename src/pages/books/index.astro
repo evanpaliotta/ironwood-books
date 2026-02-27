@@ -22,9 +22,9 @@ const books = [
 >
   <section class="books-hero">
     <div class="container">
-      <span class="section-label">The Full Catalog</span>
-      <h1>Every book, free to read</h1>
-      <p>Download any ebook free. Buy the paperback on Amazon if you want it on a shelf.</p>
+      <span class="section-label">The Library</span>
+      <h1>Every book, free to read.</h1>
+      <p>Download any ebook free. No catch. If you want it on a shelf, the paperback is on Amazon.</p>
     </div>
   </section>
 
@@ -33,6 +33,7 @@ const books = [
       <div class="books-grid">
         {books.map(book => <BookCard {...book} />)}
       </div>
+      <p class="coming-note">More titles in development for younger readers (ages 3–12). <a href="/#signup">Sign up to be notified.</a></p>
     </div>
   </section>
 </MainLayout>
@@ -60,4 +61,11 @@ const books = [
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
   }
+  .coming-note {
+    margin-top: 2rem;
+    font-size: 0.875rem;
+    color: var(--ink-light);
+    text-align: center;
+  }
+  .coming-note a { color: var(--green); }
 </style>

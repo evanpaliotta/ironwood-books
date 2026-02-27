@@ -17,8 +17,8 @@ const featuredBooks = [
 ---
 
 <MainLayout
-  title="Ironwood Books — Built to Last"
-  description="Children's books that teach liberty, economics, and character — the ideas most schools skip. Free ebooks. Paperbacks on Amazon."
+  title="Ironwood Books — Give them the wood. Watch them build."
+  description="Books for children and young adults about how the world actually works — liberty, economics, human nature, and character. Free ebooks, always. Ages 3 to adult."
 >
 
   <!-- HERO -->
@@ -26,14 +26,14 @@ const featuredBooks = [
     <div class="container hero-inner">
       <div class="hero-copy">
         <span class="section-label">Ironwood Books</span>
-        <h1>Books built to last.<br/>Ideas worth keeping.</h1>
+        <h1>Give them the wood.<br/>Watch them build.</h1>
         <p class="hero-sub">
-          Stories for kids about liberty, economics, entrepreneurship, and character.
-          The things most schools skip. Free ebooks — always.
-          Real paperbacks on Amazon.
+          Books for children and young adults about liberty, economics, human nature, and character —
+          the ideas that shaped civilization and that most schools have quietly stopped teaching.
+          Free ebooks, always.
         </p>
         <div class="hero-actions">
-          <a href="/books" class="btn btn-primary">Browse Free Ebooks</a>
+          <a href="/books" class="btn btn-primary">Get the Free Ebook</a>
           <a href="/about" class="btn btn-outline">Our Story</a>
         </div>
       </div>
@@ -70,8 +70,8 @@ const featuredBooks = [
     <div class="container">
       <div class="section-header">
         <span class="section-label">The Catalog</span>
-        <h2>Stories with something to say</h2>
-        <p>Each book teaches one big idea — clearly, through story, without talking down to kids.</p>
+        <h2>One book. More coming.</h2>
+        <p>Right now there's one title — written for teenagers and young adults. More are in development for younger readers. This is the beginning.</p>
       </div>
       <div class="books-grid">
         {featuredBooks.map(book => (
@@ -86,27 +86,31 @@ const featuredBooks = [
     <div class="container why-inner">
       <div class="why-copy">
         <span class="section-label">Why Ironwood</span>
-        <h2>The ideas that last are the ones they never taught you</h2>
+        <h2>The raw material for a mind that can navigate anything.</h2>
         <p>
-          Schools teach kids what to think. These books try to teach them
-          <em>how</em> to think — about money, ownership, trade, and what
-          makes a free society work.
+          Ironwood is the hardest native hardwood in North America. Craftsmen chose it for
+          tool handles and mallets — things that had to hold up under years of hard use.
         </p>
         <p>
-          Ironwood is named for the hardest native wood in North America. It
-          doesn't bend. Neither do good principles.
+          The books in this catalog work the same way. Not lessons disguised as stories.
+          The raw material: dense, tested ideas about how the world actually works.
+          The child takes that material and builds their own tools.
+          Their own frameworks. Their own way of navigating a world that doesn't come with instructions.
+        </p>
+        <p>
+          That's the difference between teaching kids <em>what</em> to think
+          and giving them what they need to think for themselves.
         </p>
         <a href="/about" class="btn btn-primary">Read our story</a>
       </div>
       <div class="why-values">
         {[
-          { icon: "📖", title: "Story-first", text: "Every concept lives inside a story. No lectures." },
-          { icon: "🎯", title: "One big idea per book", text: "Focused. Memorable. Actually read to the end." },
-          { icon: "🆓", title: "Free ebooks, always", text: "Every book is free to download. Paperbacks are there if you want them." },
-          { icon: "🏫", title: "Homeschool-friendly", text: "Discussion guides and free resources for every title." },
+          { title: "The raw material lasts", text: "Not trends. Not ideology. Principles tested by thousands of years of human civilization." },
+          { title: "One big idea, told well", text: "Each book goes deep on one concept. Focused. Memorable. No lectures." },
+          { title: "Free, always", text: "Every ebook is free to download. The ideas shouldn't cost anything to reach." },
+          { title: "Grows with the reader", text: "A book read at 10 means something different at 16. Built to reward returning." },
         ].map(v => (
           <div class="value-card">
-            <span class="value-icon" aria-hidden="true">{v.icon}</span>
             <h3>{v.title}</h3>
             <p>{v.text}</p>
           </div>
@@ -121,8 +125,8 @@ const featuredBooks = [
       <div class="signup-box">
         <div class="signup-copy">
           <span class="section-label">Stay in the loop</span>
-          <h2>Get new books when they drop</h2>
-          <p>Free ebook delivered to your inbox when each new title launches. No spam. Unsubscribe any time.</p>
+          <h2>New books coming for every age.</h2>
+          <p>We're building a catalog from picture books to young adult — all around timeless ideas most schools have stopped teaching. Get the free ebook now and we'll let you know when new titles drop.</p>
         </div>
         <div class="signup-form">
           <EmailForm variant="inline" />
@@ -167,8 +171,7 @@ const featuredBooks = [
   .why-copy p:last-of-type { margin-bottom: 1.75rem; }
   .why-values { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .value-card { background: var(--cream); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
-  .value-icon { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
-  .value-card h3 { font-size: 0.95rem; margin-bottom: 0.35rem; }
+  .value-card h3 { font-size: 0.95rem; margin-bottom: 0.35rem; color: var(--green); }
   .value-card p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.5; }
 
   .signup-section { background: var(--green-light); }

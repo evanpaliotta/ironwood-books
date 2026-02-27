@@ -11,7 +11,7 @@ import EmailForm from '../components/EmailForm.astro';
   <section class="about-hero">
     <div class="container">
       <span class="section-label">About Ironwood Books</span>
-      <h1>A father. A son. Some things worth knowing.</h1>
+      <h1>Built for the long game.</h1>
     </div>
   </section>
 
@@ -19,29 +19,27 @@ import EmailForm from '../components/EmailForm.astro';
     <div class="container story-inner">
       <div class="story-text">
         <p class="lead">
-          These books started as a personal project. Something I wanted my son to have —
-          a set of stories that would give him the vocabulary to understand the world before
-          the world got its hands on him.
+          These books started with a question a father asked himself the day he found out
+          his son was coming: <em>What do I actually know? What do I wish someone had told me?
+          If something happened to me before I could say it — what would he be missing?</em>
         </p>
         <p>
-          Most schools don't teach economics. They don't teach the history of liberty,
-          the logic of free markets, or the philosophy behind property rights. These aren't
-          partisan ideas — they're foundational ones. And most kids never encounter them until
-          they're already adults with fully formed opinions built on something else.
+          That question became The Ways of the World — a book for teenagers and young adults
+          about how things actually work. Power. Money. Incentives. Human nature. What it means
+          to think clearly and live well. The things most schools have quietly stopped teaching.
         </p>
         <p>
-          I read the Tuttle Twins with my son and loved them. But there were gaps —
-          topics they hadn't covered, angles they hadn't taken, concepts that deserved
-          their own story. So I started writing.
+          But the real ambition is larger. The plan is a catalog from picture books up —
+          stories for a three-year-old, chapter books for a ten-year-old, and everything
+          in between. All built around the same conviction: timeless ideas, honestly told,
+          give children the raw material they need to build their own tools for navigating
+          a world that doesn't come with instructions.
         </p>
         <p>
-          At some point it seemed wrong to keep these just for us. So I put them out.
-          Free ebooks for anyone who wants them. Paperbacks on Amazon if you want something
-          real on the shelf.
-        </p>
-        <p>
-          The name is Ironwood — the hardest native wood in North America. It doesn't bend
-          when everything else does. That's what I want these ideas to be for kids who read them.
+          Ironwood is named for the hardest native hardwood in North America. Craftsmen
+          chose it for handles and mallets — things that had to hold up under years of hard use.
+          That's the model. Not trends. Not curriculum. The densest, most durable ideas we know,
+          in stories children actually want to read.
         </p>
       </div>
       <aside class="story-aside">
@@ -54,10 +52,10 @@ import EmailForm from '../components/EmailForm.astro';
             </svg>
           </div>
           <h3>Ironwood Books</h3>
-          <p>"Built to last."</p>
+          <p>"Give them the wood. Watch them build."</p>
           <div class="brand-divider"></div>
           <ul class="brand-facts">
-            <li><strong>Focus:</strong> Liberty, economics, character</li>
+            <li><strong>Focus:</strong> Liberty, economics, character, philosophy</li>
             <li><strong>Ages:</strong> 3 to adult</li>
             <li><strong>Price:</strong> Free ebooks, Amazon paperbacks</li>
             <li><strong>Publisher:</strong> MVP Ventures</li>
@@ -82,10 +80,10 @@ import EmailForm from '../components/EmailForm.astro';
     <div class="container">
       <div class="mission-grid">
         {[
-          { title: "Stories, not lectures", text: "Every idea in these books lives inside a character and a problem. Kids don't read nonfiction for fun. Stories are how things stick." },
-          { title: "One big idea per book", text: "No book tries to cover everything. Each title teaches one concept clearly and then gets out of the way." },
-          { title: "Free, because it matters", text: "These ideas should reach every kid who could use them — not just the ones whose parents find the right bookstore." },
-          { title: "Written for curious kids", text: "Not dumbed down. These books trust that kids are smart enough to handle real ideas if you tell them straight." },
+          { title: "The raw material, not the answer", text: "These books don't tell kids what to think. They give them the ideas and let them build their own understanding." },
+          { title: "One big idea, told well", text: "Each book goes deep on one concept. Focused. Memorable. No lectures." },
+          { title: "Free, because access matters", text: "Every ebook is free. These ideas should reach every kid who could use them." },
+          { title: "Built for every age", text: "From picture books to young adult — the same timeless ideas, at every level of depth." },
         ].map(item => (
           <div class="mission-card">
             <h3>{item.title}</h3>
@@ -100,8 +98,8 @@ import EmailForm from '../components/EmailForm.astro';
     <div class="container">
       <div class="signup-inner">
         <EmailForm
-          heading="Keep up with new releases"
-          subtext="Free ebook in your inbox when each new title drops."
+          heading="New books coming for every age."
+          subtext="Get the free ebook now. We'll let you know when new titles drop."
           variant="banner"
         />
       </div>
