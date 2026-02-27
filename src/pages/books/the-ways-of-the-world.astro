@@ -1,0 +1,231 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import EmailForm from '../../components/EmailForm.astro';
+---
+
+<MainLayout
+  title="The Ways of the World — Ironwood Books"
+  description="A father's guide to life's essential wisdom — the things schools never taught you about how the world actually works. Free ebook download."
+>
+
+  <article class="book-page">
+
+    <section class="book-header">
+      <div class="container book-header-inner">
+        <div class="book-cover">
+          <div class="cover-art">
+            <svg width="44" height="44" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.25)"/>
+              <path d="M16 8C16 8 11 13 11 18C11 21 13.2 24 16 24C18.8 24 21 21 21 18C21 13 16 8 16 8Z" fill="rgba(255,255,255,0.15)"/>
+              <rect x="15" y="26" width="2" height="4" rx="1" fill="rgba(255,255,255,0.4)"/>
+            </svg>
+            <h2>The Ways of the World</h2>
+            <p class="cover-sub">A Father's Guide to Life's Essential Wisdom</p>
+            <p class="cover-brand">Ironwood Books</p>
+          </div>
+        </div>
+        <div class="book-info">
+          <div class="book-tags">
+            <span class="tag tag-ages">Ages 14+</span>
+            <span class="tag tag-topic">Life Philosophy</span>
+            <span class="tag tag-type">Nonfiction</span>
+          </div>
+          <h1>The Ways of the World</h1>
+          <p class="book-byline">A Father's Guide to Life's Essential Wisdom</p>
+          <p class="book-description">
+            Here is something worth knowing about school: it was not designed for you. It was designed in 18th-century Prussia by Frederick the Great, who needed soldiers and factory workers — people who could follow orders and not ask too many questions.
+          </p>
+          <p class="book-description">
+            What it never taught you — what it was never designed to teach you — is how the world actually works. Why power accumulates where it does. Why money flows the way it does. Why some ideas survive for thousands of years and others die in a generation. These are not secrets. They are patterns. And once you can see them, you see them everywhere.
+          </p>
+          <p class="book-description">
+            This book is one father's attempt to pass those patterns on.
+          </p>
+          <div class="book-actions">
+            <a href="#download" class="btn btn-primary">Get Free Ebook</a>
+            <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Buy Paperback on Amazon</a>
+          </div>
+          <div class="book-meta-list">
+            <div><span>Length</span><strong>~35,000 words</strong></div>
+            <div><span>Reading level</span><strong>Ages 14 and up</strong></div>
+            <div><span>Format</span><strong>Nonfiction / Philosophy</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-about">
+      <div class="container">
+        <div class="about-inner">
+          <div class="about-copy">
+            <span class="section-label">What This Book Is</span>
+            <h2>A map, not a manual</h2>
+            <p>
+              The father who wrote this didn't know everything. He knew what he'd observed — in business, in history, in his own failures and recoveries. He filtered it through the thinkers he trusted most: Marcus Aurelius, Naval Ravikant, Nassim Taleb, Richard Feynman, Epictetus.
+            </p>
+            <p>
+              Then he wrote it down for his son, clearly, without hedging, in case he wasn't around to say it in person.
+            </p>
+            <p>
+              A map is not the territory. It leaves things out and it simplifies. But a good map is worth more than no map at all — especially when you're trying to find your way through unfamiliar terrain and everyone around you is pretending they already know the route.
+            </p>
+          </div>
+          <div class="about-toc">
+            <h3>What's inside</h3>
+            <ul class="toc-list">
+              {[
+                { part: "Part One", title: "How to See the World", desc: "Entropy, evolution, systems thinking, and the lenses that make everything else visible." },
+                { part: "Part Two", title: "How the World Actually Works", desc: "Power, money, incentives, institutions, and why they behave the way they do." },
+                { part: "Part Three", title: "How to Build a Life", desc: "Work, relationships, identity, and the decisions that compound over time." },
+                { part: "Part Four", title: "Advice", desc: "Direct. Unhedged. What a father actually wants his son to know." },
+              ].map(s => (
+                <li class="toc-item">
+                  <span class="toc-part">{s.part}</span>
+                  <strong>{s.title}</strong>
+                  <p>{s.desc}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-voices">
+      <div class="container">
+        <span class="section-label">The Influences</span>
+        <h2>Written through the lens of people worth reading</h2>
+        <div class="voices-grid">
+          {[
+            { name: "Marcus Aurelius", note: "Speak in affirmations, not negations. Don't say what things are not. Say what they are." },
+            { name: "Naval Ravikant", note: "Technology is not a tool — it is the dominant civilizational force. The future belongs to people who understand systems." },
+            { name: "Nassim Taleb", note: "Skin in the game. Via negativa. The robustness that comes from exposure to randomness." },
+            { name: "Epictetus", note: "The dichotomy of control. What is up to you. What isn't. The discipline of desire." },
+          ].map(v => (
+            <div class="voice-card">
+              <strong>{v.name}</strong>
+              <p>{v.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="book-download" id="download">
+      <div class="container">
+        <div class="download-box">
+          <div class="download-copy">
+            <span class="section-label">Free Ebook</span>
+            <h2>Read it free. Keep it forever.</h2>
+            <p>
+              Enter your email and we'll send you the full book as a PDF.
+              If you want it on a shelf, the paperback is on Amazon.
+            </p>
+            <ul class="download-perks">
+              <li>Full book in PDF — no signup fee, no catch</li>
+              <li>Notified when new Ironwood Books titles drop</li>
+              <li>No spam, ever — unsubscribe any time</li>
+            </ul>
+          </div>
+          <div class="download-form">
+            <EmailForm
+              heading="Get the free ebook"
+              subtext="Enter your email and we'll send it straight to your inbox."
+              variant="stacked"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-excerpt">
+      <div class="container">
+        <span class="section-label">From the Introduction</span>
+        <blockquote>
+          <p>"The day I found out your mother was pregnant, I had two kinds of thoughts in quick succession. The first kind was logistics... The second kind of thought was harder to name. It sounded like: <em>What do I actually know? What do I wish someone had told me? And if something were to happen to me before I could tell him — what would he be missing?</em>"</p>
+          <p>"That second kind of thought is why this book exists."</p>
+          <footer>— From the Introduction</footer>
+        </blockquote>
+      </div>
+    </section>
+
+  </article>
+
+</MainLayout>
+
+<style>
+  .book-header { background: var(--cream); padding: 4rem 1.5rem; border-bottom: 1px solid var(--border); }
+  .book-header-inner { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: start; }
+
+  .cover-art {
+    border-radius: 6px;
+    aspect-ratio: 2/3;
+    background: var(--green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+  }
+  .cover-art h2 { font-size: 1.2rem; color: var(--white); line-height: 1.25; }
+  .cover-sub { font-size: 0.75rem; color: rgba(245,240,232,0.75); font-style: italic; line-height: 1.4; }
+  .cover-brand { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 0.25rem; }
+
+  .book-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 3px; }
+  .tag-ages { background: var(--green-light); color: var(--green); }
+  .tag-topic { background: var(--bronze-light); color: var(--bronze); }
+  .tag-type { background: var(--border); color: var(--ink-mid); }
+
+  .book-info h1 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 0.25rem; }
+  .book-byline { color: var(--ink-light); font-size: 0.95rem; margin-bottom: 1.25rem; font-style: italic; }
+  .book-description { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.75; }
+  .book-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1.75rem 0; }
+  .book-meta-list { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .book-meta-list div { display: flex; flex-direction: column; gap: 0.2rem; }
+  .book-meta-list span { font-size: 0.72rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.05em; }
+  .book-meta-list strong { font-size: 0.9rem; color: var(--ink); }
+
+  .book-about { background: var(--white); padding: var(--section-pad); }
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-copy h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
+  .about-copy p { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.75; }
+  .about-toc h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-light); margin-bottom: 1.25rem; }
+  .toc-list { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+  .toc-item { border-left: 3px solid var(--green); padding-left: 1rem; }
+  .toc-part { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bronze); display: block; margin-bottom: 0.2rem; }
+  .toc-item strong { font-size: 0.95rem; display: block; margin-bottom: 0.2rem; color: var(--ink); }
+  .toc-item p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.5; margin: 0; }
+
+  .book-voices { background: var(--cream); padding: var(--section-pad); }
+  .book-voices h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin-bottom: 2rem; max-width: 600px; }
+  .voices-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
+  .voice-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+  .voice-card strong { display: block; font-size: 0.95rem; color: var(--green); margin-bottom: 0.5rem; }
+  .voice-card p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.6; margin: 0; }
+
+  .book-download { background: var(--green-light); padding: var(--section-pad); }
+  .download-box { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 3rem; }
+  .download-copy h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .download-copy p { color: var(--ink-mid); margin-bottom: 1.25rem; line-height: 1.7; }
+  .download-perks { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .download-perks li { font-size: 0.875rem; color: var(--ink-mid); padding-left: 1.25rem; position: relative; }
+  .download-perks li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+  .book-excerpt { background: var(--green); padding: var(--section-pad); }
+  .book-excerpt .section-label { color: rgba(235,241,236,0.65); }
+  blockquote { max-width: 700px; border-left: 3px solid var(--bronze); padding-left: 2rem; margin-top: 1.5rem; }
+  blockquote p { color: rgba(245,240,232,0.9); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; font-style: italic; }
+  blockquote p:last-of-type { margin-bottom: 0.75rem; }
+  blockquote footer { font-size: 0.82rem; color: rgba(245,240,232,0.55); }
+
+  @media (max-width: 900px) {
+    .book-header-inner { grid-template-columns: 1fr; }
+    .cover-art { max-width: 240px; aspect-ratio: 2/3; }
+    .about-inner { grid-template-columns: 1fr; }
+    .download-box { grid-template-columns: 1fr; padding: 2rem; gap: 2rem; }
+  }
+</style>
