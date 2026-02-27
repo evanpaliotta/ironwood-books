@@ -1,6 +1,11 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
+  command   = "npm run build"
+  publish   = "dist"
+  # Prevent Netlify's Git-triggered CI from running — deployments are handled
+  # by GitHub Actions via netlify deploy --dir=dist --prod.
+  # Netlify's own build fails in its container (spawn bash ENOENT) and would
+  # overwrite the good GitHub Actions deploy.
+  ignore    = "exit 1"
 
 [build.environment]
   NODE_VERSION = "22"
