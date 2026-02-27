@@ -1,17 +1,220 @@
 ---
+import MainLayout from '../layouts/MainLayout.astro';
+import BookCard from '../components/BookCard.astro';
+import EmailForm from '../components/EmailForm.astro';
 
+const featuredBooks = [
+  {
+    title: "The Boy Who Owned His Street",
+    slug: "the-boy-who-owned-his-street",
+    ageRange: "8–12",
+    topic: "Property Rights",
+    description: "Marcus discovers that ownership isn't just about things — it's about responsibility, trade, and understanding why people respect what's theirs.",
+    coverColor: "#2D4A35",
+    comingSoon: false,
+  },
+  {
+    title: "The Price of Rain",
+    slug: "the-price-of-rain",
+    ageRange: "8–12",
+    topic: "Supply & Demand",
+    description: "When a drought hits their small town, two kids learn why prices rise, why that's actually useful, and what happens when someone tries to stop it.",
+    coverColor: "#4A3D2D",
+    comingSoon: true,
+  },
+  {
+    title: "The Invisible Hand",
+    slug: "the-invisible-hand",
+    ageRange: "8–12",
+    topic: "Free Markets",
+    description: "Nobody planned the market fair — but somehow everything got organized. An introduction to spontaneous order and why it works.",
+    coverColor: "#2D3A4A",
+    comingSoon: true,
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout
+  title="Ironwood Books — Built to Last"
+  description="Children's books that teach liberty, economics, and character — the ideas most schools skip. Free ebooks. Paperbacks on Amazon."
+>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="section-label">Ironwood Books</span>
+        <h1>Books built to last.<br/>Ideas worth keeping.</h1>
+        <p class="hero-sub">
+          Stories for kids about liberty, economics, entrepreneurship, and character.
+          The things most schools skip. Free ebooks — always.
+          Real paperbacks on Amazon.
+        </p>
+        <div class="hero-actions">
+          <a href="/books" class="btn btn-primary">Browse Free Ebooks</a>
+          <a href="/about" class="btn btn-outline">Our Story</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-book-stack">
+          <div class="hero-book hero-book-1">
+            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+              <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.3)"/>
+            </svg>
+            <span>The Boy Who<br/>Owned His Street</span>
+          </div>
+          <div class="hero-book hero-book-2">
+            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+              <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.3)"/>
+            </svg>
+            <span>The Price<br/>of Rain</span>
+          </div>
+          <div class="hero-book hero-book-3">
+            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+              <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.3)"/>
+            </svg>
+            <span>The Invisible<br/>Hand</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="container trust-inner">
+      <span>Free ebooks, always</span>
+      <span class="trust-divider">·</span>
+      <span>Paperbacks on Amazon</span>
+      <span class="trust-divider">·</span>
+      <span>Written for curious kids ages 8–12</span>
+      <span class="trust-divider">·</span>
+      <span>Perfect for homeschool families</span>
+    </div>
+  </div>
+
+  <!-- BOOKS SECTION -->
+  <section class="books-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">The Catalog</span>
+        <h2>Stories with something to say</h2>
+        <p>Each book teaches one big idea — clearly, through story, without talking down to kids.</p>
+      </div>
+      <div class="books-grid">
+        {featuredBooks.map(book => (
+          <BookCard {...book} />
+        ))}
+      </div>
+      <div class="books-cta">
+        <a href="/books" class="btn btn-outline">View all books</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SECTION -->
+  <section class="why-section">
+    <div class="container why-inner">
+      <div class="why-copy">
+        <span class="section-label">Why Ironwood</span>
+        <h2>The ideas that last are the ones they never taught you</h2>
+        <p>
+          Schools teach kids what to think. These books try to teach them
+          <em>how</em> to think — about money, ownership, trade, and what
+          makes a free society work.
+        </p>
+        <p>
+          Ironwood is named for the hardest native wood in North America. It
+          doesn't bend. Neither do good principles.
+        </p>
+        <a href="/about" class="btn btn-primary">Read our story</a>
+      </div>
+      <div class="why-values">
+        {[
+          { icon: "📖", title: "Story-first", text: "Every concept lives inside a story. No lectures." },
+          { icon: "🎯", title: "One big idea per book", text: "Focused. Memorable. Actually read to the end." },
+          { icon: "🆓", title: "Free ebooks, always", text: "Every book is free to download. Paperbacks are there if you want them." },
+          { icon: "🏫", title: "Homeschool-friendly", text: "Discussion guides and free resources for every title." },
+        ].map(v => (
+          <div class="value-card">
+            <span class="value-icon" aria-hidden="true">{v.icon}</span>
+            <h3>{v.title}</h3>
+            <p>{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL CAPTURE -->
+  <section class="signup-section">
+    <div class="container">
+      <div class="signup-box">
+        <div class="signup-copy">
+          <span class="section-label">Stay in the loop</span>
+          <h2>Get new books when they drop</h2>
+          <p>Free ebook delivered to your inbox when each new title launches. No spam. Unsubscribe any time.</p>
+        </div>
+        <div class="signup-form">
+          <EmailForm variant="inline" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</MainLayout>
+
+<style>
+  .hero { background: var(--green); color: var(--white); padding: 5rem 1.5rem 4rem; }
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .hero-copy .section-label { color: rgba(235,241,236,0.7); }
+  .hero-copy h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--white); margin-bottom: 1.25rem; line-height: 1.15; }
+  .hero-sub { font-size: 1.05rem; color: rgba(245,240,232,0.85); margin-bottom: 2rem; max-width: 500px; line-height: 1.7; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-actions .btn-outline { color: var(--cream); border-color: rgba(245,240,232,0.5); }
+  .hero-actions .btn-outline:hover { background: rgba(245,240,232,0.15); border-color: var(--cream); color: var(--cream); }
+
+  .hero-visual { display: flex; justify-content: center; }
+  .hero-book-stack { display: flex; gap: 1rem; align-items: flex-end; }
+  .hero-book { width: 120px; aspect-ratio: 3/4; border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem; text-align: center; font-family: var(--font-serif); font-size: 0.8rem; font-weight: 700; color: var(--white); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .hero-book-1 { background: #3D6347; transform: rotate(-2deg); }
+  .hero-book-2 { background: #5C4A2D; height: 90%; transform: rotate(1deg); }
+  .hero-book-3 { background: #2D3A4A; transform: rotate(-1deg); }
+
+  .trust-bar { background: var(--bronze-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.85rem 1.5rem; }
+  .trust-inner { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; justify-content: center; font-size: 0.82rem; font-weight: 600; color: var(--bronze); letter-spacing: 0.02em; }
+  .trust-divider { color: var(--border); }
+
+  .books-section { background: var(--cream); }
+  .section-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
+  .section-header h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0.75rem; }
+  .section-header p { color: var(--ink-light); }
+  .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .books-cta { text-align: center; margin-top: 2.5rem; }
+
+  .why-section { background: var(--white); }
+  .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .why-copy h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 1.25rem; }
+  .why-copy p { color: var(--ink-mid); margin-bottom: 1rem; }
+  .why-copy p:last-of-type { margin-bottom: 1.75rem; }
+  .why-values { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .value-card { background: var(--cream); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+  .value-icon { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+  .value-card h3 { font-size: 0.95rem; margin-bottom: 0.35rem; }
+  .value-card p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.5; }
+
+  .signup-section { background: var(--green-light); }
+  .signup-box { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 3rem; }
+  .signup-copy h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .signup-copy p { color: var(--ink-light); font-size: 0.9rem; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .why-inner { grid-template-columns: 1fr; }
+    .signup-box { grid-template-columns: 1fr; padding: 2rem; gap: 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    .why-values { grid-template-columns: 1fr; }
+  }
+</style>

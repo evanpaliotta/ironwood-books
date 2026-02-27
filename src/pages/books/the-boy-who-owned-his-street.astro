@@ -1,0 +1,190 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import EmailForm from '../../components/EmailForm.astro';
+---
+
+<MainLayout
+  title="The Boy Who Owned His Street — Ironwood Books"
+  description="Marcus discovers that ownership isn't just about things — it's about responsibility, trade, and why people respect what's theirs. Free ebook download."
+>
+
+  <article class="book-page">
+
+    <!-- Book header -->
+    <section class="book-header">
+      <div class="container book-header-inner">
+        <div class="book-cover">
+          <div class="cover-art" style="background: #2D4A35">
+            <svg width="40" height="40" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.3)"/>
+              <path d="M16 8C16 8 11 13 11 18C11 21 13.2 24 16 24C18.8 24 21 21 21 18C21 13 16 8 16 8Z" fill="rgba(255,255,255,0.15)"/>
+            </svg>
+            <h2>The Boy Who Owned His Street</h2>
+            <p class="cover-brand">Ironwood Books</p>
+          </div>
+        </div>
+        <div class="book-info">
+          <div class="book-tags">
+            <span class="tag tag-ages">Ages 8–12</span>
+            <span class="tag tag-topic">Property Rights</span>
+            <span class="tag tag-type">Chapter Book</span>
+          </div>
+          <h1>The Boy Who Owned His Street</h1>
+          <p class="book-byline">By Ironwood Books</p>
+          <p class="book-description">
+            Marcus gets a paper route and discovers something strange: the more he takes care of his street, the better everything on it gets. But when the city decides it knows better and takes over, he learns the hard way what ownership actually means — and why it matters who's responsible for what.
+          </p>
+          <p class="book-description">
+            A story about property rights, responsibility, and why the person who owns something usually takes better care of it than someone who doesn't.
+          </p>
+          <div class="book-actions">
+            <a href="#download" class="btn btn-primary">Get Free Ebook</a>
+            <a href="#" class="btn btn-outline">Buy Paperback on Amazon</a>
+          </div>
+          <div class="book-meta-list">
+            <div><span>Pages</span><strong>~120</strong></div>
+            <div><span>Reading level</span><strong>Grades 3–6</strong></div>
+            <div><span>Topics</span><strong>Property rights, trade, responsibility</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What kids learn -->
+    <section class="book-learns">
+      <div class="container">
+        <span class="section-label">What Kids Learn</span>
+        <h2>The big ideas in this book</h2>
+        <div class="learns-grid">
+          {[
+            { idea: "Why ownership matters", text: "People take better care of things they own. When nobody owns something, nobody maintains it." },
+            { idea: "Trade makes both sides better off", text: "Marcus trades his time for money and both sides come out ahead. That's how voluntary exchange works." },
+            { idea: "What happens when the government takes over", text: "When city hall decides to 'improve' Marcus's route, everything gets worse. This is a story about unintended consequences." },
+            { idea: "Responsibility = Pride", text: "The more Marcus owns and maintains, the prouder he is. Ownership builds character." },
+          ].map(l => (
+            <div class="learn-card">
+              <h3>{l.idea}</h3>
+              <p>{l.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Free download -->
+    <section class="book-download" id="download">
+      <div class="container">
+        <div class="download-box">
+          <div class="download-copy">
+            <span class="section-label">Free Ebook</span>
+            <h2>Read it free. Keep it forever.</h2>
+            <p>
+              Enter your email and we'll send you the full ebook as a PDF instantly.
+              You'll also get notified when new Ironwood Books titles drop.
+            </p>
+            <ul class="download-perks">
+              <li>Full book in PDF format</li>
+              <li>Discussion guide for parents & teachers included</li>
+              <li>No spam — ever</li>
+            </ul>
+          </div>
+          <div class="download-form">
+            <EmailForm
+              heading="Get the free ebook"
+              subtext="Enter your email and we'll send it straight to your inbox."
+              variant="stacked"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Discussion guide teaser -->
+    <section class="book-guide">
+      <div class="container">
+        <div class="guide-inner">
+          <span class="section-label">For Parents & Teachers</span>
+          <h2>Discussion guide included</h2>
+          <p>
+            Every Ironwood Books title comes with a free discussion guide —
+            questions to ask your kids while reading, key vocabulary, and
+            simple activities that bring the ideas to life.
+          </p>
+          <a href="/free-resources" class="btn btn-outline">See all free resources</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</MainLayout>
+
+<style>
+  /* Book header */
+  .book-header { background: var(--cream); padding: 4rem 1.5rem; border-bottom: 1px solid var(--border); }
+  .book-header-inner { display: grid; grid-template-columns: 300px 1fr; gap: 4rem; align-items: start; }
+
+  .cover-art {
+    border-radius: 8px;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+  }
+  .cover-art h2 { font-size: 1.3rem; color: var(--white); line-height: 1.2; }
+  .cover-brand { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+
+  .book-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 3px; }
+  .tag-ages { background: var(--green-light); color: var(--green); }
+  .tag-topic { background: var(--bronze-light); color: var(--bronze); }
+  .tag-type { background: var(--border); color: var(--ink-mid); }
+
+  .book-info h1 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 0.4rem; }
+  .book-byline { color: var(--ink-light); font-size: 0.9rem; margin-bottom: 1.25rem; }
+  .book-description { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.7; }
+
+  .book-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1.75rem 0; }
+
+  .book-meta-list { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .book-meta-list div { display: flex; flex-direction: column; gap: 0.2rem; }
+  .book-meta-list span { font-size: 0.75rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.05em; }
+  .book-meta-list strong { font-size: 0.9rem; color: var(--ink); }
+
+  /* What kids learn */
+  .book-learns { background: var(--white); padding: var(--section-pad); }
+  .book-learns h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 2rem; }
+  .learns-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+  .learn-card { background: var(--cream); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
+  .learn-card h3 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--green); }
+  .learn-card p { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.6; }
+
+  /* Download */
+  .book-download { background: var(--green-light); padding: var(--section-pad); }
+  .download-box { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 3rem; }
+  .download-copy h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .download-copy p { color: var(--ink-mid); margin-bottom: 1.25rem; line-height: 1.7; }
+  .download-perks { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .download-perks li { font-size: 0.875rem; color: var(--ink-mid); padding-left: 1.25rem; position: relative; }
+  .download-perks li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+  /* Guide */
+  .book-guide { background: var(--green); padding: var(--section-pad); }
+  .guide-inner { max-width: 600px; }
+  .guide-inner .section-label { color: rgba(235,241,236,0.7); }
+  .guide-inner h2 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--white); margin-bottom: 0.75rem; }
+  .guide-inner p { color: rgba(245,240,232,0.8); margin-bottom: 1.75rem; line-height: 1.7; }
+  .guide-inner .btn-outline { color: var(--cream); border-color: rgba(245,240,232,0.5); }
+  .guide-inner .btn-outline:hover { background: rgba(245,240,232,0.15); color: var(--cream); }
+
+  @media (max-width: 900px) {
+    .book-header-inner { grid-template-columns: 1fr; }
+    .cover-art { max-width: 280px; }
+    .download-box { grid-template-columns: 1fr; padding: 2rem; gap: 2rem; }
+  }
+</style>

@@ -1,0 +1,99 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import BookCard from '../../components/BookCard.astro';
+
+const books = [
+  {
+    title: "The Boy Who Owned His Street",
+    slug: "the-boy-who-owned-his-street",
+    ageRange: "8–12",
+    topic: "Property Rights",
+    description: "Marcus discovers that ownership isn't just about things — it's about responsibility, trade, and understanding why people respect what's theirs.",
+    coverColor: "#2D4A35",
+    comingSoon: false,
+    amazonUrl: "",
+  },
+  {
+    title: "The Price of Rain",
+    slug: "the-price-of-rain",
+    ageRange: "8–12",
+    topic: "Supply & Demand",
+    description: "When a drought hits their small town, two kids learn why prices rise, why that's actually useful, and what happens when someone tries to stop it.",
+    coverColor: "#4A3D2D",
+    comingSoon: true,
+  },
+  {
+    title: "The Invisible Hand",
+    slug: "the-invisible-hand",
+    ageRange: "8–12",
+    topic: "Free Markets",
+    description: "Nobody planned the market fair — but somehow everything got organized. An introduction to spontaneous order and why it works.",
+    coverColor: "#2D3A4A",
+    comingSoon: true,
+  },
+  {
+    title: "The Honest Merchant",
+    slug: "the-honest-merchant",
+    ageRange: "8–12",
+    topic: "Entrepreneurship",
+    description: "In a town where everyone cheats a little, one merchant decides honesty is the only strategy worth keeping — and discovers why it actually works.",
+    coverColor: "#3A2D4A",
+    comingSoon: true,
+  },
+  {
+    title: "The Sound Money Kids",
+    slug: "the-sound-money-kids",
+    ageRange: "8–12",
+    topic: "Money & Inflation",
+    description: "Three kids start a neighborhood bank — then discover what happens when they print too many IOUs.",
+    coverColor: "#4A2D2D",
+    comingSoon: true,
+  },
+];
+---
+
+<MainLayout
+  title="All Books — Ironwood Books"
+  description="Free children's ebooks on liberty, economics, and character. Download any title free or buy the paperback on Amazon."
+>
+  <section class="books-hero">
+    <div class="container">
+      <span class="section-label">The Full Catalog</span>
+      <h1>Every book, free to read</h1>
+      <p>Download any ebook free. Buy the paperback on Amazon if you want it on a shelf.</p>
+    </div>
+  </section>
+
+  <section class="books-main">
+    <div class="container">
+      <div class="books-grid">
+        {books.map(book => <BookCard {...book} />)}
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .books-hero {
+    background: var(--green);
+    color: var(--white);
+    padding: 4rem 1.5rem 3rem;
+  }
+  .books-hero .section-label { color: rgba(235,241,236,0.7); }
+  .books-hero h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+  .books-hero p {
+    font-size: 1.05rem;
+    color: rgba(245,240,232,0.8);
+    max-width: 500px;
+  }
+  .books-main { padding: var(--section-pad); }
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+</style>

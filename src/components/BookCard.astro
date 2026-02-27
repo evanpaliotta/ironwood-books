@@ -1,0 +1,170 @@
+---
+export interface Props {
+  title: string;
+  slug: string;
+  ageRange: string;
+  topic: string;
+  description: string;
+  coverColor?: string;
+  amazonUrl?: string;
+  comingSoon?: boolean;
+}
+
+const {
+  title,
+  slug,
+  ageRange,
+  topic,
+  description,
+  coverColor = "#2D4A35",
+  amazonUrl,
+  comingSoon = false,
+} = Astro.props;
+---
+
+<article class="book-card">
+  <a href={comingSoon ? "#" : `/books/${slug}`} class={`cover-link${comingSoon ? " no-click" : ""}`} aria-label={`View ${title}`}>
+    <div class="cover-placeholder" style={`background: ${coverColor}`}>
+      <div class="cover-inner">
+        <svg width="36" height="36" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.25)"/>
+          <path d="M16 8C16 8 11 13 11 18C11 21 13.2 24 16 24C18.8 24 21 21 21 18C21 13 16 8 16 8Z" fill="rgba(255,255,255,0.15)"/>
+        </svg>
+        <span class="cover-title">{title}</span>
+        <span class="cover-brand">Ironwood Books</span>
+      </div>
+      {comingSoon && <div class="coming-soon-badge">Coming Soon</div>}
+    </div>
+  </a>
+  <div class="book-meta">
+    <div class="book-tags">
+      <span class="tag tag-ages">Ages {ageRange}</span>
+      <span class="tag tag-topic">{topic}</span>
+    </div>
+    <h3 class="book-title">
+      {comingSoon
+        ? title
+        : <a href={`/books/${slug}`}>{title}</a>
+      }
+    </h3>
+    <p class="book-desc">{description}</p>
+    <div class="book-actions">
+      {!comingSoon && (
+        <>
+          <a href={`/books/${slug}`} class="btn btn-primary btn-sm">Free Ebook</a>
+          {amazonUrl && (
+            <a href={amazonUrl} target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Buy Paperback</a>
+          )}
+        </>
+      )}
+      {comingSoon && <span class="coming-soon-text">Notify me when it's ready →</span>}
+    </div>
+  </div>
+</article>
+
+<style>
+  .book-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .book-card:hover {
+    box-shadow: 0 8px 24px rgba(45,74,53,0.12);
+    transform: translateY(-2px);
+  }
+  .cover-link { display: block; }
+  .cover-link.no-click { cursor: default; pointer-events: none; }
+  .cover-placeholder {
+    position: relative;
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cover-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .cover-title {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+  }
+  .cover-brand {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    font-weight: 500;
+  }
+  .coming-soon-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--bronze);
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+  }
+  .book-meta {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+  }
+  .book-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+  }
+  .tag-ages { background: var(--green-light); color: var(--green); }
+  .tag-topic { background: var(--bronze-light); color: var(--bronze); }
+  .book-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .book-title a { color: var(--ink); }
+  .book-title a:hover { color: var(--green); text-decoration: none; }
+  .book-desc {
+    font-size: 0.875rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .book-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+  }
+  .btn-sm { padding: 0.5rem 1rem; font-size: 0.8rem; }
+  .coming-soon-text {
+    font-size: 0.8rem;
+    color: var(--bronze);
+    font-weight: 600;
+  }
+</style>

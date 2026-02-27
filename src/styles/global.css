@@ -1,0 +1,116 @@
+/* ============================================
+   IRONWOOD BOOKS — Global Styles
+   ============================================ */
+
+:root {
+  --green:      #2D4A35;
+  --green-mid:  #3D6347;
+  --green-light:#EBF1EC;
+  --bronze:     #8B6914;
+  --bronze-light:#F5EDD6;
+  --cream:      #F5F0E8;
+  --white:      #FFFFFF;
+  --ink:        #1A1A1A;
+  --ink-mid:    #3D3D3D;
+  --ink-light:  #6B6B6B;
+  --border:     #D9D0C1;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'Inter', system-ui, sans-serif;
+
+  --max-width: 1100px;
+  --section-pad: 5rem 1.5rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: var(--white);
+  border-color: var(--green);
+}
+.btn-primary:hover {
+  background: var(--green-mid);
+  border-color: var(--green-mid);
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--green);
+  border-color: var(--green);
+}
+.btn-outline:hover {
+  background: var(--green);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.btn-bronze {
+  background: var(--bronze);
+  color: var(--white);
+  border-color: var(--bronze);
+}
+.btn-bronze:hover {
+  background: #7a5c10;
+  text-decoration: none;
+}
+
+section { padding: var(--section-pad); }
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 0.75rem;
+}
+
+/* Kit form overrides */
+.formkit-form {
+  background: transparent !important;
+  padding: 0 !important;
+}

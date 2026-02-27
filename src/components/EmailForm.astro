@@ -1,0 +1,108 @@
+---
+export interface Props {
+  heading?: string;
+  subtext?: string;
+  variant?: "inline" | "stacked" | "banner";
+  formId?: string;
+}
+
+const {
+  heading = "Get the free ebook",
+  subtext = "Enter your email and we'll send it straight to your inbox.",
+  variant = "stacked",
+  formId = "REPLACE_WITH_KIT_FORM_ID",
+} = Astro.props;
+---
+
+<div class={`email-form email-form--${variant}`}>
+  {variant !== "inline" && (
+    <div class="form-copy">
+      <h3>{heading}</h3>
+      <p>{subtext}</p>
+    </div>
+  )}
+
+  {formId === "REPLACE_WITH_KIT_FORM_ID" ? (
+    <!-- Placeholder until Kit form ID is set -->
+    <form class="kit-placeholder-form" onsubmit="return false;">
+      <div class="form-row">
+        <input
+          type="email"
+          placeholder="your@email.com"
+          required
+          aria-label="Email address"
+          class="email-input"
+        />
+        <button type="submit" class="btn btn-bronze">
+          {variant === "inline" ? "Get it free" : "Send me the ebook"}
+        </button>
+      </div>
+      <p class="form-note">No spam. Unsubscribe anytime.</p>
+    </form>
+  ) : (
+    <script src={`https://f.kit.com/${formId}/index.js`} data-uid={formId} async></script>
+  )}
+</div>
+
+<style>
+  .email-form { width: 100%; }
+
+  .form-copy { margin-bottom: 1.25rem; }
+  .form-copy h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .form-copy p {
+    font-size: 0.9rem;
+    color: var(--ink-light);
+  }
+
+  .form-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .email-input {
+    flex: 1;
+    min-width: 220px;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: var(--font-sans);
+    background: var(--white);
+    color: var(--ink);
+    transition: border-color 0.15s;
+  }
+  .email-input:focus {
+    outline: none;
+    border-color: var(--green);
+  }
+  .email-input::placeholder { color: var(--ink-light); }
+
+  .form-note {
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    color: var(--ink-light);
+  }
+
+  /* Banner variant */
+  .email-form--banner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .email-form--banner .form-copy {
+    flex: 1;
+    margin-bottom: 0;
+    min-width: 200px;
+  }
+  .email-form--banner .kit-placeholder-form { flex: 2; min-width: 280px; }
+
+  /* Inline variant */
+  .email-form--inline .form-row { flex-wrap: nowrap; }
+</style>

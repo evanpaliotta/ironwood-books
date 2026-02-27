@@ -1,0 +1,152 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import EmailForm from '../components/EmailForm.astro';
+---
+
+<MainLayout
+  title="About — Ironwood Books"
+  description="Why a father started writing books for his son — and why he decided to share them with every kid who could use them."
+>
+
+  <section class="about-hero">
+    <div class="container">
+      <span class="section-label">About Ironwood Books</span>
+      <h1>A father. A son. Some things worth knowing.</h1>
+    </div>
+  </section>
+
+  <section class="about-story">
+    <div class="container story-inner">
+      <div class="story-text">
+        <p class="lead">
+          These books started as a personal project. Something I wanted my son to have —
+          a set of stories that would give him the vocabulary to understand the world before
+          the world got its hands on him.
+        </p>
+        <p>
+          Most schools don't teach economics. They don't teach the history of liberty,
+          the logic of free markets, or the philosophy behind property rights. These aren't
+          partisan ideas — they're foundational ones. And most kids never encounter them until
+          they're already adults with fully formed opinions built on something else.
+        </p>
+        <p>
+          I read the Tuttle Twins with my son and loved them. But there were gaps —
+          topics they hadn't covered, angles they hadn't taken, concepts that deserved
+          their own story. So I started writing.
+        </p>
+        <p>
+          At some point it seemed wrong to keep these just for us. So I put them out.
+          Free ebooks for anyone who wants them. Paperbacks on Amazon if you want something
+          real on the shelf.
+        </p>
+        <p>
+          The name is Ironwood — the hardest native wood in North America. It doesn't bend
+          when everything else does. That's what I want these ideas to be for kids who read them.
+        </p>
+      </div>
+      <aside class="story-aside">
+        <div class="brand-card">
+          <div class="brand-icon" aria-hidden="true">
+            <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
+              <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="#2D4A35"/>
+              <path d="M16 8C16 8 11 13 11 18C11 21 13.2 24 16 24C18.8 24 21 21 21 18C21 13 16 8 16 8Z" fill="#8B6914" opacity="0.7"/>
+              <rect x="15" y="26" width="2" height="4" rx="1" fill="#2D4A35"/>
+            </svg>
+          </div>
+          <h3>Ironwood Books</h3>
+          <p>"Built to last."</p>
+          <div class="brand-divider"></div>
+          <ul class="brand-facts">
+            <li><strong>Focus:</strong> Liberty, economics, character</li>
+            <li><strong>Ages:</strong> 8–12 (chapter books)</li>
+            <li><strong>Price:</strong> Free ebooks, Amazon paperbacks</li>
+            <li><strong>Publisher:</strong> MVP Ventures</li>
+          </ul>
+        </div>
+
+        <div class="influences-card">
+          <h3>Books that shaped these ideas</h3>
+          <ul>
+            <li>The Tuttle Twins series — Connor Boyack</li>
+            <li>The Road to Serfdom — F.A. Hayek</li>
+            <li>Economics in One Lesson — Henry Hazlitt</li>
+            <li>The Law — Frédéric Bastiat</li>
+            <li>Poor Richard's Almanack — Benjamin Franklin</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="about-mission">
+    <div class="container">
+      <div class="mission-grid">
+        {[
+          { title: "Stories, not lectures", text: "Every idea in these books lives inside a character and a problem. Kids don't read nonfiction for fun. Stories are how things stick." },
+          { title: "One big idea per book", text: "No book tries to cover everything. Each title teaches one concept clearly and then gets out of the way." },
+          { title: "Free, because it matters", text: "These ideas should reach every kid who could use them — not just the ones whose parents find the right bookstore." },
+          { title: "Written for curious kids", text: "Not dumbed down. These books trust that kids are smart enough to handle real ideas if you tell them straight." },
+        ].map(item => (
+          <div class="mission-card">
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="about-signup">
+    <div class="container">
+      <div class="signup-inner">
+        <EmailForm
+          heading="Keep up with new releases"
+          subtext="Free ebook in your inbox when each new title drops."
+          variant="banner"
+        />
+      </div>
+    </div>
+  </section>
+
+</MainLayout>
+
+<style>
+  .about-hero { background: var(--green); color: var(--white); padding: 4rem 1.5rem 3rem; }
+  .about-hero .section-label { color: rgba(235,241,236,0.7); }
+  .about-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--white); max-width: 620px; }
+
+  .about-story { padding: var(--section-pad); background: var(--white); }
+  .story-inner { display: grid; grid-template-columns: 1fr 320px; gap: 4rem; align-items: start; }
+
+  .story-text .lead { font-size: 1.15rem; color: var(--ink); font-weight: 500; line-height: 1.7; margin-bottom: 1.5rem; }
+  .story-text p { color: var(--ink-mid); margin-bottom: 1.25rem; line-height: 1.8; }
+
+  .brand-card { background: var(--green); color: var(--cream); border-radius: 10px; padding: 2rem; margin-bottom: 1.5rem; }
+  .brand-icon { margin-bottom: 1rem; }
+  .brand-card h3 { font-family: var(--font-serif); font-size: 1.2rem; color: var(--cream); margin-bottom: 0.25rem; }
+  .brand-card > p { font-style: italic; color: rgba(245,240,232,0.7); margin-bottom: 1.25rem; }
+  .brand-divider { height: 1px; background: rgba(245,240,232,0.2); margin-bottom: 1.25rem; }
+  .brand-facts { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .brand-facts li { font-size: 0.82rem; color: rgba(245,240,232,0.8); }
+  .brand-facts strong { color: var(--cream); }
+
+  .influences-card { background: var(--cream); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; }
+  .influences-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; color: var(--ink); text-transform: uppercase; letter-spacing: 0.05em; }
+  .influences-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .influences-card li { font-size: 0.82rem; color: var(--ink-mid); padding-left: 1rem; position: relative; }
+  .influences-card li::before { content: "—"; position: absolute; left: 0; color: var(--bronze); }
+
+  .about-mission { background: var(--cream); padding: var(--section-pad); }
+  .mission-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+  .mission-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; }
+  .mission-card h3 { font-size: 1.05rem; margin-bottom: 0.6rem; color: var(--green); }
+  .mission-card p { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.65; }
+
+  .about-signup { background: var(--green-light); padding: 4rem 1.5rem; }
+  .signup-inner { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem 3rem; }
+
+  @media (max-width: 900px) {
+    .story-inner { grid-template-columns: 1fr; }
+    .signup-inner { padding: 2rem; }
+  }
+</style>

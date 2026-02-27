@@ -1,0 +1,225 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Ironwood Books",
+  description = "Books built to last. Stories that teach kids the principles of liberty, economics, and character — the ones most schools skip.",
+  image = "/images/og-default.png",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ironwoodbooks" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="logo" aria-label="Ironwood Books home">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="#2D4A35"/>
+            <path d="M16 8C16 8 11 13 11 18C11 21 13.2 24 16 24C18.8 24 21 21 21 18C21 13 16 8 16 8Z" fill="#8B6914" opacity="0.6"/>
+            <rect x="15" y="26" width="2" height="4" rx="1" fill="#2D4A35"/>
+          </svg>
+          <span class="logo-text">Ironwood Books</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="/books">Books</a>
+          <a href="/about">About</a>
+          <a href="/free-resources">Free Resources</a>
+        </nav>
+        <a href="/books" class="btn btn-primary header-cta">Free Ebooks</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo logo-light">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="#EBF1EC"/>
+              <path d="M16 8C16 8 11 13 11 18C11 21 13.2 24 16 24C18.8 24 21 21 21 18C21 13 16 8 16 8Z" fill="#8B6914" opacity="0.8"/>
+              <rect x="15" y="26" width="2" height="4" rx="1" fill="#EBF1EC"/>
+            </svg>
+            <span>Ironwood Books</span>
+          </a>
+          <p>Built to last.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="/books">Books</a>
+          <a href="/about">About</a>
+          <a href="/free-resources">Free Resources</a>
+          <a href="https://twitter.com/ironwoodbooks" target="_blank" rel="noopener noreferrer">Twitter/X</a>
+        </nav>
+        <p class="footer-copy">&copy; {new Date().getFullYear()} Ironwood Books. A division of MVP Ventures.</p>
+      </div>
+    </footer>
+
+    <style>
+      /* Header */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        height: 68px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        text-decoration: none;
+        color: var(--ink);
+        flex-shrink: 0;
+      }
+      .logo-text {
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--green);
+      }
+      .main-nav {
+        display: flex;
+        gap: 1.75rem;
+        margin-left: auto;
+      }
+      .main-nav a {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--ink-mid);
+        transition: color 0.15s;
+      }
+      .main-nav a:hover { color: var(--green); text-decoration: none; }
+      .header-cta { font-size: 0.875rem; padding: 0.6rem 1.25rem; }
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        margin-left: auto;
+      }
+      .mobile-menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--ink);
+        border-radius: 2px;
+      }
+
+      /* Footer */
+      .site-footer {
+        background: var(--green);
+        color: var(--cream);
+        padding: 3rem 1.5rem;
+      }
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        gap: 1.5rem 3rem;
+        align-items: start;
+      }
+      .footer-brand .logo { color: var(--cream); }
+      .footer-brand .logo span {
+        font-family: var(--font-serif);
+        font-size: 1rem;
+        color: var(--cream);
+      }
+      .footer-brand p {
+        font-style: italic;
+        color: rgba(245,240,232,0.7);
+        margin-top: 0.4rem;
+        font-size: 0.9rem;
+      }
+      .footer-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
+        justify-content: flex-end;
+      }
+      .footer-nav a {
+        color: rgba(245,240,232,0.85);
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+      .footer-nav a:hover { color: var(--cream); text-decoration: none; }
+      .footer-copy {
+        grid-column: 1 / -1;
+        font-size: 0.8rem;
+        color: rgba(245,240,232,0.5);
+        border-top: 1px solid rgba(245,240,232,0.15);
+        padding-top: 1.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .main-nav, .header-cta { display: none; }
+        .mobile-menu-toggle { display: flex; }
+        .footer-inner { grid-template-columns: 1fr; }
+        .footer-nav { justify-content: flex-start; }
+      }
+    </style>
+
+    <script>
+      // Mobile menu toggle
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      const nav = document.querySelector('.main-nav');
+      const cta = document.querySelector('.header-cta');
+      toggle?.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+        if (nav) nav.style.display = isOpen ? '' : 'flex';
+        if (cta) cta.style.display = isOpen ? '' : 'inline-block';
+      });
+    </script>
+  </body>
+</html>

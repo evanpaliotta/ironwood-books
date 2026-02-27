@@ -1,0 +1,132 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import EmailForm from '../components/EmailForm.astro';
+
+const resources = [
+  {
+    title: "Discussion Guide: The Boy Who Owned His Street",
+    description: "10 questions to discuss after reading, key vocabulary, and one hands-on activity about ownership.",
+    type: "Discussion Guide",
+    bookSlug: "the-boy-who-owned-his-street",
+    available: false,
+  },
+  {
+    title: "The 5 Economic Ideas Every Kid Should Know",
+    description: "A free one-page PDF summarizing the core ideas in the Ironwood Books series — great for the fridge or a notebook.",
+    type: "Reference Sheet",
+    bookSlug: null,
+    available: false,
+  },
+  {
+    title: "Family Reading Guide: How to Use These Books",
+    description: "Tips for parents on how to read these books with your kids, what questions to ask, and how to connect the ideas to real life.",
+    type: "Parent Guide",
+    bookSlug: null,
+    available: false,
+  },
+];
+---
+
+<MainLayout
+  title="Free Resources — Ironwood Books"
+  description="Free discussion guides, worksheets, and parent resources for every Ironwood Books title."
+>
+
+  <section class="resources-hero">
+    <div class="container">
+      <span class="section-label">Free Resources</span>
+      <h1>Everything to read with your kids</h1>
+      <p>Discussion guides, vocabulary sheets, and parent guides — all free, for every title.</p>
+    </div>
+  </section>
+
+  <section class="resources-main">
+    <div class="container">
+      <div class="resources-grid">
+        {resources.map(r => (
+          <div class="resource-card">
+            <div class="resource-type">{r.type}</div>
+            <h3>{r.title}</h3>
+            <p>{r.description}</p>
+            {r.available
+              ? <a href="#" class="btn btn-primary btn-sm">Download Free</a>
+              : <span class="coming-soon">Coming with book release</span>
+            }
+          </div>
+        ))}
+      </div>
+
+      <div class="resources-signup">
+        <div class="signup-box">
+          <EmailForm
+            heading="Get resources as they're released"
+            subtext="We'll email you each new guide, worksheet, and discussion resource as we publish them."
+            variant="banner"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="homeschool-section">
+    <div class="container homeschool-inner">
+      <div class="homeschool-copy">
+        <span class="section-label">For Homeschool Families</span>
+        <h2>Built for how you teach</h2>
+        <p>
+          Ironwood Books are designed to work as standalone reads or as part of a
+          homeschool economics and civics curriculum. Each book:
+        </p>
+        <ul class="homeschool-list">
+          <li>Covers one concept in depth — easy to slot into any lesson plan</li>
+          <li>Includes a discussion guide with questions at multiple difficulty levels</li>
+          <li>Uses concrete, relatable scenarios — no abstract theory</li>
+          <li>Is appropriate for ages 8–12 but accessible to curious 7-year-olds</li>
+        </ul>
+      </div>
+      <div class="homeschool-topics">
+        <h3>Topics covered across the series</h3>
+        <div class="topics-grid">
+          {["Property Rights", "Supply & Demand", "Free Markets", "Entrepreneurship", "Sound Money", "Voluntary Exchange", "Rule of Law", "Incentives"].map(t => (
+            <span class="topic-chip">{t}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+</MainLayout>
+
+<style>
+  .resources-hero { background: var(--green); color: var(--white); padding: 4rem 1.5rem 3rem; }
+  .resources-hero .section-label { color: rgba(235,241,236,0.7); }
+  .resources-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--white); margin-bottom: 0.5rem; }
+  .resources-hero p { color: rgba(245,240,232,0.8); max-width: 500px; }
+
+  .resources-main { padding: var(--section-pad); background: var(--cream); }
+  .resources-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+
+  .resource-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .resource-type { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bronze); }
+  .resource-card h3 { font-size: 1.05rem; color: var(--ink); line-height: 1.3; }
+  .resource-card p { font-size: 0.875rem; color: var(--ink-light); line-height: 1.6; flex: 1; }
+  .btn-sm { padding: 0.5rem 1rem; font-size: 0.8rem; align-self: flex-start; }
+  .coming-soon { font-size: 0.78rem; color: var(--ink-light); font-style: italic; }
+
+  .signup-box { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; }
+
+  .homeschool-section { background: var(--white); padding: var(--section-pad); }
+  .homeschool-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .homeschool-copy h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.75rem; }
+  .homeschool-copy p { color: var(--ink-mid); margin-bottom: 1rem; }
+  .homeschool-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .homeschool-list li { font-size: 0.9rem; color: var(--ink-mid); padding-left: 1.25rem; position: relative; line-height: 1.5; }
+  .homeschool-list li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+  .homeschool-topics h3 { font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-light); margin-bottom: 1rem; }
+  .topics-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .topic-chip { background: var(--green-light); color: var(--green); font-size: 0.8rem; font-weight: 600; padding: 0.35rem 0.85rem; border-radius: 20px; }
+
+  @media (max-width: 900px) {
+    .homeschool-inner { grid-template-columns: 1fr; }
+  }
+</style>
