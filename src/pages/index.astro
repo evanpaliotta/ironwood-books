@@ -13,24 +13,6 @@ const featuredBooks = [
     coverColor: "#2D4A35",
     comingSoon: false,
   },
-  {
-    title: "The Boy Who Owned His Street",
-    slug: "the-boy-who-owned-his-street",
-    ageRange: "8–12",
-    topic: "Property Rights",
-    description: "Marcus discovers that ownership isn't just about things — it's about responsibility, trade, and understanding why people respect what's theirs.",
-    coverColor: "#4A3D2D",
-    comingSoon: true,
-  },
-  {
-    title: "The Price of Rain",
-    slug: "the-price-of-rain",
-    ageRange: "8–12",
-    topic: "Supply & Demand",
-    description: "When a drought hits their small town, two kids learn why prices rise, why that's actually useful, and what happens when someone tries to stop it.",
-    coverColor: "#2D3A4A",
-    comingSoon: true,
-  },
 ];
 ---
 
@@ -56,25 +38,15 @@ const featuredBooks = [
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
-        <div class="hero-book-stack">
-          <div class="hero-book hero-book-1">
-            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
-              <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.3)"/>
-            </svg>
-            <span>The Boy Who<br/>Owned His Street</span>
-          </div>
-          <div class="hero-book hero-book-2">
-            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
-              <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.3)"/>
-            </svg>
-            <span>The Price<br/>of Rain</span>
-          </div>
-          <div class="hero-book hero-book-3">
-            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
-              <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.3)"/>
-            </svg>
-            <span>The Invisible<br/>Hand</span>
-          </div>
+        <div class="hero-book-single">
+          <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
+            <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.25)"/>
+            <path d="M16 8C16 8 11 13 11 18C11 21 13.2 24 16 24C18.8 24 21 21 21 18C21 13 16 8 16 8Z" fill="rgba(139,105,20,0.5)"/>
+            <rect x="15" y="26" width="2" height="4" rx="1" fill="rgba(255,255,255,0.35)"/>
+          </svg>
+          <span class="hero-book-title">The Ways of the World</span>
+          <span class="hero-book-sub">A Father's Guide to Life's Essential Wisdom</span>
+          <span class="hero-book-brand">Ironwood Books</span>
         </div>
       </div>
     </div>
@@ -87,7 +59,7 @@ const featuredBooks = [
       <span class="trust-divider">·</span>
       <span>Paperbacks on Amazon</span>
       <span class="trust-divider">·</span>
-      <span>Written for curious kids ages 8–12</span>
+      <span>Ages 3 to adult</span>
       <span class="trust-divider">·</span>
       <span>Perfect for homeschool families</span>
     </div>
@@ -105,9 +77,6 @@ const featuredBooks = [
         {featuredBooks.map(book => (
           <BookCard {...book} />
         ))}
-      </div>
-      <div class="books-cta">
-        <a href="/books" class="btn btn-outline">View all books</a>
       </div>
     </div>
   </section>
@@ -174,12 +143,11 @@ const featuredBooks = [
   .hero-actions .btn-outline { color: var(--cream); border-color: rgba(245,240,232,0.5); }
   .hero-actions .btn-outline:hover { background: rgba(245,240,232,0.15); border-color: var(--cream); color: var(--cream); }
 
-  .hero-visual { display: flex; justify-content: center; }
-  .hero-book-stack { display: flex; gap: 1rem; align-items: flex-end; }
-  .hero-book { width: 120px; aspect-ratio: 3/4; border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem; text-align: center; font-family: var(--font-serif); font-size: 0.8rem; font-weight: 700; color: var(--white); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
-  .hero-book-1 { background: #3D6347; transform: rotate(-2deg); }
-  .hero-book-2 { background: #5C4A2D; height: 90%; transform: rotate(1deg); }
-  .hero-book-3 { background: #2D3A4A; transform: rotate(-1deg); }
+  .hero-visual { display: flex; justify-content: center; align-items: center; }
+  .hero-book-single { width: 200px; aspect-ratio: 2/3; border-radius: 6px; background: #3D6347; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; padding: 1.75rem 1.25rem; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .hero-book-title { font-family: var(--font-serif); font-size: 1rem; font-weight: 700; color: var(--white); line-height: 1.25; }
+  .hero-book-sub { font-size: 0.65rem; color: rgba(245,240,232,0.65); font-style: italic; line-height: 1.4; }
+  .hero-book-brand { font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 0.5rem; }
 
   .trust-bar { background: var(--bronze-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.85rem 1.5rem; }
   .trust-inner { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; justify-content: center; font-size: 0.82rem; font-weight: 600; color: var(--bronze); letter-spacing: 0.02em; }
