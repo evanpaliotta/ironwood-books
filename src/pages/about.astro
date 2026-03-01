@@ -26,7 +26,7 @@ import EmailForm from '../components/EmailForm.astro';
         <p>
           That question became The Ways of the World — a book for teenagers and young adults
           about how things actually work. Power. Money. Incentives. Human nature. What it means
-          to think clearly and live well. The things most schools have quietly stopped teaching.
+          to think for yourself and live well. The things most schools have quietly stopped teaching.
         </p>
         <p>
           But the real ambition is larger. The plan is a catalog from picture books up —
@@ -55,23 +55,12 @@ import EmailForm from '../components/EmailForm.astro';
           <p>"Give them the wood. Watch them build."</p>
           <div class="brand-divider"></div>
           <ul class="brand-facts">
-            <li><strong>Focus:</strong> Liberty, economics, character, philosophy</li>
+            <li><strong>Focus:</strong> How to think, self-reliance, character, philosophy</li>
             <li><strong>Ages:</strong> 3 to adult</li>
             <li><strong>Price:</strong> Free ebooks, Amazon paperbacks</li>
-            <li><strong>Publisher:</strong> MVP Ventures</li>
           </ul>
         </div>
 
-        <div class="influences-card">
-          <h3>Books that shaped these ideas</h3>
-          <ul>
-            <li>The Tuttle Twins series — Connor Boyack</li>
-            <li>The Road to Serfdom — F.A. Hayek</li>
-            <li>Economics in One Lesson — Henry Hazlitt</li>
-            <li>The Law — Frédéric Bastiat</li>
-            <li>Poor Richard's Almanack — Benjamin Franklin</li>
-          </ul>
-        </div>
       </aside>
     </div>
   </section>
@@ -128,13 +117,7 @@ import EmailForm from '../components/EmailForm.astro';
   .brand-facts li { font-size: 0.82rem; color: rgba(245,240,232,0.8); }
   .brand-facts strong { color: var(--cream); }
 
-  .influences-card { background: var(--cream); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; }
-  .influences-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; color: var(--ink); text-transform: uppercase; letter-spacing: 0.05em; }
-  .influences-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .influences-card li { font-size: 0.82rem; color: var(--ink-mid); padding-left: 1rem; position: relative; }
-  .influences-card li::before { content: "—"; position: absolute; left: 0; color: var(--bronze); }
-
-  .about-mission { background: var(--cream); padding: var(--section-pad); }
+.about-mission { background: var(--cream); padding: var(--section-pad); }
   .mission-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
   .mission-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; }
   .mission-card h3 { font-size: 1.05rem; margin-bottom: 0.6rem; color: var(--green); }
