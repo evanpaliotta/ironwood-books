@@ -13,16 +13,13 @@ import EmailForm from '../../components/EmailForm.astro';
     <section class="book-header">
       <div class="container book-header-inner">
         <div class="book-cover">
-          <div class="cover-art">
-            <svg width="44" height="44" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.25)"/>
-              <path d="M16 8C16 8 11 13 11 18C11 21 13.2 24 16 24C18.8 24 21 21 21 18C21 13 16 8 16 8Z" fill="rgba(255,255,255,0.15)"/>
-              <rect x="15" y="26" width="2" height="4" rx="1" fill="rgba(255,255,255,0.4)"/>
-            </svg>
-            <h2>The Ways of the World</h2>
-            <p class="cover-sub">A Father's Guide to Life's Essential Wisdom</p>
-            <p class="cover-brand">Ironwood Books</p>
-          </div>
+          <img
+            src="/images/the-ways-of-the-world-cover.jpg"
+            alt="The Ways of the World — book cover"
+            class="cover-img"
+            width="600"
+            height="990"
+          />
         </div>
         <div class="book-info">
           <div class="book-tags">
@@ -157,22 +154,13 @@ import EmailForm from '../../components/EmailForm.astro';
   .book-header { background: var(--cream); padding: 4rem 1.5rem; border-bottom: 1px solid var(--border); }
   .book-header-inner { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: start; }
 
-  .cover-art {
-    border-radius: 6px;
-    aspect-ratio: 2/3;
-    background: var(--green);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2rem;
-    text-align: center;
+  .cover-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
     box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+    display: block;
   }
-  .cover-art h2 { font-size: 1.2rem; color: var(--white); line-height: 1.25; }
-  .cover-sub { font-size: 0.75rem; color: rgba(245,240,232,0.75); font-style: italic; line-height: 1.4; }
-  .cover-brand { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 0.25rem; }
 
   .book-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
   .tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 3px; }

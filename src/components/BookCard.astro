@@ -6,6 +6,7 @@ export interface Props {
   topic: string;
   description: string;
   coverColor?: string;
+  coverImage?: string;
   amazonUrl?: string;
   comingSoon?: boolean;
 }
@@ -17,6 +18,7 @@ const {
   topic,
   description,
   coverColor = "#2D4A35",
+  coverImage,
   amazonUrl,
   comingSoon = false,
 } = Astro.props;
@@ -24,17 +26,24 @@ const {
 
 <article class="book-card">
   <a href={comingSoon ? "#" : `/books/${slug}`} class={`cover-link${comingSoon ? " no-click" : ""}`} aria-label={`View ${title}`}>
-    <div class="cover-placeholder" style={`background: ${coverColor}`}>
-      <div class="cover-inner">
-        <svg width="36" height="36" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.25)"/>
-          <path d="M16 8C16 8 11 13 11 18C11 21 13.2 24 16 24C18.8 24 21 21 21 18C21 13 16 8 16 8Z" fill="rgba(255,255,255,0.15)"/>
-        </svg>
-        <span class="cover-title">{title}</span>
-        <span class="cover-brand">Ironwood Books</span>
+    {coverImage ? (
+      <div class="cover-placeholder cover-has-image" style={`background: ${coverColor}`}>
+        <img src={coverImage} alt={`${title} cover`} class="cover-real-img" />
+        {comingSoon && <div class="coming-soon-badge">Coming Soon</div>}
       </div>
-      {comingSoon && <div class="coming-soon-badge">Coming Soon</div>}
-    </div>
+    ) : (
+      <div class="cover-placeholder" style={`background: ${coverColor}`}>
+        <div class="cover-inner">
+          <svg width="36" height="36" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.25)"/>
+            <path d="M16 8C16 8 11 13 11 18C11 21 13.2 24 16 24C18.8 24 21 21 21 18C21 13 16 8 16 8Z" fill="rgba(255,255,255,0.15)"/>
+          </svg>
+          <span class="cover-title">{title}</span>
+          <span class="cover-brand">Ironwood Books</span>
+        </div>
+        {comingSoon && <div class="coming-soon-badge">Coming Soon</div>}
+      </div>
+    )}
   </a>
   <div class="book-meta">
     <div class="book-tags">
@@ -78,6 +87,9 @@ const {
   }
   .cover-link { display: block; }
   .cover-link.no-click { cursor: default; pointer-events: none; }
+  .cover-has-image { display: block; padding: 0; }
+  .cover-real-img { width: 100%; height: auto; display: block; aspect-ratio: 3/4; object-fit: cover; }
+
   .cover-placeholder {
     position: relative;
     aspect-ratio: 3/4;

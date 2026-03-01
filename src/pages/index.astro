@@ -11,6 +11,7 @@ const featuredBooks = [
     topic: "Life Philosophy",
     description: "A father's guide to life's essential wisdom — the patterns schools never taught you about power, money, human nature, and how to build a life worth living.",
     coverColor: "#2D4A35",
+    coverImage: "/images/the-ways-of-the-world-cover.jpg",
     comingSoon: false,
   },
 ];
@@ -37,17 +38,16 @@ const featuredBooks = [
           <a href="/about" class="btn btn-outline">Our Story</a>
         </div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="hero-book-single">
-          <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
-            <path d="M16 2C16 2 8 8 8 18C8 23.5 11.5 28 16 28C20.5 28 24 23.5 24 18C24 8 16 2 16 2Z" fill="rgba(255,255,255,0.25)"/>
-            <path d="M16 8C16 8 11 13 11 18C11 21 13.2 24 16 24C18.8 24 21 21 21 18C21 13 16 8 16 8Z" fill="rgba(139,105,20,0.5)"/>
-            <rect x="15" y="26" width="2" height="4" rx="1" fill="rgba(255,255,255,0.35)"/>
-          </svg>
-          <span class="hero-book-title">The Ways of the World</span>
-          <span class="hero-book-sub">A Father's Guide to Life's Essential Wisdom</span>
-          <span class="hero-book-brand">Ironwood Books</span>
-        </div>
+      <div class="hero-visual">
+        <a href="/books/the-ways-of-the-world" class="hero-book-link">
+          <img
+            src="/images/the-ways-of-the-world-cover.jpg"
+            alt="The Ways of the World — book cover"
+            class="hero-book-cover"
+            width="600"
+            height="990"
+          />
+        </a>
       </div>
     </div>
   </section>
@@ -120,7 +120,7 @@ const featuredBooks = [
   </section>
 
   <!-- EMAIL CAPTURE -->
-  <section class="signup-section">
+  <section class="signup-section" id="signup">
     <div class="container">
       <div class="signup-box">
         <div class="signup-copy">
@@ -148,10 +148,8 @@ const featuredBooks = [
   .hero-actions .btn-outline:hover { background: rgba(245,240,232,0.15); border-color: var(--cream); color: var(--cream); }
 
   .hero-visual { display: flex; justify-content: center; align-items: center; }
-  .hero-book-single { width: 200px; aspect-ratio: 2/3; border-radius: 6px; background: #3D6347; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; padding: 1.75rem 1.25rem; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-  .hero-book-title { font-family: var(--font-serif); font-size: 1rem; font-weight: 700; color: var(--white); line-height: 1.25; }
-  .hero-book-sub { font-size: 0.65rem; color: rgba(245,240,232,0.65); font-style: italic; line-height: 1.4; }
-  .hero-book-brand { font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 0.5rem; }
+  .hero-book-link { display: block; }
+  .hero-book-cover { width: 240px; height: auto; border-radius: 4px; box-shadow: 0 24px 64px rgba(0,0,0,0.45); display: block; }
 
   .trust-bar { background: var(--bronze-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.85rem 1.5rem; }
   .trust-inner { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; justify-content: center; font-size: 0.82rem; font-weight: 600; color: var(--bronze); letter-spacing: 0.02em; }
