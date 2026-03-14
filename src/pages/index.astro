@@ -5,6 +5,16 @@ import EmailForm from '../components/EmailForm.astro';
 
 const featuredBooks = [
   {
+    title: "The Adventures of the Curious Kid",
+    slug: "the-adventures-of-the-curious-kid",
+    ageRange: "4–8",
+    topic: "Curiosity & Courage",
+    description: "A rhyming picture book about a boy who wakes up one morning and decides to explore everything — mountains, oceans, dark forests, and a mysterious book full of worlds.",
+    coverColor: "#2D4A35",
+    coverImage: "/images/the-adventures-of-the-curious-kid-cover.jpg",
+    comingSoon: false,
+  },
+  {
     title: "The Ways of the World",
     slug: "the-ways-of-the-world",
     ageRange: "14+",
@@ -39,13 +49,13 @@ const featuredBooks = [
         </div>
       </div>
       <div class="hero-visual">
-        <a href="/books/the-ways-of-the-world" class="hero-book-link">
+        <a href="/books/the-adventures-of-the-curious-kid" class="hero-book-link">
           <img
-            src="/images/the-ways-of-the-world-cover.jpg"
-            alt="The Ways of the World — book cover"
+            src="/images/the-adventures-of-the-curious-kid-cover.jpg"
+            alt="The Adventures of the Curious Kid — book cover"
             class="hero-book-cover"
             width="600"
-            height="990"
+            height="618"
           />
         </a>
       </div>
@@ -70,8 +80,8 @@ const featuredBooks = [
     <div class="container">
       <div class="section-header">
         <span class="section-label">The Catalog</span>
-        <h2>One book. More coming.</h2>
-        <p>Right now there's one title — written for teenagers and young adults. More are in development for younger readers. This is the beginning.</p>
+        <h2>Two books. More coming.</h2>
+        <p>A picture book for ages 4–8 and a guide to life's essential wisdom for ages 14+. More titles in development. This is the beginning.</p>
       </div>
       <div class="books-grid">
         {featuredBooks.map(book => (
@@ -126,7 +136,7 @@ const featuredBooks = [
         <div class="signup-copy">
           <span class="section-label">Free Ebook</span>
           <h2>Download it free. Keep it forever.</h2>
-          <p>Enter your email and we'll send you the full PDF of <em>The Ways of the World</em> straight to your inbox. No catch. No subscription.</p>
+          <p>Enter your email and we'll send you a free Ironwood Books ebook straight to your inbox. No catch. No subscription.</p>
         </div>
         <div class="signup-form">
           <EmailForm variant="inline" />

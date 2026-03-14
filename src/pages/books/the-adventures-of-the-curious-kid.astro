@@ -1,0 +1,202 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import EmailForm from '../../components/EmailForm.astro';
+---
+
+<MainLayout
+  title="The Adventures of the Curious Kid — Ironwood Books"
+  description="A picture book about a boy who wakes up one morning and decides to explore the world — climbing mountains, finding the ocean, walking through dark forests, and discovering that the more you explore, the more there is to find. Free ebook download."
+>
+
+  <article class="book-page">
+
+    <section class="book-header">
+      <div class="container book-header-inner">
+        <div class="book-cover">
+          <img
+            src="/images/the-adventures-of-the-curious-kid-cover.jpg"
+            alt="The Adventures of the Curious Kid — book cover"
+            class="cover-img"
+            width="600"
+            height="618"
+          />
+        </div>
+        <div class="book-info">
+          <div class="book-tags">
+            <span class="tag tag-ages">Ages 4–8</span>
+            <span class="tag tag-topic">Curiosity & Courage</span>
+            <span class="tag tag-type">Picture Book</span>
+          </div>
+          <h1>The Adventures of the Curious Kid</h1>
+          <p class="book-byline">Book 1</p>
+          <p class="book-description">
+            One morning, a curious kid woke up and decided the world needed exploring.
+          </p>
+          <p class="book-description">
+            By the end of the day, he had raced the sun up a mountain, stood at the edge of the ocean,
+            walked through a dark forest full of glowing eyes, and discovered a book full of worlds he
+            hadn't imagined yet.
+          </p>
+          <p class="book-description">
+            A rhyming adventure about what happens when a child follows curiosity wherever it leads —
+            even into the scary parts.
+          </p>
+          <div class="book-actions">
+            <a href="#download" class="btn btn-primary">Get Free Ebook</a>
+            <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Buy Paperback on Amazon</a>
+          </div>
+          <div class="book-meta-list">
+            <div><span>Age range</span><strong>Ages 4–8</strong></div>
+            <div><span>Pages</span><strong>24 pages</strong></div>
+            <div><span>Format</span><strong>Full-color picture book</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-about">
+      <div class="container">
+        <div class="about-inner">
+          <div class="about-copy">
+            <span class="section-label">What This Book Is</span>
+            <h2>A day worth having.</h2>
+            <p>
+              The Curious Kid wakes up before the sun. He races up a mountain. He rolls down it.
+              He finds the ocean and wonders why it's salty. He stands in the dark and keeps walking anyway.
+              He finds a book called <em>So Many Worlds</em> — and goes home to dream about tomorrow.
+            </p>
+            <p>
+              This book doesn't preach. It follows a kid through a single extraordinary day and lets
+              the questions pile up naturally — the way they do for any child paying attention.
+            </p>
+            <p>
+              Written by a father for his son. Illustrated with AI, built to last.
+            </p>
+          </div>
+          <div class="about-scenes">
+            <h3>What's inside</h3>
+            <ul class="scenes-list">
+              {[
+                { num: "01", title: "Waking Up", desc: "Before sunrise, the Curious Kid is already moving." },
+                { num: "02", title: "Racing the Sun", desc: "A mountain, a glowing horizon, and a race worth running." },
+                { num: "06", title: "The Ocean", desc: "Waves that roar and a kid who wants to know why." },
+                { num: "13", title: "The Spooky Sign", desc: "A dark path, glowing eyes, and a choice to keep going." },
+                { num: "15", title: "So Many Worlds", desc: "A book that opens every door at once." },
+                { num: "21", title: "Asleep & Dreaming", desc: "Home, safe, and already thinking about tomorrow." },
+              ].map(s => (
+                <li class="scene-item">
+                  <span class="scene-num">Scene {s.num}</span>
+                  <strong>{s.title}</strong>
+                  <p>{s.desc}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-download" id="download">
+      <div class="container">
+        <div class="download-box">
+          <div class="download-copy">
+            <span class="section-label">Free Ebook</span>
+            <h2>Read it free. Keep it forever.</h2>
+            <p>
+              Enter your email and we'll send you the full picture book as a PDF —
+              all 24 pages, full color, ready to read on any device.
+              If you want it on a shelf, the paperback is on Amazon.
+            </p>
+            <ul class="download-perks">
+              <li>Full 24-page picture book in PDF — no catch</li>
+              <li>Full color, full-bleed illustrations</li>
+              <li>No spam, ever — unsubscribe any time</li>
+            </ul>
+          </div>
+          <div class="download-form">
+            <EmailForm
+              heading="Get the free ebook"
+              subtext="Enter your email and we'll send it straight to your inbox."
+              variant="stacked"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-excerpt">
+      <div class="container">
+        <span class="section-label">From the Book</span>
+        <blockquote>
+          <p>"As he closed his eyes a thought crossed his mind,<br/>
+          that all of his questions had answers to find.<br/>
+          And while he only knew a couple things,<br/>
+          he dreamed of the wonders<br/>
+          tomorrow might bring."</p>
+          <footer>— The final page</footer>
+        </blockquote>
+      </div>
+    </section>
+
+  </article>
+
+</MainLayout>
+
+<style>
+  .book-header { background: var(--cream); padding: 4rem 1.5rem; border-bottom: 1px solid var(--border); }
+  .book-header-inner { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: start; }
+
+  .cover-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+    display: block;
+  }
+
+  .book-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 3px; }
+  .tag-ages { background: var(--green-light); color: var(--green); }
+  .tag-topic { background: var(--bronze-light); color: var(--bronze); }
+  .tag-type { background: var(--border); color: var(--ink-mid); }
+
+  .book-info h1 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 0.25rem; }
+  .book-byline { color: var(--ink-light); font-size: 0.95rem; margin-bottom: 1.25rem; font-style: italic; }
+  .book-description { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.75; }
+  .book-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1.75rem 0; }
+  .book-meta-list { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .book-meta-list div { display: flex; flex-direction: column; gap: 0.2rem; }
+  .book-meta-list span { font-size: 0.72rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.05em; }
+  .book-meta-list strong { font-size: 0.9rem; color: var(--ink); }
+
+  .book-about { background: var(--white); padding: var(--section-pad); }
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-copy h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
+  .about-copy p { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.75; }
+  .about-scenes h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-light); margin-bottom: 1.25rem; }
+  .scenes-list { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+  .scene-item { border-left: 3px solid var(--green); padding-left: 1rem; }
+  .scene-num { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bronze); display: block; margin-bottom: 0.2rem; }
+  .scene-item strong { font-size: 0.95rem; display: block; margin-bottom: 0.2rem; color: var(--ink); }
+  .scene-item p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.5; margin: 0; }
+
+  .book-download { background: var(--green-light); padding: var(--section-pad); }
+  .download-box { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 3rem; }
+  .download-copy h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .download-copy p { color: var(--ink-mid); margin-bottom: 1.25rem; line-height: 1.7; }
+  .download-perks { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .download-perks li { font-size: 0.875rem; color: var(--ink-mid); padding-left: 1.25rem; position: relative; }
+  .download-perks li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+  .book-excerpt { background: var(--green); padding: var(--section-pad); }
+  .book-excerpt .section-label { color: rgba(235,241,236,0.65); }
+  blockquote { max-width: 700px; border-left: 3px solid var(--bronze); padding-left: 2rem; margin-top: 1.5rem; }
+  blockquote p { color: rgba(245,240,232,0.9); font-size: 1.05rem; line-height: 1.8; margin-bottom: 0.75rem; font-style: italic; }
+  blockquote footer { font-size: 0.82rem; color: rgba(245,240,232,0.55); }
+
+  @media (max-width: 900px) {
+    .book-header-inner { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; }
+    .download-box { grid-template-columns: 1fr; padding: 2rem; gap: 2rem; }
+  }
+</style>

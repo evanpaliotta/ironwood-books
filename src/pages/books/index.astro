@@ -4,6 +4,17 @@ import BookCard from '../../components/BookCard.astro';
 
 const books = [
   {
+    title: "The Adventures of the Curious Kid",
+    slug: "the-adventures-of-the-curious-kid",
+    ageRange: "4–8",
+    topic: "Curiosity & Courage",
+    description: "A rhyming picture book about a boy who wakes up one morning and decides to explore everything — mountains, oceans, dark forests, and a mysterious book full of worlds.",
+    coverColor: "#2D4A35",
+    coverImage: "/images/the-adventures-of-the-curious-kid-cover.jpg",
+    comingSoon: false,
+    amazonUrl: "",
+  },
+  {
     title: "The Ways of the World",
     slug: "the-ways-of-the-world",
     ageRange: "14+",
@@ -34,7 +45,7 @@ const books = [
       <div class="books-grid">
         {books.map(book => <BookCard {...book} />)}
       </div>
-      <p class="coming-note">More titles in development for younger readers (ages 3–12). <a href="/#signup">Sign up to be notified.</a></p>
+      <p class="coming-note">More titles in development. <a href="/#signup">Sign up to be notified.</a></p>
     </div>
   </section>
 </MainLayout>
