@@ -79,11 +79,11 @@ const first = active[0];
   .hero-visual { display: flex; justify-content: center; align-items: center; }
   .hero-rotator { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
   .hero-book-link { display: block; }
-  .hero-book-cover { width: 380px; height: auto; border-radius: 4px; box-shadow: 0 32px 80px rgba(0,0,0,0.55); display: block; transition: opacity 0.4s ease; }
+  .hero-book-cover { width: 320px; aspect-ratio: 3/4; object-fit: cover; object-position: center top; border-radius: 4px; box-shadow: 0 32px 80px rgba(0,0,0,0.55); display: block; transition: opacity 0.4s ease; }
   .hero-dots { display: flex; gap: 0.6rem; }
   .hero-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(245,240,232,0.3); border: none; cursor: pointer; padding: 0; transition: background 0.3s ease; }
   .hero-dot.active { background: var(--bronze); }
 
-  @media (max-width: 1100px) { .hero-book-cover { width: 300px; } }
+  @media (max-width: 1100px) { .hero-book-cover { width: 260px; } }
   @media (max-width: 900px) { .hero-visual { display: none; } }
 </style>
