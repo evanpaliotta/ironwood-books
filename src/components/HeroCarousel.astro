@@ -1,0 +1,89 @@
+---
+interface Props {
+  books: Array<{ title: string; slug: string; coverImage: string; comingSoon?: boolean }>;
+}
+const { books } = Astro.props;
+const active = books.filter(b => !b.comingSoon);
+const first = active[0];
+---
+
+{active.length > 0 && (
+  <div class="hero-visual">
+    <div
+      class="hero-rotator"
+      id="hero-rotator"
+      data-books={JSON.stringify(active.map(b => ({ title: b.title, slug: b.slug, coverImage: b.coverImage })))}
+    >
+      <a id="hero-book-link" href={`/books/${first.slug}`} class="hero-book-link">
+        <img
+          id="hero-book-cover"
+          src={first.coverImage}
+          alt={`${first.title} — book cover`}
+          class="hero-book-cover"
+        />
+      </a>
+      <div class="hero-dots" id="hero-dots"></div>
+    </div>
+  </div>
+)}
+
+<script>
+  const rotator = document.getElementById('hero-rotator');
+  if (rotator) {
+    const books: Array<{ title: string; slug: string; coverImage: string }> =
+      JSON.parse(rotator.dataset.books || '[]');
+
+    if (books.length > 1) {
+      let current = 0;
+      const link = document.getElementById('hero-book-link') as HTMLAnchorElement;
+      const img = document.getElementById('hero-book-cover') as HTMLImageElement;
+      const dotsContainer = document.getElementById('hero-dots') as HTMLElement;
+
+      books.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Show book ' + (i + 1));
+        dot.addEventListener('click', () => { clearInterval(timer); goTo(i); resetTimer(); });
+        dotsContainer.appendChild(dot);
+      });
+
+      function goTo(index: number) {
+        current = index;
+        img.style.opacity = '0';
+        setTimeout(() => {
+          const book = books[current];
+          img.src = book.coverImage;
+          img.alt = book.title + ' — book cover';
+          link.href = '/books/' + book.slug;
+          img.style.opacity = '1';
+        }, 400);
+        dotsContainer.querySelectorAll('.hero-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      let timer = setInterval(() => goTo((current + 1) % books.length), 5000);
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => goTo((current + 1) % books.length), 5000);
+      }
+
+      link.addEventListener('mouseenter', () => clearInterval(timer));
+      link.addEventListener('mouseleave', () => resetTimer());
+    }
+  }
+</script>
+
+<style>
+  .hero-visual { display: flex; justify-content: center; align-items: center; }
+  .hero-rotator { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+  .hero-book-link { display: block; }
+  .hero-book-cover { width: 380px; height: auto; border-radius: 4px; box-shadow: 0 32px 80px rgba(0,0,0,0.55); display: block; transition: opacity 0.4s ease; }
+  .hero-dots { display: flex; gap: 0.6rem; }
+  .hero-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(245,240,232,0.3); border: none; cursor: pointer; padding: 0; transition: background 0.3s ease; }
+  .hero-dot.active { background: var(--bronze); }
+
+  @media (max-width: 1100px) { .hero-book-cover { width: 300px; } }
+  @media (max-width: 900px) { .hero-visual { display: none; } }
+</style>

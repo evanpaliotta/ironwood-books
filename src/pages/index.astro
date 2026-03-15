@@ -2,6 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import BookCard from '../components/BookCard.astro';
 import EmailForm from '../components/EmailForm.astro';
+import HeroCarousel from '../components/HeroCarousel.astro';
 
 const featuredBooks = [
   {
@@ -48,19 +49,7 @@ const featuredBooks = [
           <a href="/about" class="btn btn-outline">Our Story</a>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-rotator">
-          <a id="hero-book-link" href="/books/the-adventures-of-the-curious-kid" class="hero-book-link">
-            <img
-              id="hero-book-cover"
-              src="/images/the-adventures-of-the-curious-kid-cover.jpg"
-              alt="The Adventures of the Curious Kid — book cover"
-              class="hero-book-cover"
-            />
-          </a>
-          <div class="hero-dots" id="hero-dots"></div>
-        </div>
-      </div>
+      <HeroCarousel books={featuredBooks} />
     </div>
   </section>
 
@@ -159,15 +148,7 @@ const featuredBooks = [
   .hero-actions .btn-outline { color: var(--cream); border-color: rgba(245,240,232,0.5); }
   .hero-actions .btn-outline:hover { background: rgba(245,240,232,0.15); border-color: var(--cream); color: var(--cream); }
 
-  .hero-visual { display: flex; justify-content: center; align-items: center; }
-  .hero-rotator { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
-  .hero-book-link { display: block; }
-  .hero-book-cover { width: 380px; height: auto; border-radius: 4px; box-shadow: 0 32px 80px rgba(0,0,0,0.55); display: block; transition: opacity 0.4s ease; }
-  .hero-dots { display: flex; gap: 0.6rem; }
-  .hero-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(245,240,232,0.3); border: none; cursor: pointer; padding: 0; transition: background 0.3s ease; }
-  .hero-dot.active { background: var(--bronze); }
-
-  .trust-bar { background: var(--bronze-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.85rem 1.5rem; }
+.trust-bar { background: var(--bronze-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.85rem 1.5rem; }
   .trust-inner { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; justify-content: center; font-size: 0.82rem; font-weight: 600; color: var(--bronze); letter-spacing: 0.02em; }
   .trust-divider { color: var(--border); }
 
@@ -193,12 +174,8 @@ const featuredBooks = [
   .signup-copy h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
   .signup-copy p { color: var(--ink-light); font-size: 0.9rem; }
 
-  @media (max-width: 1100px) {
-    .hero-book-cover { width: 300px; }
-  }
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; }
-    .hero-visual { display: none; }
     .why-inner { grid-template-columns: 1fr; }
     .signup-box { grid-template-columns: 1fr; padding: 2rem; gap: 1.5rem; }
   }
@@ -207,45 +184,3 @@ const featuredBooks = [
   }
 </style>
 
-<script define:vars={{ heroBooks: featuredBooks }}>
-  const books = heroBooks.filter(b => !b.comingSoon);
-  if (books.length > 1) {
-    let current = 0;
-    const link = document.getElementById('hero-book-link');
-    const img = document.getElementById('hero-book-cover');
-    const dotsContainer = document.getElementById('hero-dots');
-
-    books.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Show book ' + (i + 1));
-      dot.addEventListener('click', () => { clearInterval(timer); goTo(i); resetTimer(); });
-      dotsContainer.appendChild(dot);
-    });
-
-    function goTo(index) {
-      current = index;
-      img.style.opacity = '0';
-      setTimeout(() => {
-        const book = books[current];
-        img.src = book.coverImage;
-        img.alt = book.title + ' — book cover';
-        link.href = '/books/' + book.slug;
-        img.style.opacity = '1';
-      }, 400);
-      dotsContainer.querySelectorAll('.hero-dot').forEach((d, i) => {
-        d.classList.toggle('active', i === current);
-      });
-    }
-
-    let timer = setInterval(() => goTo((current + 1) % books.length), 5000);
-
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(() => goTo((current + 1) % books.length), 5000);
-    }
-
-    link.addEventListener('mouseenter', () => clearInterval(timer));
-    link.addEventListener('mouseleave', () => resetTimer());
-  }
-</script>
