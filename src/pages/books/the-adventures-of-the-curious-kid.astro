@@ -28,7 +28,7 @@ import EmailForm from '../../components/EmailForm.astro';
             <span class="tag tag-type">Picture Book</span>
           </div>
           <h1>The Adventures of the Curious Kid</h1>
-          <p class="book-byline">Book 1</p>
+          <p class="book-byline">Book 2</p>
           <p class="book-description">
             One morning, a curious kid woke up and decided the world needed exploring.
           </p>
@@ -43,7 +43,7 @@ import EmailForm from '../../components/EmailForm.astro';
           </p>
           <div class="book-actions">
             <a href="#download" class="btn btn-primary">Get Free Ebook</a>
-            <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Buy Paperback on Amazon</a>
+            <a href="https://www.amazon.com/Adventures-Curious-Kid-Evan-Paliotta/dp/B0GSZ9MJL6" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Buy Paperback on Amazon</a>
           </div>
           <div class="book-meta-list">
             <div><span>Age range</span><strong>Ages 4–8</strong></div>
@@ -105,7 +105,7 @@ import EmailForm from '../../components/EmailForm.astro';
             <p>
               Enter your email and we'll send you the full picture book as a PDF —
               all 24 pages, full color, ready to read on any device.
-              If you want it on a shelf, the paperback is on Amazon.
+              The paperback is also available on Amazon.
             </p>
             <ul class="download-perks">
               <li>Full 24-page picture book in PDF — no catch</li>
@@ -164,6 +164,7 @@ import EmailForm from '../../components/EmailForm.astro';
   .book-byline { color: var(--ink-light); font-size: 0.95rem; margin-bottom: 1.25rem; font-style: italic; }
   .book-description { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.75; }
   .book-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1.75rem 0; }
+  .btn-disabled { opacity: 0.55; cursor: default; pointer-events: none; }
   .book-meta-list { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.25rem; border-top: 1px solid var(--border); }
   .book-meta-list div { display: flex; flex-direction: column; gap: 0.2rem; }
   .book-meta-list span { font-size: 0.72rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.05em; }
