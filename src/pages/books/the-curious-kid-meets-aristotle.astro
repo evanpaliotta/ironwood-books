@@ -1,0 +1,223 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import EmailForm from '../../components/EmailForm.astro';
+---
+
+<MainLayout
+  title="The Curious Kid Meets Aristotle — Ironwood Books"
+  description="A rhyming picture book about Aristotle's Golden Mean — finding the balance in everything. A Curious Kid Adventure, Book 2. Free ebook download."
+>
+
+  <article class="book-page">
+
+    <section class="book-header">
+      <div class="container book-header-inner">
+        <div class="book-cover">
+          <img
+            src="/images/the-curious-kid-meets-aristotle-cover.png"
+            alt="The Curious Kid Meets Aristotle — book cover"
+            class="cover-img"
+            width="600"
+            height="600"
+          />
+        </div>
+        <div class="book-info">
+          <div class="book-tags">
+            <span class="tag tag-ages">Ages 4–8</span>
+            <span class="tag tag-topic">Balance & Wisdom</span>
+            <span class="tag tag-type">Picture Book</span>
+          </div>
+          <h1>The Curious Kid Meets Aristotle</h1>
+          <p class="book-byline">A Curious Kid Adventure — Book 2</p>
+          <p class="book-description">
+            One morning, the Curious Kid wakes up to find a papyrus scroll by his pillow — stamped with one word: ARISTOTLE.
+          </p>
+          <p class="book-description">
+            He touches it. The room spins. And suddenly he's in ancient Athens, walking through the Lyceum with one of the wisest men who ever lived — learning about sleep, courage, figs, and the most important idea in the world.
+          </p>
+          <p class="book-description">
+            A rhyming picture book about Aristotle's Golden Mean — finding the balance between too much and too little in everything you do.
+          </p>
+          <div class="book-actions">
+            <a href="#download" class="btn btn-primary">Get Free Ebook</a>
+            <span class="btn btn-outline btn-disabled" aria-disabled="true">Coming Soon on Amazon</span>
+          </div>
+          <div class="book-meta-list">
+            <div><span>Age range</span><strong>Ages 4–8</strong></div>
+            <div><span>Pages</span><strong>24 pages</strong></div>
+            <div><span>Format</span><strong>Full-color picture book</strong></div>
+            <div><span>ISBN</span><strong>9798181939677</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-about">
+      <div class="container">
+        <div class="about-inner">
+          <div class="about-copy">
+            <span class="section-label">What This Book Is</span>
+            <h2>Not too much. Not too few.</h2>
+            <p>
+              Aristotle called it the Golden Mean — the idea that wisdom lives between two extremes.
+              Too little sleep makes you grumpy. Too much makes you sluggish.
+              Too little courage means hiding. Too much means rushing in without thinking.
+              The best way is always the one right in the middle.
+            </p>
+            <p>
+              The Curious Kid learns this the way kids learn best: by going somewhere, meeting someone remarkable, and figuring it out for themselves.
+            </p>
+            <p>
+              Written by a father for his son. Illustrated with AI, built to last.
+            </p>
+          </div>
+          <div class="about-scenes">
+            <h3>What's inside</h3>
+            <ul class="scenes-list">
+              {[
+                { num: "01", title: "Waking Up", desc: "A papyrus scroll appears by the Kid's pillow — stamped with one word: ARISTOTLE." },
+                { num: "02", title: "The Portal", desc: "One touch and the room spins. He's pulled through the dark toward a glorious day." },
+                { num: "03", title: "Arriving in Athens", desc: "Sunlight, warm golden stone, marble columns, and the city of ancient Greece." },
+                { num: "06", title: "Welcome and the Secret", desc: "Aristotle shares his great idea: not too much of a thing, and not too few." },
+                { num: "12", title: "Courage: Just Right", desc: "The balance worth finding — not cowering, not reckless. The best you can be." },
+                { num: "21", title: "The Middle Way", desc: "Not too much and not too few — the middle way in all you do." },
+              ].map(s => (
+                <li class="scene-item">
+                  <span class="scene-num">Scene {s.num}</span>
+                  <strong>{s.title}</strong>
+                  <p>{s.desc}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-about-aristotle">
+      <div class="container">
+        <div class="aristotle-inner">
+          <span class="section-label">The Real Aristotle</span>
+          <h2>One of the greatest thinkers who ever lived.</h2>
+          <p>
+            Aristotle (384–322 BCE) was a student of Plato and the teacher of Alexander the Great.
+            He asked questions about everything — from what makes a good life to why the stars move.
+          </p>
+          <p>
+            His idea of the Golden Mean — that wisdom lives between two extremes — has guided
+            thoughtful people for over two thousand years. It's not a complicated idea.
+            But it's one worth meeting early.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-download" id="download">
+      <div class="container">
+        <div class="download-box">
+          <div class="download-copy">
+            <span class="section-label">Free Ebook</span>
+            <h2>Read it free. Keep it forever.</h2>
+            <p>
+              Enter your email and we'll send you the full picture book as a PDF —
+              all 24 pages, full color, ready to read on any device.
+              The paperback will be available on Amazon soon.
+            </p>
+            <ul class="download-perks">
+              <li>Full 24-page picture book in PDF — no catch</li>
+              <li>Full color, full-bleed illustrations</li>
+              <li>No spam, ever — unsubscribe any time</li>
+            </ul>
+          </div>
+          <div class="download-form">
+            <EmailForm
+              heading="Get the free ebook"
+              subtext="Enter your email and we'll send it straight to your inbox."
+              variant="stacked"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-excerpt">
+      <div class="container">
+        <span class="section-label">From the Book</span>
+        <blockquote>
+          <p>"Aristotle laughed with a warm, rolling sound.<br/>
+          'Now you've found it — the wisest thing around!<br/>
+          In all things,' he said, 'find the beautiful mean —<br/>
+          the wisest, the strongest, the best in between.'"</p>
+          <footer>— Scene 15, The Beautiful Mean</footer>
+        </blockquote>
+      </div>
+    </section>
+
+  </article>
+
+</MainLayout>
+
+<style>
+  .book-header { background: var(--cream); padding: 4rem 1.5rem; border-bottom: 1px solid var(--border); }
+  .book-header-inner { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: start; }
+
+  .cover-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+    display: block;
+  }
+
+  .book-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 3px; }
+  .tag-ages { background: var(--green-light); color: var(--green); }
+  .tag-topic { background: var(--bronze-light); color: var(--bronze); }
+  .tag-type { background: var(--border); color: var(--ink-mid); }
+
+  .book-info h1 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 0.25rem; }
+  .book-byline { color: var(--ink-light); font-size: 0.95rem; margin-bottom: 1.25rem; font-style: italic; }
+  .book-description { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.75; }
+  .book-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1.75rem 0; }
+  .btn-disabled { opacity: 0.55; cursor: default; pointer-events: none; }
+  .book-meta-list { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .book-meta-list div { display: flex; flex-direction: column; gap: 0.2rem; }
+  .book-meta-list span { font-size: 0.72rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.05em; }
+  .book-meta-list strong { font-size: 0.9rem; color: var(--ink); }
+
+  .book-about { background: var(--white); padding: var(--section-pad); }
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-copy h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
+  .about-copy p { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.75; }
+  .about-scenes h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-light); margin-bottom: 1.25rem; }
+  .scenes-list { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+  .scene-item { border-left: 3px solid var(--green); padding-left: 1rem; }
+  .scene-num { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bronze); display: block; margin-bottom: 0.2rem; }
+  .scene-item strong { font-size: 0.95rem; display: block; margin-bottom: 0.2rem; color: var(--ink); }
+  .scene-item p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.5; margin: 0; }
+
+  .book-about-aristotle { background: var(--cream); padding: var(--section-pad); border-top: 1px solid var(--border); }
+  .aristotle-inner { max-width: 680px; }
+  .aristotle-inner h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
+  .aristotle-inner p { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.75; }
+
+  .book-download { background: var(--green-light); padding: var(--section-pad); }
+  .download-box { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 3rem; }
+  .download-copy h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .download-copy p { color: var(--ink-mid); margin-bottom: 1.25rem; line-height: 1.7; }
+  .download-perks { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .download-perks li { font-size: 0.875rem; color: var(--ink-mid); padding-left: 1.25rem; position: relative; }
+  .download-perks li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+  .book-excerpt { background: var(--green); padding: var(--section-pad); }
+  .book-excerpt .section-label { color: rgba(235,241,236,0.65); }
+  blockquote { max-width: 700px; border-left: 3px solid var(--bronze); padding-left: 2rem; margin-top: 1.5rem; }
+  blockquote p { color: rgba(245,240,232,0.9); font-size: 1.05rem; line-height: 1.8; margin-bottom: 0.75rem; font-style: italic; }
+  blockquote footer { font-size: 0.82rem; color: rgba(245,240,232,0.55); }
+
+  @media (max-width: 900px) {
+    .book-header-inner { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; }
+    .download-box { grid-template-columns: 1fr; padding: 2rem; gap: 2rem; }
+  }
+</style>
