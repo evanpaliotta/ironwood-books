@@ -5,13 +5,13 @@ import EmailForm from '../components/EmailForm.astro';
 
 <MainLayout
   title="About — Ironwood Books"
-  description="Why a father started writing books for his son — and why he decided to share them with every kid who could use them."
+  description="Ironwood Books is one author, a father writing books for his son and sharing them free with any family that wants them."
 >
 
   <section class="about-hero">
     <div class="container">
       <span class="section-label">About Ironwood Books</span>
-      <h1>Built for the long game.</h1>
+      <h1>Why these books exist</h1>
     </div>
   </section>
 
@@ -19,29 +19,33 @@ import EmailForm from '../components/EmailForm.astro';
     <div class="container story-inner">
       <div class="story-text">
         <p class="lead">
-          These books started with a question a father asked himself the day he found out
-          his son was coming: <em>What do I actually know? What do I wish someone had told me?
-          If something happened to me before I could say it — what would he be missing?</em>
+          Ironwood Books is one person: me. I write these books for my son,
+          and I publish them for any family that finds them useful.
         </p>
         <p>
-          That question became The Ways of the World — a book for teenagers and young adults
-          about how things actually work. Power. Money. Incentives. Human nature. What it means
-          to think for yourself and live well. The things most schools have quietly stopped teaching.
+          I started the first one the day I found out he was coming.
+          I kept circling the same question. What do I actually know that is
+          worth passing on? And if something happened to me before I could
+          say it in person, what would I want written down? Working through
+          that question became The Ways of the World, a short guide for
+          teenagers about power, money, human nature, and thinking for yourself.
         </p>
         <p>
-          But the real ambition is larger. The plan is a catalog from picture books up —
-          stories for a three-year-old, chapter books for a ten-year-old, and everything
-          in between. All built around the same conviction: timeless ideas, honestly told,
-          give children the raw material they need to build their own tools for navigating
-          a world that doesn't come with instructions.
+          The picture books came after. The Curious Kid series starts the same
+          ideas at age four instead of fourteen. One idea per book, told as a
+          story, because that is how kids actually remember things.
         </p>
         <p>
-          Ironwood is named for the hardest native hardwood in North America. Craftsmen
-          chose it for handles and mallets — things that had to hold up under years of hard use.
-          That's the model. Not trends. Not curriculum. The densest, most durable ideas we know,
-          in stories children actually want to read.
+          The name comes from ironwood, the hardest native wood in North
+          America. Craftsmen used it for tool handles because it held up
+          under years of hard use. That is the standard I try to hold the
+          writing to. Ideas that hold up.
         </p>
-        <p class="story-sig">— Evan Paliotta, founder &amp; author</p>
+        <p>
+          The ebooks are free and will stay free. If you want one on the
+          shelf, the paperbacks are on Amazon. That is the whole model.
+        </p>
+        <p class="story-sig">Evan Paliotta</p>
       </div>
       <aside class="story-aside">
         <div class="brand-card">
@@ -53,27 +57,27 @@ import EmailForm from '../components/EmailForm.astro';
             </svg>
           </div>
           <h3>Ironwood Books</h3>
-          <p>"Give them the wood. Watch them build."</p>
+          <p>An independent, one-person press.</p>
           <div class="brand-divider"></div>
           <ul class="brand-facts">
-            <li><strong>Focus:</strong> How to think, self-reliance, character, philosophy</li>
+            <li><strong>Author:</strong> Evan Paliotta</li>
             <li><strong>Ages:</strong> 3 to adult</li>
-            <li><strong>Price:</strong> Free ebooks, Amazon paperbacks</li>
+            <li><strong>Ebooks:</strong> Always free</li>
+            <li><strong>Paperbacks:</strong> On Amazon</li>
           </ul>
         </div>
-
       </aside>
     </div>
   </section>
 
   <section class="about-mission">
     <div class="container">
+      <h2 class="mission-heading">What every book has to pass</h2>
       <div class="mission-grid">
         {[
-          { title: "The raw material, not the answer", text: "These books don't tell kids what to think. They give them the ideas and let them build their own understanding." },
-          { title: "One big idea, told well", text: "Each book goes deep on one concept. Focused. Memorable. No lectures." },
-          { title: "Free, because access matters", text: "Every ebook is free. These ideas should reach every kid who could use them." },
-          { title: "Built for every age", text: "From picture books to young adult — the same timeless ideas, at every level of depth." },
+          { title: "One idea per book", text: "Each book takes a single idea worth keeping and tells it as a story. If it needs a lecture, it isn't ready." },
+          { title: "Old ideas only", text: "If an idea hasn't held up for a few hundred years, it doesn't go in. Nothing trendy, nothing ideological." },
+          { title: "The reader does the building", text: "The books hand kids raw material and let them draw their own conclusions. They don't tell anyone what to think." },
         ].map(item => (
           <div class="mission-card">
             <h3>{item.title}</h3>
@@ -88,8 +92,8 @@ import EmailForm from '../components/EmailForm.astro';
     <div class="container">
       <div class="signup-inner">
         <EmailForm
-          heading="New books coming for every age."
-          subtext="Get the free ebook now. We'll let you know when new titles drop."
+          heading="New books are coming."
+          subtext="Get the free ebook now. I'll email you when a new title is out."
           variant="banner"
         />
       </div>
@@ -106,24 +110,25 @@ import EmailForm from '../components/EmailForm.astro';
   .about-story { padding: var(--section-pad); background: var(--white); }
   .story-inner { display: grid; grid-template-columns: 1fr 320px; gap: 4rem; align-items: start; }
 
-  .story-text .lead { font-size: 1.15rem; color: var(--ink); font-weight: 500; line-height: 1.7; margin-bottom: 1.5rem; }
+  .story-text .lead { font-size: 1.2rem; color: var(--ink); font-weight: 500; line-height: 1.7; margin-bottom: 1.5rem; }
   .story-text p { color: var(--ink-mid); margin-bottom: 1.25rem; line-height: 1.8; }
-  .story-text .story-sig { font-family: var(--font-serif); font-style: italic; color: var(--bronze); font-size: 1.05rem; margin-top: 2rem; }
+  .story-text .story-sig { font-family: var(--font-serif); font-style: italic; color: var(--bronze); font-size: 1.1rem; margin-top: 2rem; }
 
   .brand-card { background: var(--green); color: var(--cream); border-radius: 10px; padding: 2rem; margin-bottom: 1.5rem; }
   .brand-icon { margin-bottom: 1rem; }
   .brand-card h3 { font-family: var(--font-serif); font-size: 1.2rem; color: var(--cream); margin-bottom: 0.25rem; }
-  .brand-card > p { font-style: italic; color: rgba(245,240,232,0.7); margin-bottom: 1.25rem; }
+  .brand-card > p { color: rgba(245,240,232,0.7); margin-bottom: 1.25rem; font-size: 0.92rem; }
   .brand-divider { height: 1px; background: rgba(245,240,232,0.2); margin-bottom: 1.25rem; }
   .brand-facts { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .brand-facts li { font-size: 0.82rem; color: rgba(245,240,232,0.8); }
+  .brand-facts li { font-size: 0.85rem; color: rgba(245,240,232,0.8); }
   .brand-facts strong { color: var(--cream); }
 
-.about-mission { background: var(--cream); padding: var(--section-pad); }
-  .mission-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
-  .mission-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; }
-  .mission-card h3 { font-size: 1.05rem; margin-bottom: 0.6rem; color: var(--green); }
-  .mission-card p { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.65; }
+  .about-mission { background: var(--cream); padding: var(--section-pad); }
+  .mission-heading { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 2rem; }
+  .mission-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem 2.5rem; }
+  .mission-card { border-top: 2px solid var(--bronze); padding-top: 1rem; }
+  .mission-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--green); }
+  .mission-card p { font-size: 0.95rem; color: var(--ink-mid); line-height: 1.65; }
 
   .about-signup { background: var(--green-light); padding: 4rem 1.5rem; }
   .signup-inner { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem 3rem; }
