@@ -74,16 +74,16 @@ const {
 <style>
   .book-card {
     background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgba(26,26,26,0.06), 0 12px 28px rgba(26,26,26,0.07);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
     display: flex;
     flex-direction: column;
   }
   .book-card:hover {
-    box-shadow: 0 8px 24px rgba(45,74,53,0.12);
-    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45,74,53,0.1), 0 20px 44px rgba(45,74,53,0.16);
+    transform: translateY(-3px);
   }
   .cover-link { display: block; }
   .cover-link.no-click { cursor: default; pointer-events: none; }
@@ -155,14 +155,14 @@ const {
   .tag-ages { background: var(--green-light); color: var(--green); }
   .tag-topic { background: var(--bronze-light); color: var(--bronze); }
   .book-title {
-    font-size: 1.05rem;
-    font-weight: 700;
+    font-size: 1.15rem;
+    font-weight: 600;
     line-height: 1.3;
   }
   .book-title a { color: var(--ink); }
   .book-title a:hover { color: var(--green); text-decoration: none; }
   .book-desc {
-    font-size: 0.875rem;
+    font-size: 0.92rem;
     color: var(--ink-light);
     line-height: 1.6;
     flex: 1;

@@ -35,9 +35,8 @@ const ogImage = new URL(image, Astro.site).toString();
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
 
-    <!-- Twitter -->
+    <!-- Twitter card (for link previews; no account handle) -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@ironwoodbook" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
@@ -45,7 +44,7 @@ const ogImage = new URL(image, Astro.site).toString();
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   </head>
   <body>
@@ -90,9 +89,9 @@ const ogImage = new URL(image, Astro.site).toString();
         <nav class="footer-nav" aria-label="Footer navigation">
           <a href="/books">Books</a>
           <a href="/about">About</a>
-          <a href="https://twitter.com/ironwoodbook" target="_blank" rel="noopener noreferrer">Twitter/X</a>
+          <a href="/free-resources">Free Resources</a>
         </nav>
-        <p class="footer-copy">&copy; {new Date().getFullYear()} Ironwood Books. A division of MVP Ventures.</p>
+        <p class="footer-copy">&copy; {new Date().getFullYear()} Ironwood Books. Written by a father, for his son.</p>
       </div>
     </footer>
 

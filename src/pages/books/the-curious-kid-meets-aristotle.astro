@@ -112,6 +112,18 @@ import EmailForm from '../../components/EmailForm.astro';
       </div>
     </section>
 
+    <section class="book-inside">
+      <div class="container">
+        <span class="section-label">Look Inside</span>
+        <h2>A few pages from the book.</h2>
+        <div class="inside-grid">
+          <img src="/images/interior/aristotle-scene-02-the-portal.jpg" alt="The Curious Kid pulled through a glowing portal" loading="lazy" />
+          <img src="/images/interior/aristotle-scene-03-arriving-in-athens.jpg" alt="The Curious Kid arriving in ancient Athens" loading="lazy" />
+          <img src="/images/interior/aristotle-scene-12-courage-just-right.jpg" alt="The Curious Kid and Aristotle crossing a stone bridge" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
     <section class="book-download" id="download">
       <div class="container">
         <div class="download-box">
@@ -200,6 +212,12 @@ import EmailForm from '../../components/EmailForm.astro';
   .aristotle-inner { max-width: 680px; }
   .aristotle-inner h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
   .aristotle-inner p { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.75; }
+
+  .book-inside { background: var(--white); padding: var(--section-pad); }
+  .book-inside h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 2rem; }
+  .inside-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .inside-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; box-shadow: 0 12px 32px rgba(26,26,26,0.16); }
+  @media (max-width: 700px) { .inside-grid { grid-template-columns: 1fr; } }
 
   .book-download { background: var(--green-light); padding: var(--section-pad); }
   .download-box { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 3rem; }

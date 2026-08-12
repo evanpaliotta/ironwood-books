@@ -68,11 +68,11 @@ const featuredBooks = [
     <div class="container trust-inner">
       <span>Free ebooks, always</span>
       <span class="trust-divider">·</span>
-      <span>Paperbacks coming to Amazon</span>
+      <span>Paperbacks on Amazon</span>
       <span class="trust-divider">·</span>
       <span>Ages 3 to adult</span>
       <span class="trust-divider">·</span>
-      <span>For families who want to go deeper</span>
+      <span>Written by a father, for his son</span>
     </div>
   </div>
 
@@ -89,6 +89,30 @@ const featuredBooks = [
           <BookCard {...book} />
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- FROM THE PAGES -->
+  <section class="pages-section">
+    <div class="container">
+      <div class="pages-header">
+        <span class="section-label">From the Pages</span>
+        <h2>Every spread, painted like a storybook.</h2>
+      </div>
+    </div>
+    <div class="pages-strip">
+      <figure>
+        <img src="/images/interior/curious-kid-scene-04-mountaintop.jpg" alt="The Curious Kid celebrating on a mountaintop at sunrise — interior spread" loading="lazy" />
+        <figcaption>The Adventures of the Curious Kid</figcaption>
+      </figure>
+      <figure>
+        <img src="/images/interior/aristotle-scene-03-arriving-in-athens.jpg" alt="The Curious Kid arriving in ancient Athens — interior spread" loading="lazy" />
+        <figcaption>The Curious Kid Meets Aristotle</figcaption>
+      </figure>
+      <figure>
+        <img src="/images/interior/curious-kid-scene-15-finds-book.jpg" alt="The Curious Kid finding a glowing book in a dark forest — interior spread" loading="lazy" />
+        <figcaption>The Adventures of the Curious Kid</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -130,14 +154,28 @@ const featuredBooks = [
     </div>
   </section>
 
+  <!-- AUTHOR NOTE -->
+  <section class="note-section">
+    <div class="container note-inner">
+      <span class="section-label">A Note From the Author</span>
+      <p class="note-text">
+        "I started writing these the day I found out my son was coming.
+        Not because I had all the answers — because I wanted him to have,
+        in writing, the best of what I'd found. If they're useful to your
+        family too, they're yours. The ebooks will always be free."
+      </p>
+      <p class="note-sig">— Evan, Ironwood Books</p>
+    </div>
+  </section>
+
   <!-- EMAIL CAPTURE -->
   <section class="signup-section" id="signup">
     <div class="container">
       <div class="signup-box">
         <div class="signup-copy">
           <span class="section-label">Free Ebook</span>
-          <h2>Download it free. Keep it forever.</h2>
-          <p>Enter your email and we'll send you a free Ironwood Books ebook straight to your inbox. No catch. No subscription.</p>
+          <h2>Take home <em>The Adventures of the Curious Kid</em> — free.</h2>
+          <p>Enter your email and we'll send the full 24-page picture book as a PDF, straight to your inbox. No catch. No subscription.</p>
         </div>
         <div class="signup-form">
           <EmailForm variant="inline" />
@@ -155,6 +193,8 @@ const featuredBooks = [
   .hero-copy h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--white); margin-bottom: 1.25rem; line-height: 1.15; }
   .hero-sub { font-size: 1.05rem; color: rgba(245,240,232,0.85); margin-bottom: 2rem; max-width: 500px; line-height: 1.7; }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-actions .btn-primary { background: var(--cream); border-color: var(--cream); color: var(--green); }
+  .hero-actions .btn-primary:hover { background: var(--white); border-color: var(--white); }
   .hero-actions .btn-outline { color: var(--cream); border-color: rgba(245,240,232,0.5); }
   .hero-actions .btn-outline:hover { background: rgba(245,240,232,0.15); border-color: var(--cream); color: var(--cream); }
 
@@ -164,20 +204,58 @@ const featuredBooks = [
 
   .books-section { background: var(--cream); }
   .section-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
-  .section-header h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0.75rem; }
+  .section-header h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); margin-bottom: 0.75rem; }
   .section-header p { color: var(--ink-light); }
   .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
   .books-cta { text-align: center; margin-top: 2.5rem; }
+
+  .pages-section { background: var(--white); padding-bottom: 6rem; }
+  .pages-header { text-align: left; max-width: 600px; margin-bottom: 2.5rem; }
+  .pages-header h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+  .pages-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .pages-strip figure { margin: 0; }
+  .pages-strip img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 12px 32px rgba(26,26,26,0.14);
+  }
+  .pages-strip figure:nth-child(2) { transform: translateY(1.75rem); }
+  .pages-strip figcaption {
+    margin-top: 0.85rem;
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    font-style: italic;
+  }
+
+  .note-section { background: var(--cream); }
+  .note-inner { max-width: 720px; text-align: center; }
+  .note-text {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 1rem 0 1.5rem;
+  }
+  .note-sig { color: var(--bronze); font-weight: 600; font-size: 0.95rem; }
 
   .why-section { background: var(--white); }
   .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .why-copy h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 1.25rem; }
   .why-copy p { color: var(--ink-mid); margin-bottom: 1rem; }
   .why-copy p:last-of-type { margin-bottom: 1.75rem; }
-  .why-values { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .value-card { background: var(--cream); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
-  .value-card h3 { font-size: 0.95rem; margin-bottom: 0.35rem; color: var(--green); }
-  .value-card p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.5; }
+  .why-values { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 2.5rem; }
+  .value-card { border-top: 2px solid var(--bronze); padding-top: 1rem; }
+  .value-card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--green); }
+  .value-card p { font-size: 0.92rem; color: var(--ink-light); line-height: 1.6; }
 
   .signup-section { background: var(--green-light); }
   .signup-box { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 3rem; }

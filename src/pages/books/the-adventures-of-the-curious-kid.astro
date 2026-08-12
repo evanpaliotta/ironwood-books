@@ -28,7 +28,7 @@ import EmailForm from '../../components/EmailForm.astro';
             <span class="tag tag-type">Picture Book</span>
           </div>
           <h1>The Adventures of the Curious Kid</h1>
-          <p class="book-byline">Book 2</p>
+          <p class="book-byline">A Curious Kid Adventure — Book 1</p>
           <p class="book-description">
             One morning, a curious kid woke up and decided the world needed exploring.
           </p>
@@ -92,6 +92,18 @@ import EmailForm from '../../components/EmailForm.astro';
               ))}
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-inside">
+      <div class="container">
+        <span class="section-label">Look Inside</span>
+        <h2>A few pages from the book.</h2>
+        <div class="inside-grid">
+          <img src="/images/interior/curious-kid-scene-04-mountaintop.jpg" alt="The Curious Kid celebrating on a mountaintop at sunrise" loading="lazy" />
+          <img src="/images/interior/curious-kid-scene-06-beach-waves.jpg" alt="The Curious Kid meeting the ocean waves" loading="lazy" />
+          <img src="/images/interior/curious-kid-scene-15-finds-book.jpg" alt="The Curious Kid finding a glowing book in a dark forest" loading="lazy" />
         </div>
       </div>
     </section>
@@ -180,6 +192,12 @@ import EmailForm from '../../components/EmailForm.astro';
   .scene-num { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bronze); display: block; margin-bottom: 0.2rem; }
   .scene-item strong { font-size: 0.95rem; display: block; margin-bottom: 0.2rem; color: var(--ink); }
   .scene-item p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.5; margin: 0; }
+
+  .book-inside { background: var(--cream); padding: var(--section-pad); }
+  .book-inside h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 2rem; }
+  .inside-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .inside-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; box-shadow: 0 12px 32px rgba(26,26,26,0.16); }
+  @media (max-width: 700px) { .inside-grid { grid-template-columns: 1fr; } }
 
   .book-download { background: var(--green-light); padding: var(--section-pad); }
   .download-box { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 3rem; }

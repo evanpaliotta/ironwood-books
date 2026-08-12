@@ -12,14 +12,14 @@
   --white:      #FFFFFF;
   --ink:        #1A1A1A;
   --ink-mid:    #3D3D3D;
-  --ink-light:  #6B6B6B;
+  --ink-light:  #5C5C5C;
   --border:     #D9D0C1;
 
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-serif: 'Fraunces', Georgia, serif;
   --font-sans:  'Inter', system-ui, sans-serif;
 
   --max-width: 1100px;
-  --section-pad: 5rem 1.5rem;
+  --section-pad: 5.5rem 1.5rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,7 +31,7 @@ body {
   background: var(--cream);
   color: var(--ink);
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: 1.0625rem;
 }
 
 img { max-width: 100%; display: block; }
@@ -41,8 +41,10 @@ a:hover { text-decoration: underline; }
 
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  line-height: 1.25;
+  font-weight: 600;
+  line-height: 1.2;
   color: var(--ink);
+  letter-spacing: -0.01em;
 }
 
 .container {
@@ -53,12 +55,12 @@ h1, h2, h3, h4 {
 
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.75rem;
-  border-radius: 4px;
+  padding: 0.8rem 1.85rem;
+  border-radius: 6px;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   cursor: pointer;
   transition: all 0.2s ease;
   border: 2px solid transparent;
@@ -109,8 +111,65 @@ section { padding: var(--section-pad); }
   margin-bottom: 0.75rem;
 }
 
-/* Kit form overrides */
+/* ============================================
+   Kit (ConvertKit) embedded form overrides —
+   match the site palette instead of Kit's
+   default blue theme.
+   ============================================ */
 .formkit-form {
   background: transparent !important;
   padding: 0 !important;
+  border: none !important;
+  max-width: none !important;
+}
+.formkit-form [data-style="clean"] { padding: 0 !important; }
+.formkit-form .formkit-field input,
+.formkit-form input[type="email"],
+.formkit-form input[type="text"] {
+  font-family: var(--font-sans) !important;
+  font-size: 0.95rem !important;
+  color: var(--ink) !important;
+  background: var(--white) !important;
+  border: 2px solid var(--border) !important;
+  border-radius: 6px !important;
+  padding: 0.75rem 1rem !important;
+  box-shadow: none !important;
+}
+.formkit-form .formkit-field input:focus {
+  border-color: var(--green) !important;
+  outline: none !important;
+}
+.formkit-form .formkit-submit,
+.formkit-form button[data-element="submit"],
+.formkit-form button {
+  font-family: var(--font-sans) !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  color: var(--white) !important;
+  background-color: var(--green) !important;
+  border: 2px solid var(--green) !important;
+  border-radius: 6px !important;
+  padding: 0 !important;
+  transition: background-color 0.2s ease !important;
+  box-shadow: none !important;
+}
+.formkit-form .formkit-submit > span,
+.formkit-form button[data-element="submit"] > span {
+  padding: 0.75rem 1.5rem !important;
+}
+.formkit-form .formkit-submit:hover,
+.formkit-form button[data-element="submit"]:hover {
+  background-color: var(--green-mid) !important;
+  border-color: var(--green-mid) !important;
+}
+.formkit-form .formkit-guarantee,
+.formkit-form .formkit-powered-by-convertkit-container {
+  font-family: var(--font-sans) !important;
+  color: var(--ink-light) !important;
+}
+/* Every placement on the site supplies its own heading/subtext,
+   so suppress the duplicate header baked into the Kit embed. */
+.formkit-form .formkit-header,
+.formkit-form .formkit-subheader {
+  display: none !important;
 }
