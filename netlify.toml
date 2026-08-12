@@ -1,8 +1,0 @@
-[build]
-  publish = "dist"
-  # No command here — build runs in GitHub Actions (Ubuntu, has bash).
-  # ignore = "exit 1" prevents Netlify's own Git-triggered CI from deploying.
-  ignore = "exit 1"
-
-[build.environment]
-  NODE_VERSION = "22"
