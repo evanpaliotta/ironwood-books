@@ -1,11 +1,49 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import EmailForm from '../../components/EmailForm.astro';
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The Curious Kid Meets Aristotle",
+  "author": { "@id": "https://ironwoodbooks.com/#evan" },
+  "publisher": { "@id": "https://ironwoodbooks.com/#org" },
+  "inLanguage": "en",
+  "typicalAgeRange": "4-8",
+  "genre": "Children's picture book",
+  "image": "https://ironwoodbooks.com/images/the-curious-kid-meets-aristotle-cover.png",
+  "url": "https://ironwoodbooks.com/books/the-curious-kid-meets-aristotle",
+  "numberOfPages": 24,
+  "isbn": "9798181939677",
+  "workExample": [
+    {
+      "@type": "Book",
+      "bookFormat": "https://schema.org/EBook",
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://ironwoodbooks.com/books/the-curious-kid-meets-aristotle#download",
+        "expectsAcceptanceOf": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      },
+    },
+    {
+      "@type": "Book",
+      "bookFormat": "https://schema.org/Paperback",
+      "isbn": "9798181939677",
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "USD",
+        "url": "https://www.amazon.com/dp/B0H6PGDD98",
+      },
+    },
+  ],
+};
 ---
 
 <MainLayout
   title="The Curious Kid Meets Aristotle — Ironwood Books"
   description="A rhyming picture book about Aristotle's Golden Mean — finding the balance in everything. A Curious Kid Adventure, Book 2. Free ebook download."
+  extraSchema={bookSchema}
 >
 
   <article class="book-page">

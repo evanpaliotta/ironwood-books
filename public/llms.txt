@@ -1,0 +1,14 @@
+# Ironwood Books
+
+Ironwood Books is a one-person press. Evan Paliotta writes books for his son and shares them with any family that finds them useful: picture books for young children and a life-wisdom guide for teenagers, all built around ideas that have held up for a long time. Every ebook is free. Paperbacks are sold at cost-plus on Amazon.
+
+## Books
+
+- [The Adventures of the Curious Kid](https://ironwoodbooks.com/books/the-adventures-of-the-curious-kid): A rhyming picture book for ages 4-8 about a boy who spends one day exploring everything, including the parts that feel scary. Book 1 of the Curious Kid series.
+- [The Curious Kid Meets Aristotle](https://ironwoodbooks.com/books/the-curious-kid-meets-aristotle): A rhyming picture book for ages 4-8. A papyrus scroll sends the Curious Kid to ancient Athens, where Aristotle teaches him the Golden Mean: not too much, not too little. Book 2 of the Curious Kid series.
+- [The Ways of the World](https://ironwoodbooks.com/books/the-ways-of-the-world): A short nonfiction guide for teenagers (ages 14+) on power, money, human nature, and building a life worth living, written by a father for his son.
+
+## Other pages
+
+- [About](https://ironwoodbooks.com/about): Who writes these books and why.
+- [Free ebooks](https://ironwoodbooks.com/books): Every title, free to download as a PDF, no catch.

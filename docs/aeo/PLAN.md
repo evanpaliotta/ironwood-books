@@ -14,7 +14,8 @@ Ground rules for all work in this plan:
 
 ## Phase 0: Unblock AI crawlers (do first, everything else is pointless until this is done)
 
-### T0.1 [EVAN] Turn off Cloudflare's AI crawler blocking
+### T0.1 [EVAN] Turn off Cloudflare's AI crawler blocking — ✅ DONE 2026-08-12
+Toggled off in Security → AI Crawl Control → Signals → "Managed robots.txt". Verified `https://ironwoodbooks.com/robots.txt` no longer shows the Cloudflare-injected block. (Note: the toggle path in the current dashboard is AI Crawl Control → Signals, not Security → Bots as originally guessed — updating the steps below for the record.)
 As of 2026-08-12, Cloudflare injects a managed robots.txt that DISALLOWS GPTBot, ClaudeBot, CCBot, Google-Extended, Amazonbot, Applebot-Extended, Bytespider, and meta-externalagent, and publishes `Content-Signal: ai-train=no`. The site is invisible to AI systems on purpose right now.
 
 Steps (Cloudflare dashboard, zone ironwoodbooks.com, zone ID e3c1ec9d97fb86112ccff475380ce004):
@@ -24,7 +25,7 @@ Steps (Cloudflare dashboard, zone ironwoodbooks.com, zone ID e3c1ec9d97fb86112cc
 
 Decision + rationale (so nobody re-litigates it): we ALLOW all AI crawlers including training crawlers. The research default is "block training, allow search," which is an IP-protection posture. Our posture is reach: the ebooks are deliberately free, and being inside future models' training data means models natively know the brand. There is no revenue lost to AI reading these books; there is reach lost by hiding them.
 
-### T0.2 Ship our own robots.txt
+### T0.2 Ship our own robots.txt — ✅ DONE 2026-08-12
 Create `public/robots.txt` exactly:
 
 ```
@@ -42,12 +43,13 @@ Acceptance: after deploy AND T0.1, `https://ironwoodbooks.com/robots.txt` serves
 
 ## Phase 1: Technical foundation (one working session)
 
-### T1.1 Sitemap
+### T1.1 Sitemap — ✅ DONE 2026-08-12
 1. `npx astro add sitemap` (adds `@astrojs/sitemap` and updates `astro.config.mjs`; `site` is already set).
 2. Build and confirm `dist/sitemap-index.xml` exists.
 Acceptance: `https://ironwoodbooks.com/sitemap-index.xml` returns XML listing all pages.
 
-### T1.2 Structured data (JSON-LD)
+### T1.2 Structured data (JSON-LD) — ✅ DONE 2026-08-12
+`src/components/Schema.astro` renders any JSON-LD object. Organization+Person+WebSite graph added to `MainLayout.astro` (renders on every page via a new `extraSchema` prop). Book schema added to all three book pages with real ISBNs (Ways of the World: 9798250261326, 124 pages, pulled from its live Amazon listing since it wasn't in memory). All JSON-LD validated as parseable JSON post-build.
 Add a `<slot name="head" />`-free approach: create `src/components/Schema.astro` that takes a `schema` prop (object) and renders `<script type="application/ld+json" set:html={JSON.stringify(schema)} />`. Use it as follows.
 
 1. **Organization + WebSite** on every page (add to `MainLayout.astro` head):
@@ -126,7 +128,7 @@ Acceptance: each page validates clean at https://validator.schema.org (paste ren
 
 3. **FAQPage schema** goes on book pages only when T2.4 adds visible FAQ sections. Schema must mirror the visible text exactly, never schema-only FAQs.
 
-### T1.3 llms.txt
+### T1.3 llms.txt — ✅ DONE 2026-08-12 (partial: no Guides link yet, add when Phase 2 ships)
 Cheap, speculative value, do it anyway. Create `public/llms.txt`: one H1 (`# Ironwood Books`), one-paragraph description (site purpose, who it's for), then a bulleted link list: the three book pages with one-line descriptions, /about, /guides/ index (once it exists), and the free ebook policy sentence. Keep under 60 lines. Acceptance: served at `https://ironwoodbooks.com/llms.txt`.
 
 ### T1.4 [EVAN] Bing Webmaster Tools + Google Search Console
@@ -135,7 +137,8 @@ ChatGPT Search runs on Bing's index; this is why Bing matters more than habit su
 2. Google Search Console: verify domain property via DNS TXT, submit sitemap.
 Agent may do the in-browser clicking if Evan is signed in (same CDP browser flow used for KDP), but account choices are Evan's.
 
-### T1.5 IndexNow (instant Bing indexing on deploy)
+### T1.5 IndexNow (instant Bing indexing on deploy) — ✅ DONE 2026-08-12
+Key file: `public/43af4e6d497dd7653af217c5ac327304.txt`. Ping step added to `.github/workflows/deploy.yml` after the Cloudflare Pages deploy step.
 1. Generate a 32-char hex key, save as `public/<key>.txt` containing the key itself.
 2. Add a deploy-time ping to `.github/workflows/deploy.yml` after the Pages deploy step:
 ```yaml

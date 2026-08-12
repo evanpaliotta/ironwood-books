@@ -1,0 +1,6 @@
+# ironwoodbooks.com — all readers welcome, human or machine.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://ironwoodbooks.com/sitemap-index.xml

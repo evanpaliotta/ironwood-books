@@ -23,3 +23,6 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - name: Ping IndexNow
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: curl -s "https://api.indexnow.org/indexnow?url=https://ironwoodbooks.com/&key=43af4e6d497dd7653af217c5ac327304"

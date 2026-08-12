@@ -1,11 +1,49 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import EmailForm from '../../components/EmailForm.astro';
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The Adventures of the Curious Kid",
+  "author": { "@id": "https://ironwoodbooks.com/#evan" },
+  "publisher": { "@id": "https://ironwoodbooks.com/#org" },
+  "inLanguage": "en",
+  "typicalAgeRange": "4-8",
+  "genre": "Children's picture book",
+  "image": "https://ironwoodbooks.com/images/the-adventures-of-the-curious-kid-cover.jpg",
+  "url": "https://ironwoodbooks.com/books/the-adventures-of-the-curious-kid",
+  "numberOfPages": 24,
+  "isbn": "9798252325590",
+  "workExample": [
+    {
+      "@type": "Book",
+      "bookFormat": "https://schema.org/EBook",
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://ironwoodbooks.com/books/the-adventures-of-the-curious-kid#download",
+        "expectsAcceptanceOf": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      },
+    },
+    {
+      "@type": "Book",
+      "bookFormat": "https://schema.org/Paperback",
+      "isbn": "9798252325590",
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "USD",
+        "url": "https://www.amazon.com/dp/B0GSZ9MJL6",
+      },
+    },
+  ],
+};
 ---
 
 <MainLayout
   title="The Adventures of the Curious Kid — Ironwood Books"
   description="A picture book about a boy who wakes up one morning and decides to explore the world — climbing mountains, finding the ocean, walking through dark forests, and discovering that the more you explore, the more there is to find. Free ebook download."
+  extraSchema={bookSchema}
 >
 
   <article class="book-page">

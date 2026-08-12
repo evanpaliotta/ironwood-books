@@ -1,20 +1,55 @@
 ---
 import '../styles/global.css';
+import Schema from '../components/Schema.astro';
 
 export interface Props {
   title?: string;
   description?: string;
   image?: string;
+  extraSchema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
   title = "Ironwood Books",
   description = "Books built to last. Stories that teach kids how to think, how the world works, and how to build a life worth living — the things most schools skip.",
   image = "/images/og-default.png",
+  extraSchema,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image, Astro.site).toString();
+
+const baseSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ironwoodbooks.com/#org",
+      "name": "Ironwood Books",
+      "url": "https://ironwoodbooks.com",
+      "logo": "https://ironwoodbooks.com/images/og-default.png",
+      "founder": { "@id": "https://ironwoodbooks.com/#evan" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ironwoodbooks.com/#evan",
+      "name": "Evan Paliotta",
+      "url": "https://ironwoodbooks.com/about",
+      "jobTitle": "Author",
+      "worksFor": { "@id": "https://ironwoodbooks.com/#org" },
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://ironwoodbooks.com",
+      "name": "Ironwood Books",
+      "publisher": { "@id": "https://ironwoodbooks.com/#org" },
+    },
+  ],
+};
+
+const extraSchemaList = extraSchema
+  ? Array.isArray(extraSchema) ? extraSchema : [extraSchema]
+  : [];
 ---
 
 <!doctype html>
@@ -45,6 +80,9 @@ const ogImage = new URL(image, Astro.site).toString();
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <Schema schema={baseSchema} />
+    {extraSchemaList.map((s) => <Schema schema={s} />)}
 
   </head>
   <body>

@@ -1,11 +1,50 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import EmailForm from '../../components/EmailForm.astro';
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The Ways of the World",
+  "alternateName": "The Ways of the World: A Father's Guide to Life's Essential Wisdom",
+  "author": { "@id": "https://ironwoodbooks.com/#evan" },
+  "publisher": { "@id": "https://ironwoodbooks.com/#org" },
+  "inLanguage": "en",
+  "typicalAgeRange": "14-18",
+  "genre": "Young adult nonfiction, philosophy",
+  "image": "https://ironwoodbooks.com/images/the-ways-of-the-world-cover.jpg",
+  "url": "https://ironwoodbooks.com/books/the-ways-of-the-world",
+  "numberOfPages": 124,
+  "isbn": "9798250261326",
+  "workExample": [
+    {
+      "@type": "Book",
+      "bookFormat": "https://schema.org/EBook",
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://ironwoodbooks.com/books/the-ways-of-the-world#download",
+        "expectsAcceptanceOf": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      },
+    },
+    {
+      "@type": "Book",
+      "bookFormat": "https://schema.org/Paperback",
+      "isbn": "9798250261326",
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "USD",
+        "url": "https://www.amazon.com/dp/B0GQXRLDBZ",
+      },
+    },
+  ],
+};
 ---
 
 <MainLayout
   title="The Ways of the World — Ironwood Books"
   description="A father's guide to life's essential wisdom — the things schools never taught you about how the world actually works. Free ebook download."
+  extraSchema={bookSchema}
 >
 
   <article class="book-page">
