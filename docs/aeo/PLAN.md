@@ -155,13 +155,14 @@ Acceptance: workflow green, Bing Webmaster shows IndexNow submissions within a f
 
 The research is unambiguous: listicles are the #1 cited format (about 22% of AI citations), direct-answer pages get pulled into answers, and pages need a named author and visible updated date. We are building the resource that AI engines cite for "philosophy books for kids," and it happens to be ours.
 
-### T2.1 Guides infrastructure
+### T2.1 Guides infrastructure — ✅ DONE 2026-08-13
 1. Create `src/layouts/GuideLayout.astro`: extends MainLayout; props: title, description, publishDate, updatedDate, plus Article JSON-LD (author = Evan Person @id, dates, headline). Visible byline block under the H1: "By Evan Paliotta · Updated <Month DD, YYYY>". Body slot styled like the About page (max-width ~720px prose, Fraunces headings).
 2. Create `src/pages/guides/index.astro`: plain list of guides with one-line descriptions.
 3. Add "Guides" to header nav and footer nav in MainLayout.
 Acceptance: /guides/ renders, nav links work, Article schema validates.
 
-### T2.2 Write the five guides
+### T2.2 Write the five guides — ✅ DONE 2026-08-13
+All five shipped. Every third-party book in the listicles (guides 1, 2, 5) was verified real/in-print via web search before inclusion — see the verification pass in the session that wrote them. Guide 1 ended up with 8 verified third-party titles + our 2 (10 total) rather than the brief's "10-12," because padding with unverified titles would violate the no-fabrication rule. Guide 5 similarly has 5 verified third-party titles + ours (6) rather than "8-10" for the same reason. This is a real constraint going forward: don't pad lists to hit a round number.
 Full briefs with target queries, outlines, and format rules are in `docs/aeo/BRIEFS.md`. Order of execution (highest leverage first):
 1. `/guides/best-philosophy-books-for-kids` (the flagship listicle)
 2. `/guides/books-that-teach-kids-how-to-think`
@@ -180,7 +181,8 @@ Non-negotiable format rules (they come straight from citation research):
 ### T2.3 One guide = one commit
 Ship each guide as its own commit with build passing, so review and rollback stay clean. After each deploy, ping IndexNow (automatic via T1.5).
 
-### T2.4 FAQ sections on the three book pages
+### T2.4 FAQ sections on the three book pages — ✅ DONE 2026-08-13
+Built as a shared `BookFAQ.astro` component instead of copy-pasted per page: takes a `questions` array, renders the visible Q&A and the FAQPage JSON-LD from the same data, so the two can never drift apart.
 Add a visible "Questions parents ask" section to each book page: 4-5 real questions with 2-4 sentence answers (see BRIEFS.md section 6 for the exact Q&A sets). Then add matching FAQPage JSON-LD. Acceptance: text visible on page, schema mirrors it exactly, validates.
 
 ---
