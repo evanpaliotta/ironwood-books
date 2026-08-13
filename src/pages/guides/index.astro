@@ -1,0 +1,107 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const guides = [
+  {
+    slug: 'best-philosophy-books-for-kids',
+    title: 'The Best Philosophy Books for Kids (Ages 3-10)',
+    description: 'A list of picture books that teach philosophy through story instead of lecture, chosen by a father who writes them.',
+  },
+  {
+    slug: 'books-that-teach-kids-how-to-think',
+    title: 'Books That Teach Kids How to Think (Not What to Think)',
+    description: 'A mixed-age list, picture books through teens, built around questioning and reasoning rather than a moral.',
+  },
+  {
+    slug: 'how-to-introduce-philosophy-to-your-child',
+    title: 'How to Introduce Philosophy to Your Child',
+    description: 'Ask real questions at bedtime, read stories with one big idea, and never grade the answers.',
+  },
+  {
+    slug: 'aristotle-golden-mean-explained-for-kids',
+    title: "Aristotle's Golden Mean, Explained Simply Enough for a 5-Year-Old",
+    description: 'What the Golden Mean is, why it lands so well with kids, and how to use it in daily parenting.',
+  },
+  {
+    slug: 'best-books-for-teenage-boys-who-dont-read',
+    title: "Books for Teenage Boys Who Don't Read",
+    description: 'Short, direct, no-fiction-required books that actually get finished, from a dad who was one.',
+  },
+];
+---
+
+<MainLayout
+  title="Guides — Ironwood Books"
+  description="Articles on raising kids who think for themselves, drawing on ideas from the Ironwood Books catalog."
+>
+  <section class="guides-hero">
+    <div class="container">
+      <span class="section-label">Guides</span>
+      <h1>Ideas for raising kids who think for themselves.</h1>
+      <p>Practical articles, book lists, and explainers, written by the same father who writes the books.</p>
+    </div>
+  </section>
+
+  <section class="guides-main">
+    <div class="container">
+      <div class="guides-list">
+        {guides.map((g) => (
+          <a href={`/guides/${g.slug}`} class="guide-card">
+            <h2>{g.title}</h2>
+            <p>{g.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .guides-hero {
+    background: var(--green);
+    color: var(--white);
+    padding: 4rem 1.5rem 3rem;
+  }
+  .guides-hero .section-label { color: rgba(235,241,236,0.7); }
+  .guides-hero h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--white);
+    max-width: 600px;
+    margin-bottom: 0.75rem;
+  }
+  .guides-hero p {
+    font-size: 1.05rem;
+    color: rgba(245,240,232,0.8);
+    max-width: 500px;
+  }
+  .guides-main { padding: var(--section-pad); }
+  .guides-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 720px;
+  }
+  .guide-card {
+    display: block;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(26,26,26,0.06), 0 12px 28px rgba(26,26,26,0.07);
+    padding: 1.5rem 1.75rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .guide-card:hover {
+    box-shadow: 0 4px 12px rgba(45,74,53,0.1), 0 20px 44px rgba(45,74,53,0.16);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  .guide-card h2 {
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .guide-card p {
+    font-size: 0.92rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+  }
+</style>

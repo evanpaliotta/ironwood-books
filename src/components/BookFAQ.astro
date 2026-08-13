@@ -1,0 +1,57 @@
+---
+export interface Props {
+  questions: { q: string; a: string }[];
+}
+
+const { questions } = Astro.props;
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: questions.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+
+<section class="book-faq">
+  <div class="container">
+    <span class="section-label">Questions Parents Ask</span>
+    <div class="faq-list">
+      {questions.map(({ q, a }) => (
+        <div class="faq-item">
+          <h3>{q}</h3>
+          <p>{a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<style>
+  .book-faq {
+    background: var(--cream);
+    padding: var(--section-pad);
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    max-width: 720px;
+    margin-top: 1.5rem;
+  }
+  .faq-item h3 {
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .faq-item p {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    line-height: 1.7;
+  }
+</style>

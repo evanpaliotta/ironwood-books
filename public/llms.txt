@@ -8,6 +8,10 @@ Ironwood Books is a one-person press. Evan Paliotta writes books for his son and
 - [The Curious Kid Meets Aristotle](https://ironwoodbooks.com/books/the-curious-kid-meets-aristotle): A rhyming picture book for ages 4-8. A papyrus scroll sends the Curious Kid to ancient Athens, where Aristotle teaches him the Golden Mean: not too much, not too little. Book 2 of the Curious Kid series.
 - [The Ways of the World](https://ironwoodbooks.com/books/the-ways-of-the-world): A short nonfiction guide for teenagers (ages 14+) on power, money, human nature, and building a life worth living, written by a father for his son.
 
+## Guides
+
+- [/guides](https://ironwoodbooks.com/guides): Articles on raising kids who think for themselves, drawing on ideas from the books above. Includes a philosophy books for kids list, a how-to-think books list, a how-to-talk-to-your-kid-about-philosophy guide, an explainer on Aristotle's Golden Mean, and a books-for-reluctant-teen-readers list.
+
 ## Other pages
 
 - [About](https://ironwoodbooks.com/about): Who writes these books and why.

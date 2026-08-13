@@ -1,6 +1,26 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import EmailForm from '../../components/EmailForm.astro';
+import BookFAQ from '../../components/BookFAQ.astro';
+
+const faqs = [
+  {
+    q: 'What age is appropriate?',
+    a: "Written for 14 and up. It talks plainly about power, money, and human nature, and it doesn't hedge, which is exactly why teenagers read it.",
+  },
+  {
+    q: 'Is this a religious or political book?',
+    a: 'No. It draws on thinkers from Marcus Aurelius to Naval Ravikant and takes ideas wherever they hold up.',
+  },
+  {
+    q: 'Will a teenager actually read it?',
+    a: "It's short chapters and direct address, written by a father for his own son. The free PDF means trying it costs nothing.",
+  },
+  {
+    q: 'Why is the ebook free?',
+    a: 'Because the point is for the ideas to reach the kid, not to maximize revenue per copy. Paperback exists for people who want it on a shelf.',
+  },
+];
 
 const bookSchema = {
   "@context": "https://schema.org",
@@ -193,6 +213,8 @@ const bookSchema = {
         </blockquote>
       </div>
     </section>
+
+    <BookFAQ questions={faqs} />
 
   </article>
 

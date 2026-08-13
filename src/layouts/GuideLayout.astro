@@ -1,0 +1,164 @@
+---
+import MainLayout from './MainLayout.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  publishDate: string; // "YYYY-MM-DD"
+  updatedDate?: string; // "YYYY-MM-DD", defaults to publishDate
+}
+
+const { title, description, publishDate, updatedDate = publishDate } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const formatDate = (iso: string) =>
+  new Date(iso + 'T00:00:00Z').toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@id': 'https://ironwoodbooks.com/#evan' },
+  publisher: { '@id': 'https://ironwoodbooks.com/#org' },
+  datePublished: publishDate,
+  dateModified: updatedDate,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalURL },
+};
+---
+
+<MainLayout title={`${title} — Ironwood Books`} description={description} extraSchema={articleSchema}>
+  <article class="guide">
+    <div class="container guide-inner">
+      <header class="guide-header">
+        <h1>{title}</h1>
+        <p class="guide-byline">
+          By Evan Paliotta &middot; Updated {formatDate(updatedDate)}
+        </p>
+      </header>
+      <div class="guide-body">
+        <slot />
+      </div>
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  .guide {
+    background: var(--white);
+    padding: 4rem 1.5rem 5rem;
+  }
+  .guide-inner {
+    max-width: 720px;
+  }
+  .guide-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .guide-header h1 {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .guide-byline {
+    font-size: 0.85rem;
+    color: var(--ink-light);
+  }
+
+  .guide-body {
+    color: var(--ink-mid);
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+  .guide-body :global(h2) {
+    font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+    color: var(--ink);
+    margin: 2.5rem 0 1rem;
+  }
+  .guide-body :global(h2:first-child) {
+    margin-top: 0;
+  }
+  .guide-body :global(p) {
+    margin-bottom: 1.25rem;
+  }
+  .guide-body :global(ul),
+  .guide-body :global(ol) {
+    margin: 0 0 1.25rem 1.25rem;
+  }
+  .guide-body :global(li) {
+    margin-bottom: 0.5rem;
+  }
+  .guide-body :global(a) {
+    color: var(--green);
+    text-decoration: underline;
+  }
+  .guide-body :global(strong) {
+    color: var(--ink);
+  }
+  .guide-body :global(blockquote) {
+    border-left: 3px solid var(--bronze);
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--ink-mid);
+  }
+  .guide-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+    font-size: 0.92rem;
+  }
+  .guide-body :global(th),
+  .guide-body :global(td) {
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .guide-body :global(th) {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--cream);
+  }
+  .guide-body :global(.book-entry) {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .guide-body :global(.book-entry h3) {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .guide-body :global(.book-entry .book-meta) {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--bronze);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .guide-body :global(.book-entry p) {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .guide-body :global(.book-entry p:last-child) {
+    margin-bottom: 0;
+  }
+  .guide-cta {
+    background: var(--green-light);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+</style>

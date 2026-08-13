@@ -1,6 +1,30 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import EmailForm from '../../components/EmailForm.astro';
+import BookFAQ from '../../components/BookFAQ.astro';
+
+const faqs = [
+  {
+    q: 'What age is this book for?',
+    a: "Written for ages 4-8. Kids at the younger end enjoy the rhymes and pictures; older kids catch the questions underneath. 24 pages, full color.",
+  },
+  {
+    q: 'Is the ebook really free?',
+    a: 'Yes. Enter your email and we send the full PDF. No subscription, and you can unsubscribe immediately. The paperback is $9.99 on Amazon.',
+  },
+  {
+    q: 'Is this a bedtime book?',
+    a: "It works well as one. It's a rhyming read-aloud that starts with waking up and ends with falling asleep, which makes it a natural bedtime arc.",
+  },
+  {
+    q: 'Were the illustrations made with AI?',
+    a: 'Yes, and we say so plainly. Every image was generated, then reviewed, revised, and chosen by the author.',
+  },
+  {
+    q: 'Does it teach a lesson?',
+    a: "It doesn't preach one. It follows a curious kid through one big day and lets the questions come up the way they do in real life.",
+  },
+];
 
 const bookSchema = {
   "@context": "https://schema.org",
@@ -187,6 +211,8 @@ const bookSchema = {
         </blockquote>
       </div>
     </section>
+
+    <BookFAQ questions={faqs} />
 
   </article>
 
