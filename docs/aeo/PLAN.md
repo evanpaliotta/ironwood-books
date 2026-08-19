@@ -191,8 +191,8 @@ Add a visible "Questions parents ask" section to each book page: 4-5 real questi
 
 Research finding: AI engines cite third-party surfaces (education blogs, Reddit, library lists) far more than small brand domains. On-site work makes us citable; this phase makes us cited. Most of this is [EVAN] judgment work; the agent preps materials.
 
-### T3.1 Prep the outreach kit (agent)
-Create `docs/aeo/OUTREACH.md` with: 2-sentence brand blurb, per-book blurbs (50 words each), links to covers and interior art, the free-ebook offer line, and a 120-word review-copy pitch email template (plain voice, no hype, offers free PDF or paperback, zero follow-up pressure).
+### T3.1 Prep the outreach kit (agent) — ✅ DONE 2026-08-19
+`docs/aeo/OUTREACH.md`. Includes a live, confirmed target (fivebooks.com — caught it being cited by Perplexity for the flagship query during the 2026-08-19 measurement check) plus categories still needing research before pitching.
 
 ### T3.2 [EVAN] Blog outreach
 Pitch 15-20 parenting/homeschool/philosophy-education blogs for review or inclusion in their book lists (Philosophy Foundation, Prindle Institute's kids resources, homeschool curriculum bloggers, "books for kids" roundup authors found by searching the target queries in BRIEFS.md and noting who ranks). Reviews on those blogs are exactly what AI engines cite. Track pitches in OUTREACH.md.

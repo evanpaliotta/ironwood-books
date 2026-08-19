@@ -33,6 +33,6 @@ Ask each of these, fresh conversation, no custom instructions, in: ChatGPT (with
 
 | Date | Queries with M (of 48 asks) | Queries with C | AI referrer visits | AI crawler hits seen | Notes |
 |------|------------------------------|----------------|--------------------|-----------------------|-------|
-| (baseline, fill on first run) | | | | | |
+| 2026-08-19 (partial, 1 of 48 asks) | 0 | 0 | not checked (Cloudflare session expired, needs Evan re-login) | not checked (same) | Asked query 1 on Perplexity (logged out, no custom instructions): zero mention of Ironwood. Cited amazon.com, fivebooks.com, doinggoodtogether.com, doinggoodtogether.com again for a follow-up. Google and Bing `site:ironwoodbooks.com` searches both hit CAPTCHA walls (expected bot-detection on automated browsing, not pushed through) so indexing status is unconfirmed directly — but Bing Webmaster Tools / GSC (T1.4) were never set up, so it's likely nothing has been actively submitted for crawling yet. This is 7 days post-unblock; too early to expect citations regardless. fivebooks.com added to OUTREACH.md as a live, confirmed target.|
 
 Interpretation guide: 48 asks = 12 queries x 4 engines. Expect zeros for the first 1-2 months. Long-tail queries (4, 6, 11, 12) should move first. If M stays zero at month 3 while crawler hits are healthy, shift effort to Phase 3 outreach (PLAN.md), not more on-site work.
