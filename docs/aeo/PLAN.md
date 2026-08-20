@@ -194,8 +194,8 @@ Research finding: AI engines cite third-party surfaces (education blogs, Reddit,
 ### T3.1 Prep the outreach kit (agent) — ✅ DONE 2026-08-19
 `docs/aeo/OUTREACH.md`. Includes a live, confirmed target (fivebooks.com — caught it being cited by Perplexity for the flagship query during the 2026-08-19 measurement check) plus categories still needing research before pitching.
 
-### T3.2 [EVAN] Blog outreach
-Pitch 15-20 parenting/homeschool/philosophy-education blogs for review or inclusion in their book lists (Philosophy Foundation, Prindle Institute's kids resources, homeschool curriculum bloggers, "books for kids" roundup authors found by searching the target queries in BRIEFS.md and noting who ranks). Reviews on those blogs are exactly what AI engines cite. Track pitches in OUTREACH.md.
+### T3.2 [EVAN] Blog outreach — target list ready 2026-08-20, pitching still to do
+12 targets identified and written into `OUTREACH.md` (2 confirmed via live AI citation, 10 more researched 2026-08-20 with contact methods). Pitching itself — writing and sending the actual emails — is still Evan's to do; the pitch email template is in OUTREACH.md. Track responses in that file's tracking table.
 
 ### T3.3 [EVAN] Reddit, honestly
 30-60 min/week in r/ChildrensBooks, r/homeschool, r/Parenting, r/booksuggestions: answer real questions well; mention our books only when they genuinely fit and always with the free-PDF link and a disclosure ("I wrote this one"). Reddit is the single most-cited domain in AI answers; astroturfing gets deleted and worse. No agent automation here, ever.

@@ -34,15 +34,30 @@ Ironwood Books is a one-person press: Evan Paliotta writes philosophy and life-w
 
 ## Target list
 
-Sites confirmed (via live AI-answer citation, not guesswork) to be pulled from when someone asks an AI assistant about kids' philosophy books:
+### Confirmed via live AI-answer citation (highest priority)
+- **fivebooks.com** — expert-curated "best books" lists, cited directly by Perplexity for "best philosophy books for kids" on 2026-08-19. Pitch as a candidate for a future "best philosophy picture books" or "best books to raise a thinker" list.
+- **doinggoodtogether.com** — parenting/values-focused book list site, also cited in the same live check.
 
-- **fivebooks.com** — expert-curated "best books" lists, cited directly by Perplexity for "best philosophy books for kids" on 2026-08-19. High-value target: they publish themed lists with named experts, exactly the citable-source format AI engines pull from. Pitch as a candidate for a future "best philosophy picture books" or "best books to raise a thinker" list.
-- **doinggoodtogether.com** — parenting/values-focused book list site, also cited in the same live check. Family-values angle fits the brand directly.
+### Researched 2026-08-20 — verify current submission process before pitching, sites change policies
+**Best fit, pitch first:**
+- **Home School Book Review** (homeschoolbookreviewblog.wordpress.com) — explicitly accepts print review copies, values/worldview-aligned. Email: homeschoolbookreview@gmail.com. Print books only, no ebooks — will need to mail a physical copy.
+- **Imagination Soup** (imaginationsoup.net) — curated picture-book-by-topic lists, active 2025+. Contact via site's About/Contact page.
+- **Bookworm for Kids** (bookwormforkids.com) — honest unpaid reviews, explicitly prefers electronic copies (PDF/ePub) — lowest friction, no shipping needed. Contact via site review policy page.
+- **Literary Mama** (literarymama.com) — 800-1500 word reviews for a parenting audience, accepts indie. Submit via email, subject line "Reviews Submission" (literarymama.com/submissions).
 
-Categories still to research and add (not yet individually identified — do this before pitching):
-- Homeschool curriculum bloggers who publish philosophy/critical-thinking book roundups
-- Parenting blogs with "books that teach kids values" or "philosophy for kids" content
-- Kidlit/bookstagram reviewers who accept free copies for honest reviews (also feeds the Amazon review count directly)
+**Also worth pitching:**
+- **The Peaceful Press** (thepeacefulpress.com) — homeschool "living books" reviews and lists.
+- **Mom Read It** (momreadit.com) — active picture-book review blog, no formal submission process found, contact via site.
+- **Nothing But Picture Books** (nbpbreviews.com) — picture-book-only review site, contact form.
+- **Read-Aloud Revival** (readaloudrevival.com) — Sarah Mackenzie's homeschool booklist resource, 135k subscribers. Contact form; ask about featuring in a booklist rather than a full review.
+- **Cathy Duffy Reviews** (cathyduffyreviews.com) — long-running homeschool curriculum/book review site.
+- **The Children's Book Review** (thechildrensbookreview.com) — explicitly accepts self-published/indie; also offers PAID guaranteed placement ($289-389) if free submission doesn't get picked up — free tier via growingreaders@thechildrensbookreview.com first.
+
+**Checked and skipped:** Toppsta (traditional-publisher only), BookPage (no self-published), The Picture Book Review (site returned an error, may be inactive).
+
+### Still to research before pitching
+- Kidlit/bookstagram Instagram accounts specifically (the above is blogs/sites, not Instagram reviewers)
+- Reddit communities are covered separately in PLAN.md Phase 3 (not outreach-pitch territory, direct participation only)
 
 ## Tracking
 
