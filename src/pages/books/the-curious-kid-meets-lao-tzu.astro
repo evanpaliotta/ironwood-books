@@ -1,0 +1,308 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import EmailForm from '../../components/EmailForm.astro';
+import BookFAQ from '../../components/BookFAQ.astro';
+
+const faqs = [
+  {
+    q: 'What age is this for?',
+    a: 'Ages 4-8 as a read-aloud. The idea is simple enough to feel at this age: light needs dark, quiet needs sound, and a cup is useful because of the empty space inside it.',
+  },
+  {
+    q: 'Do I need to know anything about Taoism to read it with my kid?',
+    a: 'No. The book borrows one small idea — that opposites lean on each other — and shows it with things a child already knows: night and day, quiet and song, an empty cup.',
+  },
+  {
+    q: 'Is it historically accurate?',
+    a: 'The setting is real: bamboo groves, a stream, and a sage in white. The oldest copy of the Tao Te Ching we have was written on bamboo slips over two thousand years ago. The time-travel and the conversations are ours, and we say so plainly.',
+  },
+  {
+    q: 'Is the ebook really free?',
+    a: 'Yes. Enter your email and we send the full PDF. No subscription, and you can unsubscribe immediately. The paperback is $9.99 on Amazon.',
+  },
+  {
+    q: 'Were the illustrations made with AI?',
+    a: 'Yes, and we say so plainly. Every image was generated, then reviewed, revised, and chosen by the author.',
+  },
+];
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The Curious Kid Meets Lao Tzu",
+  "author": { "@id": "https://ironwoodbooks.com/#evan" },
+  "publisher": { "@id": "https://ironwoodbooks.com/#org" },
+  "inLanguage": "en",
+  "typicalAgeRange": "4-8",
+  "genre": "Children's picture book",
+  "image": "https://ironwoodbooks.com/images/the-curious-kid-meets-lao-tzu-cover.png",
+  "url": "https://ironwoodbooks.com/books/the-curious-kid-meets-lao-tzu",
+  "numberOfPages": 24,
+  "isbn": "9798177167053", // commit-skill: ignore (ISBN-13, Luhn-valid by design)
+  "workExample": [
+    {
+      "@type": "Book",
+      "bookFormat": "https://schema.org/EBook",
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://ironwoodbooks.com/books/the-curious-kid-meets-lao-tzu#download",
+        "expectsAcceptanceOf": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      },
+    },
+    {
+      "@type": "Book",
+      "bookFormat": "https://schema.org/Paperback",
+      "isbn": "9798177167053", // commit-skill: ignore
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "USD",
+        "url": "https://www.amazon.com/s?k=The+Curious+Kid+Meets+Lao+Tzu",
+      },
+    },
+  ],
+};
+---
+
+<MainLayout
+  title="The Curious Kid Meets Lao Tzu — Ironwood Books"
+  description="A rhyming picture book about opposites leaning on each other — light needs dark, quiet needs song, and an empty cup is useful. A Curious Kid Adventure, Book 3. Free ebook download."
+  extraSchema={bookSchema}
+>
+
+  <article class="book-page">
+
+    <section class="book-header">
+      <div class="container book-header-inner">
+        <div class="book-cover">
+          <img
+            src="/images/the-curious-kid-meets-lao-tzu-cover.png"
+            alt="The Curious Kid Meets Lao Tzu — book cover"
+            class="cover-img"
+            width="600"
+            height="600"
+          />
+        </div>
+        <div class="book-info">
+          <div class="book-tags">
+            <span class="tag tag-ages">Ages 4–8</span>
+            <span class="tag tag-topic">Opposites & Balance</span>
+            <span class="tag tag-type">Picture Book</span>
+          </div>
+          <h1>The Curious Kid Meets Lao Tzu</h1>
+          <p class="book-byline">A Curious Kid Adventure — Book 3</p>
+          <p class="book-description">
+            A small bundle of green bamboo slips appears by the Curious Kid's pillow — tied with string, and carved with three words: TAO TE CHING.
+          </p>
+          <p class="book-description">
+            One touch, and he is swept away to a bamboo grove beside a silver stream, where an old man in white sits as still as the light. The sage has one small idea to share, and he shows it with things the Kid can see: the dark that lets the moon shine, the hush between each note of a song, and an empty cup that is useful because of the space inside it.
+          </p>
+          <p class="book-description">
+            A rhyming picture book about contrast — that opposites lean on each other, and the empty space is what lets a thing be filled.
+          </p>
+          <div class="book-actions">
+            <a href="#download" class="btn btn-primary">Get Free Ebook</a>
+            <a href="https://www.amazon.com/s?k=The+Curious+Kid+Meets+Lao+Tzu" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Buy Paperback on Amazon</a>
+          </div>
+          <div class="book-meta-list">
+            <div><span>Age range</span><strong>Ages 4–8</strong></div>
+            <div><span>Pages</span><strong>24 pages</strong></div>
+            <div><span>Format</span><strong>Full-color picture book</strong></div>
+            <div><span>ISBN</span><strong>9798177167053</strong><!-- commit-skill: ignore --></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-about">
+      <div class="container">
+        <div class="about-inner">
+          <div class="about-copy">
+            <span class="section-label">What This Book Is</span>
+            <h2>The dark is what lets the moon shine.</h2>
+            <p>
+              Lao Tzu's one small idea: things lean on their opposites. The moon needs the dark
+              around it to show off its silver. A song needs the quiet between the notes.
+              A cup is useful because of the empty space inside.
+            </p>
+            <p>
+              The Curious Kid learns it the way kids learn best: by going somewhere, meeting someone
+              remarkable, and seeing it for himself — a still sage, a bird that stops singing,
+              and a hollow of green bamboo.
+            </p>
+            <p>
+              Written by a father for his son. Illustrated with AI, built to last.
+            </p>
+          </div>
+          <div class="about-scenes">
+            <h3>What's inside</h3>
+            <ul class="scenes-list">
+              {[
+                { num: "01", title: "The Book on the Pillow", desc: "A bundle of green bamboo slips, tied with string, carved with three words: TAO TE CHING." },
+                { num: "03", title: "The Bamboo Grove", desc: "He lands in a grove where the tall bamboo sways on the slope of a hill and a silver stream slides by." },
+                { num: "06", title: "The Still Sage", desc: "The old man makes nothing and does no show. He sits by the water and watches the day go." },
+                { num: "11", title: "Silence Makes the Music", desc: "The quiet between every note is what gives the little bird-song its gold." },
+                { num: "14", title: "The Empty Cup", desc: "Lao Tzu lifts a hollow of green bamboo — and the empty inside is the part holding it in." },
+                { num: "21", title: "Opposites Everywhere", desc: "The dark gives the light, and the quiet gives song. The empty gives room." },
+              ].map(s => (
+                <li class="scene-item">
+                  <span class="scene-num">Scene {s.num}</span>
+                  <strong>{s.title}</strong>
+                  <p>{s.desc}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-about-figure">
+      <div class="container">
+        <div class="figure-inner">
+          <span class="section-label">The Real Lao Tzu</span>
+          <h2>A philosopher we know mostly by his words.</h2>
+          <p>
+            Lao Tzu is a traditional Chinese philosopher tied to the Tao Te Ching — a short book
+            about living in harmony with the Tao, or "the Way."
+          </p>
+          <p>
+            The oldest copy we have was written on bamboo slips and is over two thousand years old.
+            Stories about Lao Tzu are old, and historians are not certain of every detail.
+            This book borrows one small idea from that tradition: that opposites lean on each other.
+          </p>
+          <p>
+            Taoism holds far more than any one story. This is a beginning, not the whole.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-inside">
+      <div class="container">
+        <span class="section-label">Look Inside</span>
+        <h2>A few pages from the book.</h2>
+        <div class="inside-grid">
+          <img src="/images/interior/lao-tzu-scene-03-bamboo-grove.jpg" alt="The Curious Kid standing in a bamboo grove beside a silver stream" loading="lazy" />
+          <img src="/images/interior/lao-tzu-scene-06-the-still-sage.jpg" alt="The old sage sitting still by the water while the Curious Kid watches" loading="lazy" />
+          <img src="/images/interior/lao-tzu-scene-21-opposites-everywhere.jpg" alt="The final page: a yin-yang of light and dark with the closing couplet" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="book-download" id="download">
+      <div class="container">
+        <div class="download-box">
+          <div class="download-copy">
+            <span class="section-label">Free Ebook</span>
+            <h2>Read it free. Keep it forever.</h2>
+            <p>
+              Enter your email and we'll send you the full picture book as a PDF —
+              all 24 pages, full color, ready to read on any device.
+              The paperback is also available on Amazon.
+            </p>
+            <ul class="download-perks">
+              <li>Full 24-page picture book in PDF — no catch</li>
+              <li>Full color, full-bleed illustrations</li>
+              <li>No spam, ever — unsubscribe any time</li>
+            </ul>
+          </div>
+          <div class="download-form">
+            <EmailForm
+              heading="Get the free ebook"
+              subtext="Enter your email and we'll send it straight to your inbox."
+              variant="stacked"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-excerpt">
+      <div class="container">
+        <span class="section-label">From the Book</span>
+        <blockquote>
+          <p>"Then Lao Tzu reached out and he lifted a cup,<br/>
+          a hollow of green bamboo, and held it up.<br/>
+          The Kid filled it and drank, and he saw with a grin:<br/>
+          the empty inside was the part holding it in."</p>
+          <footer>— Scene 14, The Empty Cup</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <BookFAQ questions={faqs} />
+
+  </article>
+
+</MainLayout>
+
+<style>
+  .book-header { background: var(--cream); padding: 4rem 1.5rem; border-bottom: 1px solid var(--border); }
+  .book-header-inner { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: start; }
+
+  .cover-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+    display: block;
+  }
+
+  .book-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 3px; }
+  .tag-ages { background: var(--green-light); color: var(--green); }
+  .tag-topic { background: var(--bronze-light); color: var(--bronze); }
+  .tag-type { background: var(--border); color: var(--ink-mid); }
+
+  .book-info h1 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 0.25rem; }
+  .book-byline { color: var(--ink-light); font-size: 0.95rem; margin-bottom: 1.25rem; font-style: italic; }
+  .book-description { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.75; }
+  .book-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1.75rem 0; }
+  .book-meta-list { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .book-meta-list div { display: flex; flex-direction: column; gap: 0.2rem; }
+  .book-meta-list span { font-size: 0.72rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.05em; }
+  .book-meta-list strong { font-size: 0.9rem; color: var(--ink); }
+
+  .book-about { background: var(--white); padding: var(--section-pad); }
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-copy h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
+  .about-copy p { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.75; }
+  .about-scenes h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-light); margin-bottom: 1.25rem; }
+  .scenes-list { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+  .scene-item { border-left: 3px solid var(--green); padding-left: 1rem; }
+  .scene-num { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bronze); display: block; margin-bottom: 0.2rem; }
+  .scene-item strong { font-size: 0.95rem; display: block; margin-bottom: 0.2rem; color: var(--ink); }
+  .scene-item p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.5; margin: 0; }
+
+  .book-about-figure { background: var(--cream); padding: var(--section-pad); border-top: 1px solid var(--border); }
+  .figure-inner { max-width: 680px; }
+  .figure-inner h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
+  .figure-inner p { color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.75; }
+
+  .book-inside { background: var(--white); padding: var(--section-pad); }
+  .book-inside h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 2rem; }
+  .inside-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .inside-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; box-shadow: 0 12px 32px rgba(26,26,26,0.16); }
+  @media (max-width: 700px) { .inside-grid { grid-template-columns: 1fr; } }
+
+  .book-download { background: var(--green-light); padding: var(--section-pad); }
+  .download-box { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 3rem; }
+  .download-copy h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .download-copy p { color: var(--ink-mid); margin-bottom: 1.25rem; line-height: 1.7; }
+  .download-perks { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .download-perks li { font-size: 0.875rem; color: var(--ink-mid); padding-left: 1.25rem; position: relative; }
+  .download-perks li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+  .book-excerpt { background: var(--green); padding: var(--section-pad); }
+  .book-excerpt .section-label { color: rgba(235,241,236,0.65); }
+  blockquote { max-width: 700px; border-left: 3px solid var(--bronze); padding-left: 2rem; margin-top: 1.5rem; }
+  blockquote p { color: rgba(245,240,232,0.9); font-size: 1.05rem; line-height: 1.8; margin-bottom: 0.75rem; font-style: italic; }
+  blockquote footer { font-size: 0.82rem; color: rgba(245,240,232,0.55); }
+
+  @media (max-width: 900px) {
+    .book-header-inner { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; }
+    .download-box { grid-template-columns: 1fr; padding: 2rem; gap: 2rem; }
+  }
+</style>
