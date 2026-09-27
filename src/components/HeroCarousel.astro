@@ -121,4 +121,12 @@ const first = active[0];
     .hero-visual { margin-top: 2.5rem; }
     .hero-book-cover { height: 300px; }
   }
+  @media (max-width: 600px) {
+    /* Rotated cover + page-block edge bleed past the container on small screens. */
+    .hero-visual { margin-top: 2rem; }
+    .hero-book-link { transform: none; }
+    .hero-book-link::after { right: -4px; width: 4px; }
+    .hero-book-cover { height: 240px; max-width: 100%; }
+    .hero-rotator { max-width: 100%; }
+  }
 </style>

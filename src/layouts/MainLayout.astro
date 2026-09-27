@@ -96,13 +96,18 @@ const extraSchemaList = extraSchema
           </svg>
           <span class="logo-text">Ironwood Books</span>
         </a>
-        <nav class="main-nav" aria-label="Main navigation">
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
           <a href="/books">Books</a>
           <a href="/guides">Guides</a>
           <a href="/about">About</a>
+          <a href="/books" class="btn btn-primary header-cta">Free Ebooks</a>
         </nav>
-        <a href="/books" class="btn btn-primary header-cta">Free Ebooks</a>
-        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <button
+          class="mobile-menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -151,9 +156,10 @@ const extraSchemaList = extraSchema
         height: 68px;
       }
       .logo {
-        display: flex;
+        display: inline-flex;
         align-items: center;
         gap: 0.6rem;
+        min-height: 44px;
         text-decoration: none;
         color: var(--ink);
         flex-shrink: 0;
@@ -166,6 +172,7 @@ const extraSchemaList = extraSchema
       }
       .main-nav {
         display: flex;
+        align-items: center;
         gap: 1.75rem;
         margin-left: auto;
       }
@@ -176,15 +183,27 @@ const extraSchemaList = extraSchema
         transition: color 0.15s;
       }
       .main-nav a:hover { color: var(--green); text-decoration: none; }
-      .header-cta { font-size: 0.875rem; padding: 0.6rem 1.25rem; }
+      /* CTA lives inside .main-nav so the mobile panel can show it; keep desktop look */
+      .main-nav a.header-cta {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--white);
+        padding: 0.6rem 1.25rem;
+      }
+      .main-nav a.header-cta:hover { color: var(--white); }
       .mobile-menu-toggle {
         display: none;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 5px;
+        width: 44px;
+        height: 44px;
         background: none;
         border: none;
         cursor: pointer;
-        padding: 4px;
+        padding: 0;
+        margin-right: -9px;
         margin-left: auto;
       }
       .mobile-menu-toggle span {
@@ -208,7 +227,7 @@ const extraSchemaList = extraSchema
         gap: 1.5rem 3rem;
         align-items: start;
       }
-      .footer-brand .logo { color: var(--cream); }
+      .footer-brand .logo { color: var(--cream); display: inline-flex; align-items: center; min-height: 44px; }
       .footer-brand .logo span {
         font-family: var(--font-serif);
         font-size: 1rem;
@@ -230,6 +249,9 @@ const extraSchemaList = extraSchema
         color: rgba(245,240,232,0.85);
         font-size: 0.875rem;
         font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
       }
       .footer-nav a:hover { color: var(--cream); text-decoration: none; }
       .footer-copy {
@@ -241,24 +263,78 @@ const extraSchemaList = extraSchema
       }
 
       @media (max-width: 768px) {
-        .main-nav, .header-cta { display: none; }
+        /* Header collapses to logo + hamburger; nav + CTA become a dropdown panel. */
         .mobile-menu-toggle { display: flex; }
+        .main-nav {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+          margin: 0;
+          padding: 0.5rem 1.5rem 1.25rem;
+          background: var(--white);
+          border-bottom: 1px solid var(--border);
+          box-shadow: 0 16px 32px rgba(26,26,26,0.10);
+        }
+        .main-nav.is-open { display: flex; }
+        .main-nav a {
+          display: flex;
+          align-items: center;
+          min-height: 52px;
+          font-size: 1rem;
+          font-weight: 500;
+          color: var(--ink);
+          border-bottom: 1px solid var(--border);
+          padding: 0;
+        }
+        .main-nav a:last-child { border-bottom: none; }
+        .main-nav a.header-cta {
+          justify-content: center;
+          min-height: 52px;
+          margin-top: 1rem;
+          font-size: 0.95rem;
+          padding: 0.8rem 1.5rem;
+          border: 2px solid var(--green);
+          border-radius: 6px;
+        }
         .footer-inner { grid-template-columns: 1fr; }
-        .footer-nav { justify-content: flex-start; }
+        .footer-nav { justify-content: flex-start; gap: 0 2rem; }
       }
     </style>
 
     <script>
-      // Mobile menu toggle
+      // Mobile menu: toggles a dropdown panel below the sticky header.
       const toggle = document.querySelector('.mobile-menu-toggle');
       const nav = document.querySelector('.main-nav');
-      const cta = document.querySelector('.header-cta');
-      toggle?.addEventListener('click', () => {
-        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!isOpen));
-        if (nav) nav.style.display = isOpen ? '' : 'flex';
-        if (cta) cta.style.display = isOpen ? '' : 'inline-block';
-      });
+
+      if (toggle && nav) {
+        const setOpen = (open) => {
+          nav.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+
+        toggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          setOpen(!nav.classList.contains('is-open'));
+        });
+
+        // Close after navigating, or on Escape.
+        nav.addEventListener('click', (e) => {
+          if (e.target instanceof HTMLAnchorElement) setOpen(false);
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') setOpen(false);
+        });
+
+        // Reset state when returning to desktop width.
+        const mq = window.matchMedia('(min-width: 769px)');
+        mq.addEventListener('change', (e) => { if (e.matches) setOpen(false); });
+      }
     </script>
   </body>
 </html>

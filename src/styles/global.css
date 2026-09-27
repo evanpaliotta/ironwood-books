@@ -173,3 +173,84 @@ section { padding: var(--section-pad); }
 .formkit-form .formkit-subheader {
   display: none !important;
 }
+
+/* Kit's embed keeps the email field and submit button in one non-wrapping row,
+   which overflows its container on phones — stack them below 640px. */
+.formkit-form .formkit-fields { flex-wrap: wrap !important; }
+
+@media (max-width: 640px) {
+  .formkit-form .formkit-fields {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+  }
+  .formkit-form .formkit-field {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 100% !important;
+    margin: 0 !important;
+  }
+  .formkit-form .formkit-field input,
+  .formkit-form input[type="email"],
+  .formkit-form input[type="text"] {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .formkit-form .formkit-submit,
+  .formkit-form button[data-element="submit"] {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .formkit-form .formkit-submit > span {
+    display: block !important;
+    text-align: center !important;
+  }
+  .formkit-form .formkit-powered-by-convertkit {
+    white-space: normal !important;
+  }
+}
+
+/* ============================================
+   Wide-content handling
+   Data tables (guide comparison tables, etc.) scroll inside their own
+   box instead of pushing the page into horizontal scroll.
+   ============================================ */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.table-scroll table {
+  margin: 0 !important;
+  min-width: 560px;
+}
+.table-scroll:focus-within { outline: 2px solid var(--green); outline-offset: 2px; }
+
+/* Touch targets: keep inline/standalone controls at least 44px tall.
+   The carousel dots are injected by JS, so they need global (unscoped) rules. */
+.hero-dot {
+  position: relative;
+  width: 9px;
+  height: 9px;
+}
+.hero-dot::after {
+  content: "";
+  position: absolute;
+  inset: -18px;
+}
+
+.btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+
+@media (max-width: 600px) {
+  .hero-dot { width: 12px; height: 12px; }
+  .hero-dot::after { inset: -18px; }
+  .hero-dots { gap: 0.9rem; }
+}
+
+@media (max-width: 640px) {
+  :root { --section-pad: 3.5rem 1.25rem; }
+  .container { padding: 0 1.25rem; }
+  blockquote { padding-left: 1.25rem !important; }
+}

@@ -105,4 +105,31 @@ const {
 
   /* Inline variant */
   .email-form--inline .form-row { flex-wrap: nowrap; }
+
+  @media (max-width: 600px) {
+    /* Stack the field and button; fixed min-widths overflow narrow phones. */
+    .form-row, .email-form--inline .form-row {
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    .email-input { min-width: 0; width: 100%; }
+    .email-form--banner .kit-placeholder-form { min-width: 0; }
+    .form-row .btn { width: 100%; }
+  }
+
+  /* Kit's injected wrappers are flex children: stop them being squeezed below
+     their content when the surrounding box is narrow. */
+  @media (max-width: 640px) {
+    .email-form--banner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1.25rem;
+    }
+    .email-form--banner .form-copy,
+    .email-form--banner .kit-placeholder-form { min-width: 0; }
+    .email-form .formkit-form,
+    .email-form .formkit-form > div { width: 100% !important; min-width: 0 !important; }
+    .email-form .formkit-fields,
+    .email-form .formkit-field { min-width: 0 !important; flex: 1 1 100% !important; }
+  }
 </style>

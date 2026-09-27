@@ -261,7 +261,7 @@ const bookSchema = {
 
   .book-voices { background: var(--cream); padding: var(--section-pad); }
   .book-voices h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin-bottom: 2rem; max-width: 600px; }
-  .voices-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
+  .voices-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: 1.25rem; }
   .voice-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
   .voice-card strong { display: block; font-size: 0.95rem; color: var(--green); margin-bottom: 0.5rem; }
   .voice-card p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.6; margin: 0; }

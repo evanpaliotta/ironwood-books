@@ -192,7 +192,7 @@ const featuredBooks = [
   .section-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
   .section-header h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); margin-bottom: 0.75rem; }
   .section-header p { color: var(--ink-light); }
-  .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 1.5rem; }
   .books-cta { text-align: center; margin-top: 2.5rem; }
 
   .pages-section { background: var(--white); padding-bottom: 6rem; }
@@ -245,6 +245,12 @@ const featuredBooks = [
   }
   @media (max-width: 600px) {
     .why-values { grid-template-columns: 1fr; }
+    /* Three side-by-side spreads are unreadably small on phones — stack them. */
+    .pages-strip { grid-template-columns: 1fr; gap: 1.5rem; }
+    .pages-strip figure:nth-child(2) { transform: none; }
+    .hero { padding: 3.5rem 1.25rem 3rem; }
+    .trust-bar { padding: 0.85rem 1.25rem; }
+    .signup-box { padding: 1.5rem; }
   }
 </style>
 

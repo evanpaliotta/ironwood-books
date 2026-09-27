@@ -125,7 +125,7 @@ import EmailForm from '../components/EmailForm.astro';
 
   .about-mission { background: var(--cream); padding: var(--section-pad); }
   .mission-heading { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 2rem; }
-  .mission-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem 2.5rem; }
+  .mission-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 2rem 2.5rem; }
   .mission-card { border-top: 2px solid var(--bronze); padding-top: 1rem; }
   .mission-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--green); }
   .mission-card p { font-size: 0.95rem; color: var(--ink-mid); line-height: 1.65; }
