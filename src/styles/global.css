@@ -254,3 +254,35 @@ section { padding: var(--section-pad); }
   .container { padding: 0 1.25rem; }
   blockquote { padding-left: 1.25rem !important; }
 }
+
+/* Kit's injected tree is unreachable from component-scoped styles, and at 320-360px
+   its min-content width (input min-width 220px + the "powered by" badge) pokes out of
+   the signup card. Clamp the whole injected subtree inside the email-form wrappers. */
+@media (max-width: 640px) {
+  .email-form,
+  .email-form > *,
+  .email-form .formkit-form,
+  .email-form .formkit-form * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .email-form .formkit-form,
+  .email-form .formkit-form > div,
+  .email-form .formkit-fields,
+  .email-form .formkit-field { width: 100% !important; }
+  .email-form .formkit-input { width: 100% !important; }
+  /* Attribution badge: let it wrap instead of spilling out of the card. */
+  .formkit-form .formkit-powered-by-convertkit,
+  .formkit-form .formkit-powered-by-convertkit-container {
+    max-width: 100% !important;
+    white-space: normal !important;
+    flex-wrap: wrap !important;
+    overflow-wrap: anywhere;
+  }
+  /* Large card padding eats the usable width on small phones. */
+  .signup-inner,
+  .signup-box,
+  .download-box,
+  .resources-signup { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+}
