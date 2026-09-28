@@ -6,9 +6,10 @@ export interface Props {
   description: string;
   publishDate: string; // "YYYY-MM-DD"
   updatedDate?: string; // "YYYY-MM-DD", defaults to publishDate
+  faqs?: { q: string; a: string }[];
 }
 
-const { title, description, publishDate, updatedDate = publishDate } = Astro.props;
+const { title, description, publishDate, updatedDate = publishDate, faqs = [] } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
@@ -20,6 +21,10 @@ const formatDate = (iso: string) =>
     timeZone: 'UTC',
   });
 
+// lastReviewed: for an evergreen guide, naming the date the content was
+// last fact-checked matches Google's guidance that it should be genuine and
+// truthful. We set it to the publish/update date because that is when we
+// actually reviewed the content.
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -29,22 +34,50 @@ const articleSchema = {
   publisher: { '@id': 'https://ironwoodbooks.com/#org' },
   datePublished: publishDate,
   dateModified: updatedDate,
+  lastReviewed: updatedDate,
   mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalURL },
 };
+
+const faqSchema = faqs.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    }
+  : null;
+
+const schemas = faqSchema ? [articleSchema, faqSchema] : articleSchema;
 ---
 
-<MainLayout title={`${title} — Ironwood Books`} description={description} extraSchema={articleSchema}>
+<MainLayout title={`${title} — Ironwood Books`} description={description} extraSchema={schemas}>
   <article class="guide">
     <div class="container guide-inner">
       <header class="guide-header">
         <h1>{title}</h1>
         <p class="guide-byline">
-          By Evan Paliotta &middot; Updated {formatDate(updatedDate)}
+          By Evan Paliotta &middot; Last updated {formatDate(updatedDate)}
         </p>
       </header>
       <div class="guide-body">
         <slot />
       </div>
+      {faqs.length > 0 && (
+        <section class="guide-faq" id="faq">
+          <h2>Questions parents ask</h2>
+          <div class="faq-list">
+            {faqs.map(({ q, a }) => (
+              <div class="faq-item">
+                <h3>{q}</h3>
+                <p>{a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   </article>
 </MainLayout>
@@ -160,5 +193,26 @@ const articleSchema = {
     border-radius: 10px;
     padding: 1.5rem 1.75rem;
     margin: 2rem 0;
+  }
+  .guide-faq {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    margin-top: 1.25rem;
+  }
+  .faq-item h3 {
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .faq-item p {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    line-height: 1.7;
   }
 </style>

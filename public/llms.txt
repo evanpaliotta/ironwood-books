@@ -6,14 +6,18 @@ Ironwood Books is a one-person press. Evan Paliotta writes books for his son and
 
 - [The Adventures of the Curious Kid](https://ironwoodbooks.com/books/the-adventures-of-the-curious-kid): A rhyming picture book for ages 4-8 about a boy who spends one day exploring everything, including the parts that feel scary. Book 1 of the Curious Kid series.
 - [The Curious Kid Meets Aristotle](https://ironwoodbooks.com/books/the-curious-kid-meets-aristotle): A rhyming picture book for ages 4-8. A papyrus scroll sends the Curious Kid to ancient Athens, where Aristotle teaches him the Golden Mean: not too much, not too little. Book 2 of the Curious Kid series.
-- [The Curious Kid Meets Lao Tzu](https://ironwoodbooks.com/books/the-curious-kid-meets-lao-tzu): A rhyming picture book for ages 4-8. Green bamboo slips pull the Curious Kid to a bamboo grove, where a still sage shows him that opposites lean on each other — light needs dark, song needs quiet, and an empty cup is useful because of the space inside it. Book 3 of the Curious Kid series.
+- [The Curious Kid Meets Lao Tzu](https://ironwoodbooks.com/books/the-curious-kid-meets-lao-tzu): A rhyming picture book for ages 4-8. Green bamboo slips pull the Curious Kid to a bamboo grove, where a still sage shows him that opposites lean on each other: light needs dark, song needs quiet, and an empty cup is useful because of the space inside it. Book 3 of the Curious Kid series.
 - [The Ways of the World](https://ironwoodbooks.com/books/the-ways-of-the-world): A short nonfiction guide for teenagers (ages 14+) on power, money, human nature, and building a life worth living, written by a father for his son.
 
 ## Guides
 
-- [/guides](https://ironwoodbooks.com/guides): Articles on raising kids who think for themselves, drawing on ideas from the books above. Includes a philosophy books for kids list, a how-to-think books list, a how-to-talk-to-your-kid-about-philosophy guide, an explainer on Aristotle's Golden Mean, and a books-for-reluctant-teen-readers list.
+- [/guides](https://ironwoodbooks.com/guides): Articles on raising kids who think for themselves, drawing on ideas from the books above. Includes a philosophy books for kids list, a how-to-think books list, a how-to-talk-to-your-kid-about-philosophy guide, an explainer on Aristotle's Golden Mean, a philosophy-by-age guide, and a books-for-reluctant-teen-readers list.
 
 ## Other pages
 
 - [About](https://ironwoodbooks.com/about): Who writes these books and why.
 - [Free ebooks](https://ironwoodbooks.com/books): Every title, free to download as a PDF, no catch.
+
+## Full content
+
+- [llms-full.txt](https://ironwoodbooks.com/llms-full.txt): The full text of every guide, for models that want the actual content rather than just the map above.
