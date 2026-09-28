@@ -99,10 +99,21 @@ const featuredBooks = [
         <p>Three picture books for ages 4–8 and a guide to life's essential wisdom for ages 14+. More titles in development.</p>
       </div>
       <div class="books-grid">
-        {featuredBooks.map(book => (
+        {featuredBooks.filter(b => b.ageRange === "4–8").map(book => (
           <BookCard {...book} />
         ))}
       </div>
+      <a href={`/books/${featuredBooks[3].slug}`} class="feature-row">
+        <div class="feature-cover">
+          <img src={featuredBooks[3].coverImage} alt={`${featuredBooks[3].title} — book cover`} loading="lazy" />
+        </div>
+        <div class="feature-copy">
+          <span class="feature-label">{featuredBooks[3].ageRange} · {featuredBooks[3].topic}</span>
+          <h3>{featuredBooks[3].title}</h3>
+          <p>{featuredBooks[3].description}</p>
+          <span class="feature-cta">Free Ebook <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -112,24 +123,21 @@ const featuredBooks = [
       <div class="pages-header">
         <span class="section-label">From the Pages</span>
         <h2>Every spread, painted like a storybook.</h2>
+        <p class="pages-note">Real pages from the books. Every book downloads free.</p>
       </div>
     </div>
     <div class="pages-strip">
       <figure>
-        <img src="/images/interior/lao-tzu-scene-03-bamboo-grove.jpg" alt="The Curious Kid in a bamboo grove beside a silver stream — interior spread" loading="lazy" />
-        <figcaption>The Curious Kid Meets Lao Tzu</figcaption>
+        <a href="/books/the-curious-kid-meets-lao-tzu">
+          <img src="/images/interior/lao-tzu-scene-03-bamboo-grove.jpg" alt="The Curious Kid in a bamboo grove beside a silver stream — interior spread" loading="lazy" />
+        </a>
+        <figcaption><a href="/books/the-curious-kid-meets-lao-tzu">The Curious Kid Meets Lao Tzu <span aria-hidden="true">→</span></a></figcaption>
       </figure>
       <figure>
-        <img src="/images/interior/curious-kid-scene-04-mountaintop.jpg" alt="The Curious Kid celebrating on a mountaintop at sunrise — interior spread" loading="lazy" />
-        <figcaption>The Adventures of the Curious Kid</figcaption>
-      </figure>
-      <figure>
-        <img src="/images/interior/aristotle-scene-03-arriving-in-athens.jpg" alt="The Curious Kid arriving in ancient Athens — interior spread" loading="lazy" />
-        <figcaption>The Curious Kid Meets Aristotle</figcaption>
-      </figure>
-      <figure>
-        <img src="/images/interior/curious-kid-scene-15-finds-book.jpg" alt="The Curious Kid finding a glowing book in a dark forest — interior spread" loading="lazy" />
-        <figcaption>The Adventures of the Curious Kid</figcaption>
+        <a href="/books/the-adventures-of-the-curious-kid">
+          <img src="/images/interior/curious-kid-scene-15-finds-book.jpg" alt="The Curious Kid finding a glowing book in a dark forest — interior spread" loading="lazy" />
+        </a>
+        <figcaption><a href="/books/the-adventures-of-the-curious-kid">The Adventures of the Curious Kid <span aria-hidden="true">→</span></a></figcaption>
       </figure>
     </div>
   </section>
@@ -216,29 +224,64 @@ const featuredBooks = [
   .pages-section { background: var(--white); padding-bottom: 6rem; }
   .pages-header { text-align: left; max-width: 600px; margin-bottom: 2.5rem; }
   .pages-header h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+  .pages-note { color: var(--ink-light); margin-top: 0.6rem; }
   .pages-strip {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, minmax(0, 560px));
+    justify-content: center;
+    gap: 2.5rem;
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 1.5rem;
   }
-  .pages-strip figure { margin: 0; }
+  .pages-strip figure {
+    margin: 0;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .pages-strip figure:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(26,26,26,0.16);
+  }
   .pages-strip img {
+    display: block;
     width: 100%;
-    aspect-ratio: 1;
+    aspect-ratio: 2 / 1.45;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 12px 32px rgba(26,26,26,0.14);
   }
-  .pages-strip figure:nth-child(2) { transform: translateY(1.75rem); }
   .pages-strip figcaption {
-    margin-top: 0.85rem;
-    font-size: 0.8rem;
-    color: var(--ink-light);
-    font-style: italic;
+    margin-top: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 600;
   }
+  .pages-strip figcaption a { color: var(--green); text-decoration: none; }
+  .pages-strip figcaption a:hover { text-decoration: underline; }
+  .pages-strip figcaption span { font-weight: 400; }
+
+  .feature-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 2rem 2.5rem;
+    background: var(--green);
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--white);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .feature-row:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(26,26,26,0.18); }
+  .feature-cover img { width: 100%; border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.35); display: block; }
+  .feature-label { color: rgba(245,240,232,0.7); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .feature-copy h3 { color: var(--white); font-size: clamp(1.4rem, 2.4vw, 1.9rem); margin: 0.5rem 0 0.6rem; }
+  .feature-copy p { color: rgba(245,240,232,0.85); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+  .feature-cta { color: var(--bronze-light); font-weight: 600; font-size: 0.95rem; }
 
 
   .why-section { background: var(--white); }
@@ -262,14 +305,14 @@ const featuredBooks = [
     .signup-box { grid-template-columns: 1fr; padding: 2rem; gap: 1.5rem; }
   }
   @media (max-width: 1100px) {
-    /* Four spreads get too small below ~1100px — drop to two per row. */
-    .pages-strip { grid-template-columns: repeat(2, 1fr); }
+    .feature-row { grid-template-columns: 180px 1fr; padding: 1.75rem; gap: 1.75rem; }
   }
   @media (max-width: 600px) {
     .why-values { grid-template-columns: 1fr; }
-    /* Spreads are unreadably small on phones — stack them. */
+    /* One big panel per row on phones. */
     .pages-strip { grid-template-columns: 1fr; gap: 1.5rem; }
-    .pages-strip figure:nth-child(2) { transform: none; }
+    .feature-row { grid-template-columns: 1fr; text-align: center; padding: 1.5rem; }
+    .feature-cover { max-width: 200px; margin: 0 auto; }
     .hero { padding: 3.5rem 1.25rem 3rem; }
     .trust-bar { padding: 0.85rem 1.25rem; }
     .signup-box { padding: 1.5rem; }
