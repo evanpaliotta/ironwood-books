@@ -13,7 +13,7 @@ Deploy = `git push origin main` from ~/Projects/ironwood-books (Evan does this; 
 | # | Brief | Status |
 |---|-------|--------|
 | 1 | Philosophy books by age: comparison table, 4-6 vs 7-9 vs 10-12, incl. series + 3rd-party titles | DONE 2026-09-28 |
-| 2 | Socratic questions to ask your kid at bedtime (10 questions, FAQ format) | TODO |
+| 2 | Socratic questions to ask your kid at bedtime (10 questions, FAQ format) | DONE 2026-10-05 |
 | 3 | Plato for kids — philosopher deep-dive #1 (sets up Book 4) | TODO |
 | 4 | Critical thinking books for 5-year-olds (long-tail) | TODO |
 | 5 | How to read aloud so kids ask questions (companion to series spine) | TODO |
