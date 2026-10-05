@@ -1,0 +1,60 @@
+{
+  "plate": "plates/scene-12-walking-away-sad-plate.png",
+  "out": "out/scene-12-walking-away-sad-rig.mp4",
+  "original": "/Users/evanpaliotta/Projects/ironwood-series-archive/book-01-adventures/illustrations/final/scene-12-walking-away-sad.png",
+  "dur": 6.0,
+  "fps": 24,
+  "width": 1080,
+  "height": 1080,
+  "layers": [
+    {
+      "image": "sprites/scene-12-walking-away-sad-cut-full.png",
+      "anchor": [
+        0.5,
+        1.0
+      ],
+      "path": [
+        {
+          "t": 0.0,
+          "x": 0.5068,
+          "y": 0.9307,
+          "scale": 1.0,
+          "rotate": 0.0,
+          "squash": 1.0
+        },
+        {
+          "t": 1.0,
+          "x": 0.5068,
+          "y": 0.9307,
+          "scale": 1.0,
+          "rotate": 0.0,
+          "squash": 1.0
+        },
+        {
+          "t": 2.6,
+          "x": 0.5062,
+          "y": 0.921,
+          "scale": 0.995,
+          "rotate": -1.0,
+          "squash": 1.014
+        },
+        {
+          "t": 4.4,
+          "x": 0.5054,
+          "y": 0.908,
+          "scale": 0.99,
+          "rotate": -2.0,
+          "squash": 1.0
+        },
+        {
+          "t": 6.0,
+          "x": 0.505,
+          "y": 0.901,
+          "scale": 0.988,
+          "rotate": -1.5,
+          "squash": 1.0
+        }
+      ]
+    }
+  ]
+}

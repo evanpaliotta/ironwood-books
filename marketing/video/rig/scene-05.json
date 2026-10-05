@@ -1,0 +1,68 @@
+{
+  "plate": "plates/scene-05-plate.png",
+  "out": "out/scene-05-rig-demo.mp4",
+  "dur": 6.0,
+  "fps": 24,
+  "width": 1080,
+  "height": 1080,
+  "layers": [
+    {
+      "image": "sprites/scene-05-cut-full.png",
+      "anchor": [
+        0.5,
+        1.0
+      ],
+      "path": [
+        {
+          "t": 0.0,
+          "x": 0.4482,
+          "y": 0.8701,
+          "scale": 1.0,
+          "rotate": 0.0,
+          "squash": 1.0
+        },
+        {
+          "t": 0.6,
+          "x": 0.4482,
+          "y": 0.8701,
+          "scale": 1.0,
+          "rotate": 0.0,
+          "squash": 1.0
+        },
+        {
+          "t": 2.6,
+          "x": 0.478,
+          "y": 0.884,
+          "scale": 1.0,
+          "rotate": 2.0,
+          "squash": 1.02
+        },
+        {
+          "t": 4.6,
+          "x": 0.548,
+          "y": 0.902,
+          "scale": 0.98,
+          "rotate": 6.0,
+          "squash": 0.985
+        },
+        {
+          "t": 5.4,
+          "x": 0.539,
+          "y": 0.898,
+          "scale": 0.975,
+          "rotate": 4.5,
+          "squash": 1.015
+        },
+        {
+          "t": 6.0,
+          "x": 0.559,
+          "y": 0.906,
+          "scale": 0.975,
+          "rotate": 6.5,
+          "squash": 1.0
+        }
+      ]
+    }
+  ],
+  "original": "plates/scene-05-original.png"
+}

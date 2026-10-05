@@ -1,0 +1,60 @@
+{
+  "plate": "plates/scene-02-spots-mountain-plate.png",
+  "out": "out/scene-02-spots-mountain-rig.mp4",
+  "original": "/Users/evanpaliotta/Projects/ironwood-series-archive/book-01-adventures/illustrations/final/scene-02-spots-mountain.png",
+  "dur": 6.0,
+  "fps": 24,
+  "width": 1080,
+  "height": 1080,
+  "layers": [
+    {
+      "image": "sprites/scene-02-spots-mountain-cut-full.png",
+      "anchor": [
+        0.5,
+        1.0
+      ],
+      "path": [
+        {
+          "t": 0.0,
+          "x": 0.4888,
+          "y": 0.9199,
+          "scale": 1.0,
+          "rotate": 0.0,
+          "squash": 1.0
+        },
+        {
+          "t": 0.9,
+          "x": 0.4888,
+          "y": 0.9199,
+          "scale": 1.0,
+          "rotate": 0.0,
+          "squash": 1.0
+        },
+        {
+          "t": 2.4,
+          "x": 0.4866,
+          "y": 0.906,
+          "scale": 1.0,
+          "rotate": -1.0,
+          "squash": 1.008
+        },
+        {
+          "t": 4.2,
+          "x": 0.4848,
+          "y": 0.889,
+          "scale": 0.992,
+          "rotate": -2.5,
+          "squash": 1.0
+        },
+        {
+          "t": 6.0,
+          "x": 0.4838,
+          "y": 0.878,
+          "scale": 0.986,
+          "rotate": -2.0,
+          "squash": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -11,7 +11,7 @@ Ironwood Books is a one-person press. Evan Paliotta writes books for his son and
 
 ## Guides
 
-- [/guides](https://ironwoodbooks.com/guides): Articles on raising kids who think for themselves, drawing on ideas from the books above. Includes a philosophy books for kids list, a how-to-think books list, a how-to-talk-to-your-kid-about-philosophy guide, an explainer on Aristotle's Golden Mean, a philosophy-by-age guide, and a books-for-reluctant-teen-readers list.
+- [/guides](https://ironwoodbooks.com/guides): Articles on raising kids who think for themselves, drawing on ideas from the books above. Includes a philosophy books for kids list, a how-to-think books list, a how-to-talk-to-your-kid-about-philosophy guide, an explainer on Aristotle's Golden Mean, a philosophy-by-age guide, a Socratic bedtime-questions guide, and a books-for-reluctant-teen-readers list.
 
 ## Other pages
 

@@ -20,6 +20,21 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# marketing/video: heavy or generated artifacts stay OUT of git (code + docs are tracked).
+# The guide cron runs `git add .`, so without these it would commit an 800MB venv and mp4s.
+marketing/video/rig/.venv/
+marketing/video/rig/out/
+marketing/video/rig/plates/
+marketing/video/rig/sprites/
+marketing/video/bakeoff/out/
+# per-book scene dirs (book01/...) hold the same heavy artifacts: cutouts, plates,
+# rendered frames and filmstrips. The scene .json specs are the part worth tracking.
+marketing/video/*/sprites/
+marketing/video/*/plates/
+marketing/video/*/out/
+marketing/video/**/*.mp4
+marketing/audio/
+
 # jetbrains setting folder
 .idea/
 

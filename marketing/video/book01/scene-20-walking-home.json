@@ -1,0 +1,60 @@
+{
+  "plate": "plates/scene-20-walking-home-plate.png",
+  "out": "out/scene-20-walking-home-rig.mp4",
+  "original": "/Users/evanpaliotta/Projects/ironwood-series-archive/book-01-adventures/illustrations/final/scene-20-walking-home.png",
+  "dur": 6.0,
+  "fps": 24,
+  "width": 1080,
+  "height": 1080,
+  "layers": [
+    {
+      "image": "sprites/scene-20-walking-home-cut-full.png",
+      "anchor": [
+        0.5,
+        1.0
+      ],
+      "path": [
+        {
+          "t": 0.0,
+          "x": 0.6196,
+          "y": 0.9365,
+          "scale": 1.0,
+          "rotate": 0.0,
+          "squash": 1.0
+        },
+        {
+          "t": 0.8,
+          "x": 0.6196,
+          "y": 0.9365,
+          "scale": 1.0,
+          "rotate": 0.0,
+          "squash": 1.0
+        },
+        {
+          "t": 2.6,
+          "x": 0.6055,
+          "y": 0.91,
+          "scale": 0.99,
+          "rotate": 1.4,
+          "squash": 1.008
+        },
+        {
+          "t": 4.6,
+          "x": 0.5905,
+          "y": 0.8855,
+          "scale": 0.976,
+          "rotate": 2.4,
+          "squash": 1.0
+        },
+        {
+          "t": 6.0,
+          "x": 0.5835,
+          "y": 0.8725,
+          "scale": 0.968,
+          "rotate": 2.0,
+          "squash": 1.0
+        }
+      ]
+    }
+  ]
+}
