@@ -4,14 +4,14 @@ import EmailForm from '../components/EmailForm.astro';
 ---
 
 <MainLayout
-  title="About — Ironwood Books"
-  description="Ironwood Books is one author, a father writing books for his son and sharing them free with any family that wants them."
+  title="About Ironwood — Ironwood Books"
+  description="Ironwood gives curious kids strong ideas and useful tools for whatever they grow up to become. It starts with books, written by a father for his son."
 >
 
   <section class="about-hero">
     <div class="container">
-      <span class="section-label">About Ironwood Books</span>
-      <h1>Why these books exist</h1>
+      <span class="section-label">About Ironwood</span>
+      <h1>Why Ironwood exists</h1>
     </div>
   </section>
 
@@ -19,38 +19,37 @@ import EmailForm from '../components/EmailForm.astro';
     <div class="container story-inner">
       <div class="story-text">
         <p class="lead">
-          Ironwood Books is one person: me. I write these books for my son,
-          and I publish them for any family that finds them useful.
+          Ironwood is one person: me. I write these books for my son and share
+          them with any family that finds them useful.
         </p>
         <p>
-          I started the first one the day I found out he was coming.
-          I kept circling the same question. What do I actually know that is
-          worth passing on? And if something happened to me before I could
-          say it in person, what would I want written down? Working through
-          that question became The Ways of the World, a short guide for
-          teenagers about power, money, human nature, and thinking for yourself.
+          I started the first one the day I found out he was coming. I kept
+          asking myself what I knew that was worth passing on. If I could not
+          be there to say it, what would I want written down? That question
+          became <em>The Ways of the World</em>, a short guide for teenagers
+          about power, money, human nature, and thinking for yourself.
         </p>
         <p>
-          The picture books came after. The Curious Kid series starts the same
-          ideas at age four instead of fourteen. One idea per book, told as a
-          story, because that is how kids actually remember things.
+          The picture books came after. In the Curious Kid stories, the kid asks
+          the questions and meets people who have wrestled with big ideas. Each
+          book follows one idea from beginning to end.
         </p>
         <p>
-          The name comes from ironwood, the hardest native wood in North
-          America. Craftsmen used it for tool handles because it held up
-          under years of hard use. That is the standard I try to hold the
-          writing to. Ideas that hold up.
+          Ironwood is a name used for different trees around the world. Some
+          have been used for tool handles, boats, and homes. I liked what the
+          name suggests: strong material put to work. That is what I want
+          these ideas to be for kids.
         </p>
         <p>
-          The point is not to train a kid for one job or one decade. Nobody can
-          see that far. It is to hand them ideas and tools that still work
-          whether they end up farming, building, studying, or doing something
-          that does not have a name yet. That is what I want for my son, and
-          it is what goes in the books.
+          I cannot know what work my son will do, or what the world will ask of
+          him. I can give him ideas and tools he can use wherever life takes
+          him, whether he becomes a farmer, a scientist, or something no one
+          has named yet. That is the reason for Ironwood.
         </p>
         <p>
-          The ebooks are free and will stay free. If you want one on the
-          shelf, the paperbacks are on Amazon. That is the whole model.
+          Books are where Ironwood starts. I hope to share these ideas in other
+          ways too. Every ebook is free. If you want one on the shelf, the
+          paperback is on Amazon.
         </p>
         <p class="story-sig">Evan Paliotta</p>
       </div>
@@ -64,11 +63,11 @@ import EmailForm from '../components/EmailForm.astro';
             </svg>
           </div>
           <h3>Ironwood Books</h3>
-          <p>An independent, one-person press.</p>
+          <p>A one-person learning brand.</p>
           <div class="brand-divider"></div>
           <ul class="brand-facts">
             <li><strong>Author:</strong> Evan Paliotta</li>
-            <li><strong>Ages:</strong> 3 to adult</li>
+            <li><strong>Ages:</strong> 4–8 and 14+</li>
             <li><strong>Ebooks:</strong> Always free</li>
             <li><strong>Paperbacks:</strong> On Amazon</li>
           </ul>
@@ -82,9 +81,9 @@ import EmailForm from '../components/EmailForm.astro';
       <h2 class="mission-heading">What every book has to pass</h2>
       <div class="mission-grid">
         {[
-          { title: "One idea per book", text: "Each book takes a single idea worth keeping and tells it as a story. If it needs a lecture, it isn't ready." },
-          { title: "Old ideas only", text: "If an idea hasn't held up for a few hundred years, it doesn't go in. Nothing trendy, nothing ideological." },
-          { title: "The reader does the building", text: "The books hand kids raw material and let them draw their own conclusions. They don't tell anyone what to think." },
+          { title: "One idea, made clear", text: "Each book follows one idea from start to finish. We tell it as a story, not a lecture." },
+          { title: "Useful beyond the page", text: "We look for ideas a child can carry into another part of life, not facts to memorize and forget." },
+          { title: "The reader does the building", text: "We show an idea at work. Kids make it their own and decide what to do with it." },
         ].map(item => (
           <div class="mission-card">
             <h3>{item.title}</h3>
