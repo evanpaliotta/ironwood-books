@@ -1,6 +1,6 @@
 # Ironwood Books
 
-Ironwood Books is a one-person press. Evan Paliotta writes books for his son and shares them with any family that finds them useful: picture books for young children and a life-wisdom guide for teenagers, all built around ideas that have held up for a long time. Every ebook is free. Paperbacks are sold at cost-plus on Amazon.
+Ironwood Books is a one-person press. Evan Paliotta writes books for his son and shares them with any family that finds them useful: picture books for young children and a life-wisdom guide for teenagers, all built around ideas that have held up for a long time. The point is not to train a kid for one job or one decade, but to hand them ideas and tools that still work whatever they grow up to do. Every ebook is free. Paperbacks are sold at cost-plus on Amazon.
 
 ## Books
 
