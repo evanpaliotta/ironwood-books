@@ -3,7 +3,8 @@
 Start date: 2026-09-29. One-person press; agent produces drafts/assets, Evan
 records voice and pushes. Everything here must obey BRAND_TASTE.md (read it
 before producing): plain dad voice, timeless, no hedging, book is never the
-pitch.
+pitch. The why lives in [[Ironwood-Brand-Compass]]; the trailer and first test
+videos are planned in [[Ironwood-Brand-Video-Plan]] (not started).
 
 ## 1. Strategic verdict
 
@@ -27,7 +28,7 @@ funnel. Cadence: 1 long-form / month, 2-3 Shorts / week. Do not chase news.
 |--------|------|---------|---------------|
 | Read-aloud (Curious Kid) | 4-8 + parents | Sell book, evergreen search | Book art + Evan voice |
 | Parent explainer ("Socratic qs for bedtime", "opposites for kids") | parents | Discovery/SEO, matches guides | Script + motion stills + TTS or voice |
-| Channel trailer ("why I write philosophy books for kids") | parents | Identity | 60-90s, Evan voice |
+| Channel trailer ("why Ironwood exists") | parents | Identity | 60-90s, Evan voice |
 | Shorts: couplet / illustration reveal / 2-line idea | all | Feed funnel | Cut from above, vertical |
 
 ## 3. PRODUCTION MODEL (rev 2026-10-01) — full-frame image-to-video
