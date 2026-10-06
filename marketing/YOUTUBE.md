@@ -22,6 +22,26 @@ Order of launch: read-aloud of Book 1 (search demand now) -> 2 parent explainer
 videos (repurposed guides #2 and #7) -> Shorts cut from everything to feed the
 funnel. Cadence: 1 long-form / month, 2-3 Shorts / week. Do not chase news.
 
+## 1a. BRAND VOICE — applies to every title, description, thumbnail text, and spoken line
+
+The why: Obsidian `Hermes Memory/Projects/Ironwood-Brand-Compass.md`. Ironwood is a
+children's LEARNING brand; the books are the first product, not the definition.
+Read the compass before writing anything for this channel.
+
+- **The promise:** strong ideas and useful tools for whatever they grow up to become.
+- **Voice:** a father who reads too much, telling his kid what he has learned. Warm,
+  direct, never lecturing. Plain words.
+- **The test for every video:** what can a child carry out of this into a different
+  part of their life? If it is just a fact, it is not an Ironwood video.
+- **Never** say ironwood "doesn't rot" (too heavy for a kids brand; the real line is
+  wood used for tool handles because it holds up).
+- **Never** use the anti-school frame ("the ideas most schools stopped teaching").
+  The compass is kid-centered and additive, not combative.
+- **Never** hedge, hype, chase news, or pitch the book as the point. The idea is the point.
+- Titles name the idea or the book plainly, never clickbait. Descriptions say what the
+  child takes away, then link the free ebook.
+- The MFK spoken outro is one plain sentence (free ebook at ironwoodbooks.com), never a sell.
+
 ## 2. Formats (the menu)
 
 | Format | Ages | Purpose | Assets needed |
