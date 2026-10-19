@@ -14,8 +14,8 @@ Deploy = `git push origin main` from ~/Projects/ironwood-books (Evan does this; 
 |---|-------|--------|
 | 1 | Philosophy books by age: comparison table, 4-6 vs 7-9 vs 10-12, incl. series + 3rd-party titles | DONE 2026-09-28 |
 | 2 | Socratic questions to ask your kid at bedtime (10 questions, FAQ format) | DONE 2026-10-05 |
-| 3 | Plato for kids — philosopher deep-dive #1 (sets up Book 4) | TODO |
-| 4 | Critical thinking books for 5-year-olds (long-tail) | TODO |
+| 3 | Plato for kids — philosopher deep-dive #1 (sets up Book 4) | DONE 2026-10-12 |
+| 4 | Critical thinking books for 5-year-olds (long-tail) | DONE 2026-10-19 |
 | 5 | How to read aloud so kids ask questions (companion to series spine) | TODO |
 | 6 | Stoicism for kids: Marcus Aurelius / Epictetus explainers | TODO |
 | 7 | Books about opposites/contrast for kids (companion to Book 3, Lao Tzu) | TODO |
@@ -28,6 +28,7 @@ Deploy = `git push origin main` from ~/Projects/ironwood-books (Evan does this; 
 - [x] "Last updated" visible on all 6 existing guides (2026-09-28; byline now reads "Last updated <date>")
 
 ## Rules
+- Every new book owes, at publish time: 1 full read-along, 3 Shorts cut from it, 1 companion guide, 1 parent-lane piece. That is chapter Ch.1 of [[Ironwood-Distribution-System]]; a book shipped without them is half-published.
 - Never invent KDP/Amazon facts; ASIN dp URLs only (skill: ironwood-book-factory).
 - Voice: Evan's plain first-person dad voice — read ~/Projects/ironwood-series-archive/Ironwood Books/BRAND_TASTE.md before drafting.
 - No em-dashes in book copy; guides follow the same house voice.
