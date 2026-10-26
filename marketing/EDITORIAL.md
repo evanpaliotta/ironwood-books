@@ -16,7 +16,7 @@ Deploy = `git push origin main` from ~/Projects/ironwood-books (Evan does this; 
 | 2 | Socratic questions to ask your kid at bedtime (10 questions, FAQ format) | DONE 2026-10-05 |
 | 3 | Plato for kids — philosopher deep-dive #1 (sets up Book 4) | DONE 2026-10-12 |
 | 4 | Critical thinking books for 5-year-olds (long-tail) | DONE 2026-10-19 |
-| 5 | How to read aloud so kids ask questions (companion to series spine) | TODO |
+| 5 | How to read aloud so kids ask questions (companion to series spine) | DONE 2026-10-26 |
 | 6 | Stoicism for kids: Marcus Aurelius / Epictetus explainers | TODO |
 | 7 | Books about opposites/contrast for kids (companion to Book 3, Lao Tzu) | TODO |
 | 8 | Golden Mean worked examples for everyday parenting (refresh of existing guide + last-updated stamp) | TODO |
