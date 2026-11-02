@@ -17,7 +17,7 @@ Deploy = `git push origin main` from ~/Projects/ironwood-books (Evan does this; 
 | 3 | Plato for kids — philosopher deep-dive #1 (sets up Book 4) | DONE 2026-10-12 |
 | 4 | Critical thinking books for 5-year-olds (long-tail) | DONE 2026-10-19 |
 | 5 | How to read aloud so kids ask questions (companion to series spine) | DONE 2026-10-26 |
-| 6 | Stoicism for kids: Marcus Aurelius / Epictetus explainers | TODO |
+| 6 | Stoicism for kids: Marcus Aurelius / Epictetus explainers | DONE 2026-11-02 |
 | 7 | Books about opposites/contrast for kids (companion to Book 3, Lao Tzu) | TODO |
 | 8 | Golden Mean worked examples for everyday parenting (refresh of existing guide + last-updated stamp) | TODO |
 
