@@ -18,7 +18,7 @@ Deploy = `git push origin main` from ~/Projects/ironwood-books (Evan does this; 
 | 4 | Critical thinking books for 5-year-olds (long-tail) | DONE 2026-10-19 |
 | 5 | How to read aloud so kids ask questions (companion to series spine) | DONE 2026-10-26 |
 | 6 | Stoicism for kids: Marcus Aurelius / Epictetus explainers | DONE 2026-11-02 |
-| 7 | Books about opposites/contrast for kids (companion to Book 3, Lao Tzu) | TODO |
+| 7 | Books about opposites/contrast for kids (companion to Book 3, Lao Tzu) | DONE 2026-11-09 |
 | 8 | Golden Mean worked examples for everyday parenting (refresh of existing guide + last-updated stamp) | TODO |
 
 ## One-time fixes (Week-1 list)
